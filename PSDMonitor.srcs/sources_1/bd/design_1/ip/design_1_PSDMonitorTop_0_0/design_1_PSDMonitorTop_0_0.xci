@@ -4,7 +4,7 @@
     "xci_name": "design_1_PSDMonitorTop_0_0",
     "cell_name": "PSDMonitorTop_0",
     "component_reference": "xilinx.com:hls:PSDMonitorTop:1.0",
-    "ip_revision": "2114574020",
+    "ip_revision": "2114574027",
     "gen_directory": "../../../../../../PSDMonitor.gen/sources_1/bd/design_1/ip/design_1_PSDMonitorTop_0_0",
     "parameters": {
       "component_parameters": {
@@ -58,7 +58,7 @@
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
-        "IPREVISION": [ { "value": "2114574020" } ],
+        "IPREVISION": [ { "value": "2114574027" } ],
         "MANAGED": [ { "value": "TRUE" } ],
         "OUTPUTDIR": [ { "value": "../../../../../../PSDMonitor.gen/sources_1/bd/design_1/ip/design_1_PSDMonitorTop_0_0" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],

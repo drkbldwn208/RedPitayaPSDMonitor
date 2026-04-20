@@ -2573,8 +2573,8 @@
       </xilinx:taxonomies>
       <xilinx:displayName>Psdmonitortop</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>2114574020</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2026-04-20T22:20:39Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>2114574027</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2026-04-20T22:27:09Z</xilinx:coreCreationDateTime>
       <xilinx:sdxKernelAttributes>
         <xilinx:sdx_kernel>true</xilinx:sdx_kernel>
         <xilinx:sdx_kernel_type>hls</xilinx:sdx_kernel_type>

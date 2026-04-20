@@ -599,7 +599,7 @@
       },
       "PSDMonitorTop_0": {
         "vlnv": "xilinx.com:hls:PSDMonitorTop:1.0",
-        "ip_revision": "2114574020",
+        "ip_revision": "2114574027",
         "xci_name": "design_1_PSDMonitorTop_0_0",
         "xci_path": "ip/design_1_PSDMonitorTop_0_0/design_1_PSDMonitorTop_0_0.xci",
         "inst_hier_path": "PSDMonitorTop_0",

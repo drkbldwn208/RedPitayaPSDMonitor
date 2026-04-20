@@ -586,3 +586,185 @@ Execute   close_project
 Execute     close_solution 
 Execute       cleanup_all 
 Execute       cleanup_all 
+INFO-FLOW: Workspace /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls opened at Mon Apr 20 15:26:58 PDT 2026
+Execute     source /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/.autopilot/db/global.setting.tcl 
+Execute     set_part xc7z010-clg400-1 
+Execute       create_platform xc7z010-clg400-1 -board  
+DBG:HLSDevice: Trying to load device library: /home/levlabcukomen/tools/Vitis_HLS/2024.1/lib/lnx64.o/libxv_hlsvwrap.so
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /home/levlabcukomen/tools/Vivado/2024.1/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xc7z010-clg400-1'
+Command       create_platform done; 0.89 sec.
+Execute       source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/ip/util.gen 
+Execute         source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/ip/xfft.gen 
+Execute         source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/DSP48/dsp48.gen 
+Execute       ap_part_info -name xc7z010-clg400-1 -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 0.98 sec.
+Execute     send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Command   open_solution done; 0.99 sec.
+Execute   apply_ini /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/hls_config.cfg 
+Execute     send_msg_by_id INFO @200-1465@%s 'syn.file=PSDMonitor.cpp' from /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/hls_config.cfg(9) 
+INFO: [HLS 200-1465] Applying ini 'syn.file=PSDMonitor.cpp' from /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/hls_config.cfg(9)
+Execute     add_files /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.cpp 
+INFO: [HLS 200-10] Adding design file '/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.cpp' to the project
+Execute     send_msg_by_id INFO @200-1465@%s 'syn.top=PSDMonitorTop' from /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/hls_config.cfg(7) 
+INFO: [HLS 200-1465] Applying ini 'syn.top=PSDMonitorTop' from /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/hls_config.cfg(7)
+Execute     set_top PSDMonitorTop 
+Execute     send_msg_by_id INFO @200-1465@%s 'flow_target=vivado' from /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/hls_config.cfg(4) 
+INFO: [HLS 200-1465] Applying ini 'flow_target=vivado' from /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/hls_config.cfg(4)
+Execute     send_msg_by_id INFO @200-1505@%s%s  vivado 
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Execute     send_msg_by_id INFO @200-1465@%s 'part=xc7z010clg400-1' from /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/hls_config.cfg(1) 
+INFO: [HLS 200-1465] Applying ini 'part=xc7z010clg400-1' from /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/hls_config.cfg(1)
+Execute     set_part xc7z010clg400-1 
+Execute       create_platform xc7z010clg400-1 -board  
+Execute       source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/interface/saxilite.gen 
+Execute         source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/ip/util.gen 
+Execute         source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/ip/xfft.gen 
+Execute         source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/DSP48/dsp48.gen 
+Execute       ap_part_info -name xc7z010-clg400-1 -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 0.15 sec.
+Execute     send_msg_by_id INFO @200-1465@%s 'clock=8ns' from /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/hls_config.cfg(8) 
+INFO: [HLS 200-1465] Applying ini 'clock=8ns' from /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/hls_config.cfg(8)
+Execute     create_clock -period 8ns 
+Execute       ap_set_clock -name default -period 8 -unit ns -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 8ns.
+Execute     send_msg_by_id INFO @200-1465@%s 'package.output.format=ip_catalog' from /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/hls_config.cfg(5) 
+INFO: [HLS 200-1465] Applying ini 'package.output.format=ip_catalog' from /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/hls_config.cfg(5)
+Execute     config_export -format=ip_catalog 
+Command   apply_ini done; 0.16 sec.
+Execute   apply_ini /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/config.cmdline 
+Execute   export_design -flow none 
+Execute     AP::app_get_file_relativeroot [AP::app_get_root] {}
+Execute     AP::app_get_file_relativeroot [AP::app_get_root] {}
+Execute     AP::app_get_file_relativeroot [AP::app_get_root] {}
+Execute     AP::get_vpp_package_output_file
+Execute     config_export -flow=none 
+INFO-FLOW: DBG:PUTS: export_design_wrap: -format ip_catalog -rtl verilog
+Execute     source /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:PUTS:   auto_impl: pack: -export -rtl verilog
+INFO-FLOW: DBG:PROC: ::AESL_AUTOIMPL::auto_impl args='-export -rtl verilog'
+Execute     source /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/.autopilot/db/global.setting.tcl 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+INFO-FLOW: DBG:PUTS: automg_wrap -export -pcore_version 1.00.a -rtl vlog -tool Vivado -impltomg_flag
+INFO-FLOW: DBG:PROC: ::AESL_AUTOMG::auto_generate args='-export -pcore_version 1.00.a -rtl vlog -tool Vivado -impltomg_flag'
+INFO-FLOW: DBG:PUTS:     auto_generate -export -pcore_version 1.00.a -rtl vlog -tool Vivado -impltomg_flag
+Execute     source /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:PUTS: read_platform_lib /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/.autopilot/db/global.setting.tcl
+Execute     source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/generic/autopilot/common.gen 
+Execute       source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/generic/autopilot/op.gen 
+Execute     source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/generic/autopilot/interface.gen 
+Execute     source /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/.autopilot/db/global.setting.tcl 
+Execute     source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/common/xilinx.gen 
+Execute       source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/interface/plb46.gen 
+Execute       source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/interface/axi4.gen 
+Execute       source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/interface/saxilite.gen 
+Execute       source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/ip/xfir.gen 
+Execute       source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/ip/util.gen 
+Execute       source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/ip/xfft.gen 
+Execute       source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/DSP48/dsp48.gen 
+INFO-FLOW: DBG:PUTS:   using AESL_AUTOCG::g_clock_period=8.000 (was NA)
+INFO-FLOW: DBG:PUTS:       initCTypeInfo top_module=PSDMonitorTop xml_exists=1
+Execute     source /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/.autopilot/db/PSDMonitorTop.rtl_wrap.cfg.tcl 
+Execute     source /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/.autopilot/db/PSDMonitorTop.rtl_wrap.cfg.tcl 
+Execute     source /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/.autopilot/db/PSDMonitorTop.rtl_wrap.cfg.tcl 
+Execute     source /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/.autopilot/db/PSDMonitorTop.tbgen.tcl 
+Execute     source /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/.autopilot/db/PSDMonitorTop.tbgen.tcl 
+Execute     source /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/.autopilot/db/PSDMonitorTop.tbgen.tcl 
+Execute     source /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/.autopilot/db/global.setting.tcl 
+Execute     source /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/.autopilot/db/PSDMonitorTop.tbgen.tcl 
+INFO-FLOW: DBG:PUTS:       cosim_export_main adding deadlock detection to PSDMonitorTop
+INFO-FLOW: DBG:PUTS:       generate_datafile_ip_script ip_types={vitis sysgen} #gSsdmPorts=0
+INFO-FLOW: DBG:PUTS: Skipping loadAnalyze_DB, #g_database=8
+INFO-FLOW: DBG:PUTS:       generate_json generate_bd_files=0 generate_xo_files=false #modelList=7 #gSsdmPorts=0
+INFO-FLOW: DBG:PROC: ::AP::DESIGN_DATA::generate_json generate_bd_files='0' generate_xo_files='false' modelList='PSDMonitorTop_gmem_m_axi
+PSDMonitorTop_CTRL_s_axi
+PSDMonitorTop_regslice_both
+PSDMonitorTop_regslice_both
+PSDMonitorTop_regslice_both
+PSDMonitorTop_regslice_both
+PSDMonitorTop
+' rtl_lang='vlog' bootstrap_tcl='false' outdir='' outfilename=''
+Execute     source /home/levlabcukomen/tools/Vitis_HLS/2024.1/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
+Execute     source /home/levlabcukomen/tools/Vitis_HLS/2024.1/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
+Execute     source /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/.autopilot/db/global.setting.tcl 
+Execute     source /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/.autopilot/db/global.setting.tcl 
+Execute     source /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/.autopilot/db/top-io-be.tcl 
+Execute     source /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/.autopilot/db/PSDMonitorTop.tbgen.tcl 
+Execute     source /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/.autopilot/db/PSDMonitorTop.compgen.dataonly.tcl 
+Execute     source /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/.autopilot/db/PSDMonitorTop.compgen.dataonly.tcl 
+Execute     source /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/.autopilot/db/PSDMonitorTop.rtl_wrap.cfg.tcl 
+Execute     source /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/.autopilot/db/PSDMonitorTop.compgen.dataonly.tcl 
+Execute     source /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/.autopilot/db/PSDMonitorTop.tbgen.tcl 
+Execute     source /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/.autopilot/db/global.setting.tcl 
+Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
+Execute     source /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/.autopilot/db/PSDMonitorTop.constraint.tcl 
+Execute     sc_get_clocks PSDMonitorTop 
+Execute     source /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:PUTS:       generate_syn_sh
+Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
+Execute     source /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/.autopilot/db/global.setting.tcl 
+INFO-FLOW: DBG:PUTS:       generate_imp_constraints
+Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
+Execute     source /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/.autopilot/db/PSDMonitorTop.constraint.tcl 
+Execute     source /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/.autopilot/db/PSDMonitorTop.tbgen.tcl 
+INFO-FLOW: DBG:PUTS:       delete-temp-dirs (skipped for debug)
+Execute     ap_part_info -name xc7z010-clg400-1 -data names -quiet 
+Execute     ap_part_info -name xc7z010-clg400-1 -data info -quiet 
+INFO-FLOW: DBG:PUTS: read_platform_lib /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/.autopilot/db/global.setting.tcl
+Execute     source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/generic/autopilot/common.gen 
+Execute       source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/generic/autopilot/APCoreGen.gen 
+Execute     source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/generic/autopilot/op.gen 
+Execute     source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/generic/autopilot/op_simcore.gen 
+Execute     source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/generic/autopilot/interface.gen 
+Execute     source /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/.autopilot/db/global.setting.tcl 
+Execute     source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/common/xilinx.gen 
+Execute       source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/interface/plb46.gen 
+Execute       source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/interface/axi4.gen 
+Execute       source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute         source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/interface/saxilite.gen 
+Execute       source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute       source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute       source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/ip/xfir.gen 
+Execute       source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/ip/util.gen 
+Execute       source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute       source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/ip/xfft.gen 
+Execute       source /home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/xilinx/DSP48/dsp48.gen 
+INFO-FLOW: DBG:PUTS:     IP package: exec /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/impl/ip/pack.sh
+INFO-FLOW: DBG:PUTS:     IP package: success /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/impl/ip/pack.sh
+Execute     send_msg_by_id INFO @200-802@%s PSDMonitorTop/PSDMonitorTop.zip 
+INFO: [HLS 200-802] Generated output file PSDMonitorTop/PSDMonitorTop.zip
+Command   export_design done; 12.77 sec.
+Execute   close_project 
+Execute     close_solution 
+Execute       cleanup_all 
+Execute       cleanup_all 
