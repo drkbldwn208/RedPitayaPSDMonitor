@@ -1,0 +1,159 @@
+<ENTRY>
+{
+ "thisFile": "/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/PSDMonitorTop.hlsrun_package_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Mon Apr 20 10:52:28 2026",
+ "timestampMillis": "1776707548406",
+ "buildStep": {
+  "cmdId": "d1d6625d-3c33-4e0b-8d77-807d195aa973",
+  "name": "vitis-run",
+  "logFile": "/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/logs/PSDMonitorTop.steps.log",
+  "commandLine": "/home/levlabcukomen/tools/Vitis/2024.1/bin/unwrapped/lnx64.o/vitis-run  --mode hls --package --config /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/hls_config.cfg --work_dir PSDMonitorTop ",
+  "args": [
+   "--mode",
+   "hls",
+   "--package",
+   "--config",
+   "/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/hls_config.cfg",
+   "--work_dir",
+   "PSDMonitorTop"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Mon Apr 20 10:52:28 2026",
+ "timestampMillis": "1776707548407",
+ "status": {
+  "cmdId": "d1d6625d-3c33-4e0b-8d77-807d195aa973",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Mon Apr 20 10:52:32 2026",
+ "timestampMillis": "1776707552305",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_IP",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "PSDMonitorTop",
+     "file": "/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/PSDMonitorTop.zip",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2024.1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Mon Apr 20 10:52:32 2026",
+ "timestampMillis": "1776707552305",
+ "buildStep": {
+  "cmdId": "94797c9d-22b3-4e1a-9f0a-d7beb3165d54",
+  "name": "export_design",
+  "logFile": "/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/hls.log",
+  "commandLine": "export_design -flow none",
+  "args": [
+   "-flow",
+   "none"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Mon Apr 20 10:52:32 2026",
+ "timestampMillis": "1776707552305",
+ "status": {
+  "cmdId": "94797c9d-22b3-4e1a-9f0a-d7beb3165d54",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Mon Apr 20 10:52:45 2026",
+ "timestampMillis": "1776707565146",
+ "status": {
+  "cmdId": "94797c9d-22b3-4e1a-9f0a-d7beb3165d54",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Mon Apr 20 10:52:45 2026",
+ "timestampMillis": "1776707565262",
+ "status": {
+  "cmdId": "d1d6625d-3c33-4e0b-8d77-807d195aa973",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Apr 20 10:52:45 2026",
+ "timestampMillis": "1776707565263",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Mon Apr 20 10:52:45 2026",
+ "timestampMillis": "1776707565263",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

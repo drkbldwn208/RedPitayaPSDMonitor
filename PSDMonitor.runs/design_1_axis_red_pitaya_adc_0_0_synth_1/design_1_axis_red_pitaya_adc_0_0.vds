@@ -1,0 +1,231 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Mon Apr 20 11:08:29 2026
+# Process ID: 3326085
+# Current directory: /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/design_1_axis_red_pitaya_adc_0_0_synth_1
+# Command line: vivado -log design_1_axis_red_pitaya_adc_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_axis_red_pitaya_adc_0_0.tcl
+# Log file: /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/design_1_axis_red_pitaya_adc_0_0_synth_1/design_1_axis_red_pitaya_adc_0_0.vds
+# Journal file: /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/design_1_axis_red_pitaya_adc_0_0_synth_1/vivado.jou
+# Running On        :levlabcukomen-OMEN-30L-Desktop-GT13-0xxx
+# Platform          :Ubuntu
+# Operating System  :Ubuntu 22.04.5 LTS
+# Processor Detail  :Intel(R) Core(TM) i9-10900KF CPU @ 3.70GHz
+# CPU Frequency     :4904.010 MHz
+# CPU Physical cores:10
+# CPU Logical cores :20
+# Host memory       :67280 MB
+# Swap memory       :0 MB
+# Total Virtual     :67280 MB
+# Available Virtual :47239 MB
+#-----------------------------------------------------------
+source design_1_axis_red_pitaya_adc_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1444.891 ; gain = 81.836 ; free physical = 415 ; free virtual = 41101
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/impl/ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/levlabcukomen/tools/Vivado/2024.1/data/ip'.
+Command: synth_design -top design_1_axis_red_pitaya_adc_0_0 -part xc7z020clg400-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Device 21-9227] Part: xc7z020clg400-1 does not have CEAM library.
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 3326668
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 2232.855 ; gain = 412.715 ; free physical = 522 ; free virtual = 30432
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'design_1_axis_red_pitaya_adc_0_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ip/design_1_axis_red_pitaya_adc_0_0/synth/design_1_axis_red_pitaya_adc_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'axis_red_pitaya_adc' [/home/levlabcukomen/Desktop/VitisProjects/DyCavityRelockRedPitaya2/extern/red-pitaya-notes/cores/axis_red_pitaya_adc.v:4]
+	Parameter ADC_DATA_WIDTH bound to: 14 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axis_red_pitaya_adc' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/DyCavityRelockRedPitaya2/extern/red-pitaya-notes/cores/axis_red_pitaya_adc.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axis_red_pitaya_adc_0_0' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ip/design_1_axis_red_pitaya_adc_0_0/synth/design_1_axis_red_pitaya_adc_0_0.v:53]
+WARNING: [Synth 8-7129] Port adc_dat_a[1] in module axis_red_pitaya_adc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port adc_dat_a[0] in module axis_red_pitaya_adc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port adc_dat_b[1] in module axis_red_pitaya_adc is either unconnected or has no load
+WARNING: [Synth 8-7129] Port adc_dat_b[0] in module axis_red_pitaya_adc is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2319.824 ; gain = 499.684 ; free physical = 457 ; free virtual = 29791
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2337.637 ; gain = 517.496 ; free physical = 409 ; free virtual = 29743
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 2337.637 ; gain = 517.496 ; free physical = 409 ; free virtual = 29743
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2337.637 ; gain = 0.000 ; free physical = 402 ; free virtual = 29736
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2461.387 ; gain = 0.000 ; free physical = 537 ; free virtual = 29447
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2461.387 ; gain = 0.000 ; free physical = 536 ; free virtual = 29446
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2461.387 ; gain = 641.246 ; free physical = 542 ; free virtual = 29045
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2469.391 ; gain = 649.250 ; free physical = 541 ; free virtual = 29044
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 2469.391 ; gain = 649.250 ; free physical = 538 ; free virtual = 29041
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2469.391 ; gain = 649.250 ; free physical = 535 ; free virtual = 29038
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	               14 Bit    Registers := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+INFO: [Synth 8-3917] design design_1_axis_red_pitaya_adc_0_0 has port adc_csn driven by constant 1
+INFO: [Synth 8-3917] design design_1_axis_red_pitaya_adc_0_0 has port m_axis_tvalid driven by constant 1
+WARNING: [Synth 8-7129] Port adc_dat_a[1] in module design_1_axis_red_pitaya_adc_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port adc_dat_a[0] in module design_1_axis_red_pitaya_adc_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port adc_dat_b[1] in module design_1_axis_red_pitaya_adc_0_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port adc_dat_b[0] in module design_1_axis_red_pitaya_adc_0_0 is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 2469.391 ; gain = 649.250 ; free physical = 515 ; free virtual = 29018
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2469.391 ; gain = 649.250 ; free physical = 462 ; free virtual = 28971
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2469.391 ; gain = 649.250 ; free physical = 462 ; free virtual = 28971
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2469.391 ; gain = 649.250 ; free physical = 462 ; free virtual = 28971
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 2469.391 ; gain = 649.250 ; free physical = 820 ; free virtual = 29101
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 2469.391 ; gain = 649.250 ; free physical = 820 ; free virtual = 29101
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 2469.391 ; gain = 649.250 ; free physical = 820 ; free virtual = 29101
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 2469.391 ; gain = 649.250 ; free physical = 820 ; free virtual = 29101
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 2469.391 ; gain = 649.250 ; free physical = 820 ; free virtual = 29101
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 2469.391 ; gain = 649.250 ; free physical = 820 ; free virtual = 29101
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |LUT1 |    26|
+|2     |FDRE |    28|
++------+-----+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 2469.391 ; gain = 649.250 ; free physical = 820 ; free virtual = 29101
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 5 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 2469.391 ; gain = 525.500 ; free physical = 820 ; free virtual = 29101
+Synthesis Optimization Complete : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2469.398 ; gain = 649.250 ; free physical = 820 ; free virtual = 29101
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2469.398 ; gain = 0.000 ; free physical = 820 ; free virtual = 29101
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2469.398 ; gain = 0.000 ; free physical = 1709 ; free virtual = 29991
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: 3eb6931a
+INFO: [Common 17-83] Releasing license: Synthesis
+23 Infos, 9 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:27 ; elapsed = 00:00:24 . Memory (MB): peak = 2469.398 ; gain = 1003.727 ; free physical = 1702 ; free virtual = 29983
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1706.559; main = 1418.012; forked = 305.460
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3492.660; main = 2469.395; forked = 1031.270
+INFO: [Common 17-1381] The checkpoint '/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/design_1_axis_red_pitaya_adc_0_0_synth_1/design_1_axis_red_pitaya_adc_0_0.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file design_1_axis_red_pitaya_adc_0_0_utilization_synth.rpt -pb design_1_axis_red_pitaya_adc_0_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Mon Apr 20 11:09:03 2026...

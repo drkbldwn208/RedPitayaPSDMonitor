@@ -1,0 +1,3 @@
+relativeroot=/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor
+original_argv=--mode hls --package --config /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/hls_config.cfg --work_dir PSDMonitorTop 
+

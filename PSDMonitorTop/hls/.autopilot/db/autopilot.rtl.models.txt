@@ -1,0 +1,7 @@
+PSDMonitorTop_gmem_m_axi
+PSDMonitorTop_CTRL_s_axi
+PSDMonitorTop_regslice_both
+PSDMonitorTop_regslice_both
+PSDMonitorTop_regslice_both
+PSDMonitorTop_regslice_both
+PSDMonitorTop

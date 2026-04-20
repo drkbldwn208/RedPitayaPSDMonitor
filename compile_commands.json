@@ -1,0 +1,14 @@
+[
+  {
+    "directory": "/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor",
+    "arguments": [
+      "/home/levlabcukomen/tools/Vitis_HLS/2024.1/vcxx/libexec/clang++",
+      "-fhls",
+      "-hls-syn-headers-dir=/home/levlabcukomen/tools/Vitis_HLS/2024.1/common/technology/autopilot",
+      "",
+      "-c",
+      "/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.cpp"
+    ],
+    "file": "/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.cpp"
+  }
+]
