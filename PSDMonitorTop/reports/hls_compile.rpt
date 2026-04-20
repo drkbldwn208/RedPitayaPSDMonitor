@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'PSDMonitorTop'
 ================================================================
 + General Information: 
-    * Date:           Mon Apr 20 14:41:49 2026
+    * Date:           Mon Apr 20 15:20:09 2026
     * Version:        2024.1 (Build 5069499 on May 21 2024)
     * Project:        PSDMonitorTop
     * Solution:       hls (Vivado IP Flow Target)
@@ -19,7 +19,7 @@
     |     Modules     | Issue|      | Latency | Latency| Iteration|         | Trip |          |         |    |           |           |     |
     |     & Loops     | Type | Slack| (cycles)|  (ns)  |  Latency | Interval| Count| Pipelined|  BRAM   | DSP|     FF    |    LUT    | URAM|
     +-----------------+------+------+---------+--------+----------+---------+------+----------+---------+----+-----------+-----------+-----+
-    |+ PSDMonitorTop  |     -|  0.00|        7|  56.000|         -|        1|     -|       yes|  1 (~0%)|   -|  1209 (3%)|  1380 (7%)|    -|
+    |+ PSDMonitorTop  |     -|  0.00|        8|  64.000|         -|        1|     -|       yes|  1 (~0%)|   -|  1381 (3%)|  1430 (8%)|    -|
     +-----------------+------+------+---------+--------+----------+---------+------+----------+---------+----+-----------+-----------+-----+
 
 
@@ -101,12 +101,13 @@
 | Name                  | DSP | Pragma | Variable  | Op    | Impl   | Latency |
 +-----------------------+-----+--------+-----------+-------+--------+---------+
 | + PSDMonitorTop       | 0   |        |           |       |        |         |
-|   add_ln33_fu_212_p2  |     |        | add_ln33  | add   | fabric | 0       |
-|   icmp_ln35_fu_223_p2 |     |        | icmp_ln35 | seteq | auto   | 0       |
-|   add_ln46_fu_229_p2  |     |        | add_ln46  | add   | fabric | 0       |
-|   icmp_ln38_fu_246_p2 |     |        | icmp_ln38 | setlt | auto   | 0       |
-|   add_ln39_fu_264_p2  |     |        | add_ln39  | add   | fabric | 0       |
-|   add_ln40_fu_290_p2  |     |        | add_ln40  | add   | fabric | 0       |
+|   add_ln37_fu_213_p2  |     |        | add_ln37  | add   | fabric | 0       |
+|   add_ln42_fu_243_p2  |     |        | add_ln42  | add   | fabric | 0       |
+|   icmp_ln44_fu_254_p2 |     |        | icmp_ln44 | seteq | auto   | 0       |
+|   add_ln55_fu_260_p2  |     |        | add_ln55  | add   | fabric | 0       |
+|   icmp_ln47_fu_277_p2 |     |        | icmp_ln47 | setlt | auto   | 0       |
+|   add_ln48_fu_294_p2  |     |        | add_ln48  | add   | fabric | 0       |
+|   add_ln49_fu_319_p2  |     |        | add_ln49  | add   | fabric | 0       |
 +-----------------------+-----+--------+-----------+-------+--------+---------+
 
 

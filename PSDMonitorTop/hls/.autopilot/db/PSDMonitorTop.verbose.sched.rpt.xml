@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'PSDMonitorTop'" level="0">
-<item name = "Date">Mon Apr 20 14:41:49 2026
+<item name = "Date">Mon Apr 20 15:20:09 2026
 </item>
 <item name = "Version">2024.1 (Build 5069499 on May 21 2024)</item>
 <item name = "Project">PSDMonitorTop</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">7, 7, 56.000 ns, 56.000 ns, 1, 1, yes</column>
+<column name="">8, 8, 64.000 ns, 64.000 ns, 1, 1, yes</column>
 </table>
 </item>
 <item name = "Detail">

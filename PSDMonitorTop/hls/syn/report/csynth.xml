@@ -20,14 +20,14 @@
         </SummaryOfTimingAnalysis>
         <SummaryOfOverallLatency>
             <unit>clock cycles</unit>
-            <Best-caseLatency>7</Best-caseLatency>
-            <Average-caseLatency>7</Average-caseLatency>
-            <Worst-caseLatency>7</Worst-caseLatency>
-            <Best-caseRealTimeLatency>56.000 ns</Best-caseRealTimeLatency>
-            <Average-caseRealTimeLatency>56.000 ns</Average-caseRealTimeLatency>
-            <Worst-caseRealTimeLatency>56.000 ns</Worst-caseRealTimeLatency>
+            <Best-caseLatency>8</Best-caseLatency>
+            <Average-caseLatency>8</Average-caseLatency>
+            <Worst-caseLatency>8</Worst-caseLatency>
+            <Best-caseRealTimeLatency>64.000 ns</Best-caseRealTimeLatency>
+            <Average-caseRealTimeLatency>64.000 ns</Average-caseRealTimeLatency>
+            <Worst-caseRealTimeLatency>64.000 ns</Worst-caseRealTimeLatency>
             <PipelineInitiationInterval>1</PipelineInitiationInterval>
-            <PipelineDepth>8</PipelineDepth>
+            <PipelineDepth>9</PipelineDepth>
             <Interval-min>1</Interval-min>
             <Interval-max>1</Interval-max>
         </SummaryOfOverallLatency>
@@ -40,8 +40,8 @@
     <AreaEstimates>
         <Resources>
             <BRAM_18K>1</BRAM_18K>
-            <FF>1209</FF>
-            <LUT>1380</LUT>
+            <FF>1381</FF>
+            <LUT>1430</LUT>
             <DSP>0</DSP>
             <URAM>0</URAM>
         </Resources>
@@ -879,7 +879,7 @@
     <RTLDesignHierarchy>
         <TopModule MAX_DEPTH="2">
             <ModuleName>PSDMonitorTop</ModuleName>
-            <BindInstances>add_ln33_fu_212_p2 icmp_ln35_fu_223_p2 add_ln46_fu_229_p2 icmp_ln38_fu_246_p2 add_ln39_fu_264_p2 add_ln40_fu_290_p2 CTRL_s_axi_U gmem_m_axi_U</BindInstances>
+            <BindInstances>add_ln37_fu_213_p2 add_ln42_fu_243_p2 icmp_ln44_fu_254_p2 add_ln55_fu_260_p2 icmp_ln47_fu_277_p2 add_ln48_fu_294_p2 add_ln49_fu_319_p2 CTRL_s_axi_U gmem_m_axi_U</BindInstances>
         </TopModule>
     </RTLDesignHierarchy>
     <ModuleInformation>
@@ -893,14 +893,14 @@
                     <EstimatedClockPeriod>5.840</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>7</Best-caseLatency>
-                    <Average-caseLatency>7</Average-caseLatency>
-                    <Worst-caseLatency>7</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>56.000 ns</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>56.000 ns</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>56.000 ns</Worst-caseRealTimeLatency>
+                    <Best-caseLatency>8</Best-caseLatency>
+                    <Average-caseLatency>8</Average-caseLatency>
+                    <Worst-caseLatency>8</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>64.000 ns</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>64.000 ns</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>64.000 ns</Worst-caseRealTimeLatency>
                     <PipelineInitiationInterval>1</PipelineInitiationInterval>
-                    <PipelineDepth>8</PipelineDepth>
+                    <PipelineDepth>9</PipelineDepth>
                     <PipelineType>yes</PipelineType>
                 </SummaryOfOverallLatency>
                 <SummaryOfViolations>
@@ -914,12 +914,12 @@
                     <BRAM_18K>1</BRAM_18K>
                     <AVAIL_BRAM>120</AVAIL_BRAM>
                     <UTIL_BRAM>~0</UTIL_BRAM>
-                    <FF>1209</FF>
+                    <FF>1381</FF>
                     <AVAIL_FF>35200</AVAIL_FF>
                     <UTIL_FF>3</UTIL_FF>
-                    <LUT>1380</LUT>
+                    <LUT>1430</LUT>
                     <AVAIL_LUT>17600</AVAIL_LUT>
-                    <UTIL_LUT>7</UTIL_LUT>
+                    <UTIL_LUT>8</UTIL_LUT>
                     <DSP>0</DSP>
                     <AVAIL_DSP>80</AVAIL_DSP>
                     <UTIL_DSP>0</UTIL_DSP>
@@ -929,12 +929,13 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln33_fu_212_p2" SOURCE="PSDMonitor.cpp:33" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln33" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln35_fu_223_p2" SOURCE="PSDMonitor.cpp:35" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln35" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln46_fu_229_p2" SOURCE="PSDMonitor.cpp:46" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln46" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln38_fu_246_p2" SOURCE="PSDMonitor.cpp:38" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln38" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln39_fu_264_p2" SOURCE="PSDMonitor.cpp:39" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln39" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln40_fu_290_p2" SOURCE="PSDMonitor.cpp:40" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln40" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln37_fu_213_p2" SOURCE="PSDMonitor.cpp:37" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln37" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln42_fu_243_p2" SOURCE="PSDMonitor.cpp:42" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln42" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln44_fu_254_p2" SOURCE="PSDMonitor.cpp:44" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln44" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln55_fu_260_p2" SOURCE="PSDMonitor.cpp:55" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln55" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln47_fu_277_p2" SOURCE="PSDMonitor.cpp:47" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln47" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln48_fu_294_p2" SOURCE="PSDMonitor.cpp:48" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln48" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln49_fu_319_p2" SOURCE="PSDMonitor.cpp:49" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln49" VISIBLE="true"/>
                 <BindNode BINDTYPE="adapter" BRAM="0" BUNDLEDNAME="CTRL" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="CTRL_s_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="s_axilite" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
                 <BindNode BINDTYPE="adapter" BRAM="1" BUNDLEDNAME="gmem" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="gmem_m_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="m_axi" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
             </BindNodes>

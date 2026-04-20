@@ -9046,8 +9046,17 @@ __attribute__((sdx_kernel("PSDMonitorTop", 0))) void PSDMonitorTop(hls::stream<a
     static ap_int<11> counter = 0;
     static unsigned int mem_idx = 0;
 
-    axis_t val_adc = adc_in.read();
-    short val_adc1 = (short)(val_adc.data & 0xFFFF);
+    axis_t val_adc;
+    short val_adc1 = 0;
+
+    if (adc_in.read_nb(val_adc)) {
+        short val_adc1 = (short)(val_adc.data & 0xFFFF);
+    } else {
+        static short fake_counter = 0;
+        val_adc1 = fake_counter;
+        fake_counter += 100;
+    }
+
 
     if (en_logging) {
         error_accum += val_adc1;

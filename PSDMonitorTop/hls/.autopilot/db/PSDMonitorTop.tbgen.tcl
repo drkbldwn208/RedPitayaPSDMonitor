@@ -190,13 +190,13 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0", "real_start" : "0",
 		"Pipeline" : "Aligned", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "1",
-		"VariableLatency" : "0", "ExactLatency" : "7", "EstimateLatencyMin" : "7", "EstimateLatencyMax" : "7",
+		"VariableLatency" : "0", "ExactLatency" : "8", "EstimateLatencyMin" : "8", "EstimateLatencyMax" : "8",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
 		"HasSubDataflow" : "0",
 		"InDataflowNetwork" : "0",
-		"HasNonBlockingOperation" : "0",
+		"HasNonBlockingOperation" : "1",
 		"IsBlackBox" : "0",
 		"Port" : [
 			{"Name" : "gmem", "Type" : "MAXI", "Direction" : "O",
@@ -204,15 +204,14 @@ set RtlHierarchyInfo {[
 					{"Name" : "gmem_blk_n_AW", "Type" : "RtlSignal"},
 					{"Name" : "gmem_blk_n_W", "Type" : "RtlSignal"},
 					{"Name" : "gmem_blk_n_B", "Type" : "RtlSignal"}]},
-			{"Name" : "adc_in_V_data_V", "Type" : "Axis", "Direction" : "I", "BaseName" : "adc_in",
-				"BlockSignal" : [
-					{"Name" : "adc_in_TDATA_blk_n", "Type" : "RtlSignal"}]},
+			{"Name" : "adc_in_V_data_V", "Type" : "Axis", "Direction" : "I", "BaseName" : "adc_in"},
 			{"Name" : "adc_in_V_keep_V", "Type" : "Axis", "Direction" : "I", "BaseName" : "adc_in"},
 			{"Name" : "adc_in_V_strb_V", "Type" : "Axis", "Direction" : "I", "BaseName" : "adc_in"},
 			{"Name" : "adc_in_V_last_V", "Type" : "Axis", "Direction" : "I", "BaseName" : "adc_in"},
 			{"Name" : "ram_buffer", "Type" : "None", "Direction" : "I"},
 			{"Name" : "max_samples", "Type" : "None", "Direction" : "I"},
 			{"Name" : "en_logging", "Type" : "None", "Direction" : "I"},
+			{"Name" : "fake_counter", "Type" : "OVld", "Direction" : "IO"},
 			{"Name" : "error_accum", "Type" : "OVld", "Direction" : "IO"},
 			{"Name" : "mem_idx", "Type" : "OVld", "Direction" : "IO"},
 			{"Name" : "counter", "Type" : "OVld", "Direction" : "IO"}]},
@@ -226,7 +225,7 @@ set RtlHierarchyInfo {[
 
 set ArgLastReadFirstWriteLatency {
 	PSDMonitorTop {
-		gmem {Type O LastRead 3 FirstWrite 2}
+		gmem {Type O LastRead 4 FirstWrite 3}
 		adc_in_V_data_V {Type I LastRead 0 FirstWrite -1}
 		adc_in_V_keep_V {Type I LastRead 0 FirstWrite -1}
 		adc_in_V_strb_V {Type I LastRead 0 FirstWrite -1}
@@ -234,6 +233,7 @@ set ArgLastReadFirstWriteLatency {
 		ram_buffer {Type I LastRead 0 FirstWrite -1}
 		max_samples {Type I LastRead 0 FirstWrite -1}
 		en_logging {Type I LastRead 0 FirstWrite -1}
+		fake_counter {Type IO LastRead -1 FirstWrite -1}
 		error_accum {Type IO LastRead -1 FirstWrite -1}
 		mem_idx {Type IO LastRead -1 FirstWrite -1}
 		counter {Type IO LastRead -1 FirstWrite -1}}}
@@ -241,7 +241,7 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "7", "Max" : "7"}
+	{"Name" : "Latency", "Min" : "8", "Max" : "8"}
 	, {"Name" : "Interval", "Min" : "1", "Max" : "1"}
 ]}
 

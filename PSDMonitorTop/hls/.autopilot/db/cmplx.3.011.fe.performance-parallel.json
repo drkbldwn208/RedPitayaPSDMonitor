@@ -1,20 +1,18 @@
 {
   "0": {
-    "basicblocks": 9,
+    "basicblocks": 11,
     "calls": "",
     "file": "PSDMonitor.cpp",
     "fileloc": 11,
-    "instructions": 60,
+    "instructions": 56,
     "loads": {
-      "G": 3,
-      "L": 2
+      "G": 4
     },
     "name": "PSDMonitorTop",
     "stores": {
-      "G": 8,
-      "L": 1,
+      "G": 9,
       "T": 1
     },
-    "total_instructions": 63
+    "total_instructions": 56
   }
 }

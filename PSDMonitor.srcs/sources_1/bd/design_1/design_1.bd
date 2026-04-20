@@ -599,7 +599,7 @@
       },
       "PSDMonitorTop_0": {
         "vlnv": "xilinx.com:hls:PSDMonitorTop:1.0",
-        "ip_revision": "2114573982",
+        "ip_revision": "2114574020",
         "xci_name": "design_1_PSDMonitorTop_0_0",
         "xci_path": "ip/design_1_PSDMonitorTop_0_0/design_1_PSDMonitorTop_0_0.xci",
         "inst_hier_path": "PSDMonitorTop_0",
@@ -1170,7 +1170,6 @@
       "clk_wiz_0_clk_out1": {
         "ports": [
           "clk_wiz_0/clk_out1",
-          "PSDMonitorTop_0/ap_clk",
           "axi_mem_intercon/ACLK",
           "axi_mem_intercon/S00_ACLK",
           "axi_mem_intercon/M00_ACLK",
@@ -1180,7 +1179,8 @@
           "ps7_0_axi_periph/S00_ACLK",
           "ps7_0_axi_periph/M00_ACLK",
           "rst_clk_wiz_0_125M/slowest_sync_clk",
-          "axis_red_pitaya_adc_0/aclk"
+          "axis_red_pitaya_adc_0/aclk",
+          "PSDMonitorTop_0/ap_clk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -1192,13 +1192,13 @@
       "rst_clk_wiz_0_125M_peripheral_aresetn": {
         "ports": [
           "rst_clk_wiz_0_125M/peripheral_aresetn",
-          "PSDMonitorTop_0/ap_rst_n",
           "axi_mem_intercon/ARESETN",
           "axi_mem_intercon/S00_ARESETN",
           "axi_mem_intercon/M00_ARESETN",
           "ps7_0_axi_periph/ARESETN",
           "ps7_0_axi_periph/S00_ARESETN",
-          "ps7_0_axi_periph/M00_ARESETN"
+          "ps7_0_axi_periph/M00_ARESETN",
+          "PSDMonitorTop_0/ap_rst_n"
         ]
       }
     },

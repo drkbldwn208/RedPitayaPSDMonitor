@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'PSDMonitorTop'" level="0">
-<item name = "Date">Mon Apr 20 14:41:49 2026
+<item name = "Date">Mon Apr 20 15:20:09 2026
 </item>
 <item name = "Version">2024.1 (Build 5069499 on May 21 2024)</item>
 <item name = "Project">PSDMonitorTop</item>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">7, 7, 56.000 ns, 56.000 ns, 1, 1, yes</column>
+<column name="">8, 8, 64.000 ns, 64.000 ns, 1, 1, yes</column>
 </table>
 </item>
 <item name = "Detail">
@@ -47,14 +47,14 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="DSP">-, -, -, -, -</column>
-<column name="Expression">-, -, 0, 234, -</column>
+<column name="Expression">-, -, 0, 261, -</column>
 <column name="FIFO">-, -, -, -, -</column>
 <column name="Instance">1, -, 835, 977, -</column>
 <column name="Memory">-, -, -, -, -</column>
-<column name="Multiplexer">-, -, 0, 73, -</column>
-<column name="Register">-, -, 374, 96, -</column>
+<column name="Multiplexer">-, -, 0, 96, -</column>
+<column name="Register">-, -, 546, 96, -</column>
 <specialColumn name="Available">120, 80, 35200, 17600, 0</specialColumn>
-<specialColumn name="Utilization (%)">~0, 0, 3, 7, 0</specialColumn>
+<specialColumn name="Utilization (%)">~0, 0, 3, 8, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
@@ -79,30 +79,35 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln33_fu_212_p2">+, 0, 0, 39, 32, 32</column>
-<column name="add_ln39_fu_264_p2">+, 0, 0, 71, 64, 64</column>
-<column name="add_ln40_fu_290_p2">+, 0, 0, 39, 32, 1</column>
-<column name="add_ln46_fu_229_p2">+, 0, 0, 12, 11, 1</column>
-<column name="ap_block_state2_io">and, 0, 0, 2, 1, 1</column>
+<column name="add_ln37_fu_213_p2">+, 0, 0, 23, 16, 7</column>
+<column name="add_ln42_fu_243_p2">+, 0, 0, 39, 32, 32</column>
+<column name="add_ln48_fu_294_p2">+, 0, 0, 71, 64, 64</column>
+<column name="add_ln49_fu_319_p2">+, 0, 0, 39, 32, 1</column>
+<column name="add_ln55_fu_260_p2">+, 0, 0, 12, 11, 1</column>
+<column name="ap_block_pp0_stage0_01001">and, 0, 0, 2, 1, 1</column>
 <column name="ap_block_state3_io">and, 0, 0, 2, 1, 1</column>
-<column name="ap_block_state8_pp0_stage0_iter7">and, 0, 0, 2, 1, 1</column>
-<column name="ap_condition_323">and, 0, 0, 2, 1, 1</column>
-<column name="ap_condition_342">and, 0, 0, 2, 1, 1</column>
-<column name="ap_predicate_op62_writereq_state2">and, 0, 0, 2, 1, 1</column>
-<column name="ap_predicate_op63_write_state3">and, 0, 0, 2, 1, 1</column>
-<column name="ap_predicate_op68_writeresp_state8">and, 0, 0, 2, 1, 1</column>
-<column name="icmp_ln35_fu_223_p2">icmp, 0, 0, 12, 11, 10</column>
-<column name="icmp_ln38_fu_246_p2">icmp, 0, 0, 39, 32, 32</column>
-<column name="ap_block_pp0_stage0_01001">or, 0, 0, 2, 1, 1</column>
+<column name="ap_block_state4_io">and, 0, 0, 2, 1, 1</column>
+<column name="ap_block_state9_pp0_stage0_iter8">and, 0, 0, 2, 1, 1</column>
+<column name="ap_condition_328">and, 0, 0, 2, 1, 1</column>
+<column name="ap_condition_335">and, 0, 0, 2, 1, 1</column>
+<column name="ap_condition_358">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op68_writereq_state3">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op69_write_state4">and, 0, 0, 2, 1, 1</column>
+<column name="ap_predicate_op74_writeresp_state9">and, 0, 0, 2, 1, 1</column>
+<column name="empty_nbread_fu_138_p5_0">and, 0, 0, 2, 1, 0</column>
+<column name="icmp_ln44_fu_254_p2">icmp, 0, 0, 12, 11, 10</column>
+<column name="icmp_ln47_fu_277_p2">icmp, 0, 0, 39, 32, 32</column>
 <column name="ap_block_pp0_stage0_11001">or, 0, 0, 2, 1, 1</column>
 <column name="ap_enable_pp0">xor, 0, 0, 2, 1, 2</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
-<column name="adc_in_TDATA_blk_n">9, 2, 1, 2</column>
-<column name="ap_phi_mux_error_accum_new_0_phi_fu_163_p6">14, 3, 32, 96</column>
-<column name="ap_phi_mux_storemerge1_phi_fu_176_p6">14, 3, 11, 33</column>
+<column name="ap_phi_mux_error_accum_new_0_phi_fu_181_p6">14, 3, 32, 96</column>
+<column name="ap_phi_mux_storemerge1_phi_fu_195_p6">14, 3, 11, 33</column>
+<column name="ap_phi_reg_pp0_iter1_error_accum_new_0_reg_177">9, 2, 32, 64</column>
+<column name="ap_phi_reg_pp0_iter1_storemerge1_reg_191">9, 2, 11, 22</column>
+<column name="ap_phi_reg_pp0_iter1_val_adc1_1_reg_166">14, 3, 16, 48</column>
 <column name="gmem_blk_n_AW">9, 2, 1, 2</column>
 <column name="gmem_blk_n_B">9, 2, 1, 2</column>
 <column name="gmem_blk_n_W">9, 2, 1, 2</column>
@@ -119,18 +124,25 @@
 <column name="ap_enable_reg_pp0_iter5">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp0_iter6">1, 0, 1, 0</column>
 <column name="ap_enable_reg_pp0_iter7">1, 0, 1, 0</column>
-<column name="avg_error_reg_322">16, 0, 16, 0</column>
-<column name="avg_error_reg_322_pp0_iter1_reg">16, 0, 16, 0</column>
+<column name="ap_enable_reg_pp0_iter8">1, 0, 1, 0</column>
+<column name="ap_phi_reg_pp0_iter1_error_accum_new_0_reg_177">32, 0, 32, 0</column>
+<column name="ap_phi_reg_pp0_iter1_storemerge1_reg_191">11, 0, 11, 0</column>
+<column name="ap_phi_reg_pp0_iter1_val_adc1_1_reg_166">16, 0, 16, 0</column>
+<column name="avg_error_reg_369">16, 0, 16, 0</column>
+<column name="avg_error_reg_369_pp0_iter2_reg">16, 0, 16, 0</column>
 <column name="counter">11, 0, 11, 0</column>
-<column name="en_logging_read_reg_314">1, 0, 1, 0</column>
+<column name="en_logging_read_reg_343">1, 0, 1, 0</column>
 <column name="error_accum">32, 0, 32, 0</column>
-<column name="gmem_addr_reg_331">64, 0, 64, 0</column>
-<column name="icmp_ln35_reg_318">1, 0, 1, 0</column>
-<column name="icmp_ln38_reg_327">1, 0, 1, 0</column>
+<column name="fake_counter">16, 0, 16, 0</column>
+<column name="gmem_addr_reg_378">64, 0, 64, 0</column>
+<column name="icmp_ln44_reg_365">1, 0, 1, 0</column>
+<column name="icmp_ln47_reg_374">1, 0, 1, 0</column>
+<column name="max_samples_read_reg_347">32, 0, 32, 0</column>
 <column name="mem_idx">32, 0, 32, 0</column>
-<column name="en_logging_read_reg_314">64, 32, 1, 0</column>
-<column name="icmp_ln35_reg_318">64, 32, 1, 0</column>
-<column name="icmp_ln38_reg_327">64, 32, 1, 0</column>
+<column name="ram_buffer_read_reg_352">64, 0, 64, 0</column>
+<column name="en_logging_read_reg_343">64, 32, 1, 0</column>
+<column name="icmp_ln44_reg_365">64, 32, 1, 0</column>
+<column name="icmp_ln47_reg_374">64, 32, 1, 0</column>
 </table>
 </item>
 </section>

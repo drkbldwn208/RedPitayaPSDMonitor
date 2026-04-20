@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:hls:PSDMonitorTop:1.0
-// IP Revision: 2114573982
+// IP Revision: 2114574020
 
 `timescale 1ns/1ps
 
