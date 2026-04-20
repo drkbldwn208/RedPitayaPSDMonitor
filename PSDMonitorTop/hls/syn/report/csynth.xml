@@ -40,8 +40,8 @@
     <AreaEstimates>
         <Resources>
             <BRAM_18K>1</BRAM_18K>
-            <FF>1194</FF>
-            <LUT>1409</LUT>
+            <FF>1209</FF>
+            <LUT>1380</LUT>
             <DSP>0</DSP>
             <URAM>0</URAM>
         </Resources>
@@ -879,7 +879,7 @@
     <RTLDesignHierarchy>
         <TopModule MAX_DEPTH="2">
             <ModuleName>PSDMonitorTop</ModuleName>
-            <BindInstances>add_ln33_fu_208_p2 icmp_ln35_fu_219_p2 add_ln46_fu_225_p2 select_ln36_fu_308_p3 icmp_ln38_fu_240_p2 add_ln39_fu_258_p2 add_ln40_fu_284_p2 CTRL_s_axi_U gmem_m_axi_U</BindInstances>
+            <BindInstances>add_ln33_fu_212_p2 icmp_ln35_fu_223_p2 add_ln46_fu_229_p2 icmp_ln38_fu_246_p2 add_ln39_fu_264_p2 add_ln40_fu_290_p2 CTRL_s_axi_U gmem_m_axi_U</BindInstances>
         </TopModule>
     </RTLDesignHierarchy>
     <ModuleInformation>
@@ -914,10 +914,10 @@
                     <BRAM_18K>1</BRAM_18K>
                     <AVAIL_BRAM>280</AVAIL_BRAM>
                     <UTIL_BRAM>~0</UTIL_BRAM>
-                    <FF>1194</FF>
+                    <FF>1209</FF>
                     <AVAIL_FF>106400</AVAIL_FF>
                     <UTIL_FF>1</UTIL_FF>
-                    <LUT>1409</LUT>
+                    <LUT>1380</LUT>
                     <AVAIL_LUT>53200</AVAIL_LUT>
                     <UTIL_LUT>2</UTIL_LUT>
                     <DSP>0</DSP>
@@ -929,13 +929,12 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln33_fu_208_p2" SOURCE="PSDMonitor.cpp:33" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln33" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln35_fu_219_p2" SOURCE="PSDMonitor.cpp:35" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln35" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln46_fu_225_p2" SOURCE="PSDMonitor.cpp:46" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln46" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op select" DSP="0" ID="" IMPL="auto_sel" LATENCY="0" LOOP="" OPTYPE="select" PRAGMA="" RTLNAME="select_ln36_fu_308_p3" SOURCE="PSDMonitor.cpp:36" STORAGESUBTYPE="" URAM="0" VARIABLE="select_ln36" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln38_fu_240_p2" SOURCE="PSDMonitor.cpp:38" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln38" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln39_fu_258_p2" SOURCE="PSDMonitor.cpp:39" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln39" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln40_fu_284_p2" SOURCE="PSDMonitor.cpp:40" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln40" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln33_fu_212_p2" SOURCE="PSDMonitor.cpp:33" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln33" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln35_fu_223_p2" SOURCE="PSDMonitor.cpp:35" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln35" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln46_fu_229_p2" SOURCE="PSDMonitor.cpp:46" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln46" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln38_fu_246_p2" SOURCE="PSDMonitor.cpp:38" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln38" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln39_fu_264_p2" SOURCE="PSDMonitor.cpp:39" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln39" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln40_fu_290_p2" SOURCE="PSDMonitor.cpp:40" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln40" VISIBLE="true"/>
                 <BindNode BINDTYPE="adapter" BRAM="0" BUNDLEDNAME="CTRL" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="CTRL_s_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="s_axilite" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
                 <BindNode BINDTYPE="adapter" BRAM="1" BUNDLEDNAME="gmem" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="gmem_m_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="m_axi" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
             </BindNodes>

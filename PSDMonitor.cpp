@@ -22,8 +22,8 @@ void PSDMonitorTop(hls::stream<axis_t> &adc_in,
     #pragma HLS INTERFACE s_axilite port=en_logging bundle=CTRL
     #pragma HLS INTERFACE ap_ctrl_none port=return
 
-    static ap_int<11> error_accum=0;
-    static int counter = 0;
+    static int error_accum=0;
+    static ap_int<11> counter = 0;
     static unsigned int mem_idx = 0;
 
     axis_t val_adc = adc_in.read();

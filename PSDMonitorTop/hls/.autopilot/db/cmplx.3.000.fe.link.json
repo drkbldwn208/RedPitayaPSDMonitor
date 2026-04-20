@@ -4,7 +4,7 @@
     "calls": "",
     "file": "PSDMonitor.cpp",
     "fileloc": 11,
-    "instructions": 82,
+    "instructions": 83,
     "loads": {
       "G": 6,
       "L": 3
@@ -14,6 +14,6 @@
       "G": 8,
       "T": 1
     },
-    "total_instructions": 390
+    "total_instructions": 366
   }
 }

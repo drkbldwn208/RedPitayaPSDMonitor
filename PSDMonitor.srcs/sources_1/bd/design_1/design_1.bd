@@ -17,12 +17,10 @@
       "PSDMonitorTop_0": "",
       "ps7_0_axi_periph": {
         "s00_couplers": {
-          "auto_cc": "",
           "auto_pc": ""
         }
       },
       "rst_clk_wiz_0_125M": "",
-      "rst_ps7_0_50M": "",
       "axi_mem_intercon": {
         "s00_couplers": {
           "auto_pc": "",
@@ -475,11 +473,15 @@
                 "value_src": "constant"
               },
               "FREQ_HZ": {
-                "value": "50000000",
-                "value_src": "user_prop"
+                "value": "125000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
               },
               "CLK_DOMAIN": {
-                "value": "design_1_processing_system7_0_0_FCLK_CLK0",
+                "value": "design_1_clk_wiz_0_0_clk_out1",
                 "value_src": "default_prop"
               }
             },
@@ -507,11 +509,15 @@
                 "value_src": "constant"
               },
               "FREQ_HZ": {
-                "value": "50000000",
-                "value_src": "user_prop"
+                "value": "125000000",
+                "value_src": "ip_prop"
+              },
+              "PHASE": {
+                "value": "0.0",
+                "value_src": "ip_prop"
               },
               "CLK_DOMAIN": {
-                "value": "design_1_processing_system7_0_0_FCLK_CLK0",
+                "value": "design_1_clk_wiz_0_0_clk_out1",
                 "value_src": "default_prop"
               }
             }
@@ -533,7 +539,7 @@
       },
       "PSDMonitorTop_0": {
         "vlnv": "xilinx.com:hls:PSDMonitorTop:1.0",
-        "ip_revision": "2114573752",
+        "ip_revision": "2114573818",
         "xci_name": "design_1_PSDMonitorTop_0_0",
         "xci_path": "ip/design_1_PSDMonitorTop_0_0/design_1_PSDMonitorTop_0_0.xci",
         "inst_hier_path": "PSDMonitorTop_0",
@@ -676,22 +682,6 @@
               }
             },
             "components": {
-              "auto_cc": {
-                "vlnv": "xilinx.com:ip:axi_clock_converter:2.1",
-                "ip_revision": "30",
-                "xci_name": "design_1_auto_cc_0",
-                "xci_path": "ip/design_1_auto_cc_0/design_1_auto_cc_0.xci",
-                "inst_hier_path": "ps7_0_axi_periph/s00_couplers/auto_cc",
-                "interface_ports": {
-                  "S_AXI": {
-                    "vlnv": "xilinx.com:interface:aximm_rtl:1.0",
-                    "mode": "Slave",
-                    "bridges": [
-                      "M_AXI"
-                    ]
-                  }
-                }
-              },
               "auto_pc": {
                 "vlnv": "xilinx.com:ip:axi_protocol_converter:2.1",
                 "ip_revision": "31",
@@ -718,50 +708,30 @@
               }
             },
             "interface_nets": {
-              "auto_cc_to_auto_pc": {
-                "interface_ports": [
-                  "auto_cc/M_AXI",
-                  "auto_pc/S_AXI"
-                ]
-              },
               "auto_pc_to_s00_couplers": {
                 "interface_ports": [
                   "M_AXI",
                   "auto_pc/M_AXI"
                 ]
               },
-              "s00_couplers_to_auto_cc": {
+              "s00_couplers_to_auto_pc": {
                 "interface_ports": [
                   "S_AXI",
-                  "auto_cc/S_AXI"
+                  "auto_pc/S_AXI"
                 ]
               }
             },
             "nets": {
-              "M_ACLK_1": {
-                "ports": [
-                  "M_ACLK",
-                  "auto_cc/m_axi_aclk",
-                  "auto_pc/aclk"
-                ]
-              },
-              "M_ARESETN_1": {
-                "ports": [
-                  "M_ARESETN",
-                  "auto_cc/m_axi_aresetn",
-                  "auto_pc/aresetn"
-                ]
-              },
               "S_ACLK_1": {
                 "ports": [
                   "S_ACLK",
-                  "auto_cc/s_axi_aclk"
+                  "auto_pc/aclk"
                 ]
               },
               "S_ARESETN_1": {
                 "ports": [
                   "S_ARESETN",
-                  "auto_cc/s_axi_aresetn"
+                  "auto_pc/aresetn"
                 ]
               }
             }
@@ -814,13 +784,6 @@
         "xci_name": "design_1_rst_clk_wiz_0_125M_1",
         "xci_path": "ip/design_1_rst_clk_wiz_0_125M_1/design_1_rst_clk_wiz_0_125M_1.xci",
         "inst_hier_path": "rst_clk_wiz_0_125M"
-      },
-      "rst_ps7_0_50M": {
-        "vlnv": "xilinx.com:ip:proc_sys_reset:5.0",
-        "ip_revision": "15",
-        "xci_name": "design_1_rst_ps7_0_50M_0",
-        "xci_path": "ip/design_1_rst_ps7_0_50M_0/design_1_rst_ps7_0_50M_0.xci",
-        "inst_hier_path": "rst_ps7_0_50M"
       },
       "axi_mem_intercon": {
         "vlnv": "xilinx.com:ip:axi_interconnect:2.1",
@@ -1144,26 +1107,19 @@
           "processing_system7_0/M_AXI_GP0_ACLK",
           "ps7_0_axi_periph/S00_ACLK",
           "rst_clk_wiz_0_125M/slowest_sync_clk",
-          "ps7_0_axi_periph/ACLK"
-        ]
-      },
-      "processing_system7_0_FCLK_CLK0": {
-        "ports": [
-          "processing_system7_0/FCLK_CLK0",
+          "ps7_0_axi_periph/ACLK",
           "axis_red_pitaya_adc_0/aclk",
-          "PSDMonitorTop_0/ap_clk",
           "ps7_0_axi_periph/M00_ACLK",
-          "rst_ps7_0_50M/slowest_sync_clk",
           "axi_mem_intercon/S00_ACLK",
           "processing_system7_0/S_AXI_HP0_ACLK",
           "axi_mem_intercon/M00_ACLK",
-          "axi_mem_intercon/ACLK"
+          "axi_mem_intercon/ACLK",
+          "PSDMonitorTop_0/ap_clk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
         "ports": [
           "processing_system7_0/FCLK_RESET0_N",
-          "rst_ps7_0_50M/ext_reset_in",
           "rst_clk_wiz_0_125M/ext_reset_in"
         ]
       },
@@ -1171,17 +1127,12 @@
         "ports": [
           "rst_clk_wiz_0_125M/peripheral_aresetn",
           "ps7_0_axi_periph/S00_ARESETN",
-          "ps7_0_axi_periph/ARESETN"
-        ]
-      },
-      "rst_ps7_0_50M_peripheral_aresetn": {
-        "ports": [
-          "rst_ps7_0_50M/peripheral_aresetn",
-          "PSDMonitorTop_0/ap_rst_n",
+          "ps7_0_axi_periph/ARESETN",
           "ps7_0_axi_periph/M00_ARESETN",
           "axi_mem_intercon/S00_ARESETN",
           "axi_mem_intercon/M00_ARESETN",
-          "axi_mem_intercon/ARESETN"
+          "axi_mem_intercon/ARESETN",
+          "PSDMonitorTop_0/ap_rst_n"
         ]
       }
     },
