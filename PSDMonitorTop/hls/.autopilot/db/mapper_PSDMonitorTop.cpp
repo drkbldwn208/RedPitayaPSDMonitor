@@ -251,8 +251,8 @@ static AESL_RUNTIME_BC __xlx_adc_in_V_strb_V_V_size_Reader("../tv/stream_size/st
 unsigned int ap_apatb_adc_in_V_last_V_cap_bc;
 static AESL_RUNTIME_BC __xlx_adc_in_V_last_V_V_size_Reader("../tv/stream_size/stream_size_in_adc_in_V_last_V.dat");
 using hls::sim::Byte;
-extern "C" void PSDMonitorTop(Byte<2>*, volatile void *, volatile void *, volatile void *, volatile void *, int, int, char);
-extern "C" void apatb_PSDMonitorTop_hw(volatile void * __xlx_apatb_param_adc_in_V_data_V, volatile void * __xlx_apatb_param_adc_in_V_keep_V, volatile void * __xlx_apatb_param_adc_in_V_strb_V, volatile void * __xlx_apatb_param_adc_in_V_last_V, volatile void * __xlx_apatb_param_ram_buffer, int __xlx_apatb_param_max_samples, char __xlx_apatb_param_en_logging) {
+extern "C" void PSDMonitorTop(Byte<2>*, volatile void *, volatile void *, volatile void *, volatile void *, int, int);
+extern "C" void apatb_PSDMonitorTop_hw(volatile void * __xlx_apatb_param_adc_in_V_data_V, volatile void * __xlx_apatb_param_adc_in_V_keep_V, volatile void * __xlx_apatb_param_adc_in_V_strb_V, volatile void * __xlx_apatb_param_adc_in_V_last_V, volatile void * __xlx_apatb_param_ram_buffer, int __xlx_apatb_param_max_samples) {
 using hls::sim::createStream;
   // Collect __xlx_ram_buffer__tmp_vec
 std::vector<Byte<2>> __xlx_ram_buffer__tmp_vec;
@@ -267,7 +267,7 @@ auto* sadc_in_V_keep_V = createStream((hls::stream<char>*)__xlx_apatb_param_adc_
 auto* sadc_in_V_strb_V = createStream((hls::stream<char>*)__xlx_apatb_param_adc_in_V_strb_V);
 auto* sadc_in_V_last_V = createStream((hls::stream<char>*)__xlx_apatb_param_adc_in_V_last_V);
   // DUT call
-  PSDMonitorTop(__xlx_ram_buffer__tmp_vec.data(), sadc_in_V_data_V->data<int>(), sadc_in_V_keep_V->data<char>(), sadc_in_V_strb_V->data<char>(), sadc_in_V_last_V->data<char>(), __xlx_offset_byte_param_ram_buffer, __xlx_apatb_param_max_samples, __xlx_apatb_param_en_logging);
+  PSDMonitorTop(__xlx_ram_buffer__tmp_vec.data(), sadc_in_V_data_V->data<int>(), sadc_in_V_keep_V->data<char>(), sadc_in_V_strb_V->data<char>(), sadc_in_V_last_V->data<char>(), __xlx_offset_byte_param_ram_buffer, __xlx_apatb_param_max_samples);
 // print __xlx_apatb_param_ram_buffer
 for (size_t i = 0; i < __xlx_size_param_ram_buffer; ++i) {
 ((Byte<2>*)__xlx_apatb_param_ram_buffer)[i] = __xlx_ram_buffer__tmp_vec[__xlx_offset_param_ram_buffer+i];

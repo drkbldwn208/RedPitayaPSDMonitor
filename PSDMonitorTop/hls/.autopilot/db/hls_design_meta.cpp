@@ -70,5 +70,6 @@ const Port_Property HLS_Design_Meta::port_props[]={
 	Port_Property("s_axi_CTRL_BVALID", 1, hls_out, -1, "", "", 1),
 	Port_Property("s_axi_CTRL_BREADY", 1, hls_in, -1, "", "", 1),
 	Port_Property("s_axi_CTRL_BRESP", 2, hls_out, -1, "", "", 1),
+	Port_Property("interrupt", 1, hls_out, -1, "", "", 1),
 };
 const char* HLS_Design_Meta::dut_name = "PSDMonitorTop";

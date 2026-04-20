@@ -9,39 +9,55 @@
         <TopModelName>PSDMonitorTop</TopModelName>
         <TargetClockPeriod>8.00</TargetClockPeriod>
         <ClockUncertainty>2.16</ClockUncertainty>
-        <TargetInitiationInterval>1</TargetInitiationInterval>
         <FlowTarget>vivado</FlowTarget>
     </UserAssignments>
     <PerformanceEstimates>
-        <PipelineType>yes</PipelineType>
+        <PipelineType>loop auto-rewind stp(delay=0 clock cycles(s))</PipelineType>
         <SummaryOfTimingAnalysis>
             <unit>ns</unit>
-            <EstimatedClockPeriod>5.840</EstimatedClockPeriod>
+            <EstimatedClockPeriod>4.658</EstimatedClockPeriod>
         </SummaryOfTimingAnalysis>
         <SummaryOfOverallLatency>
             <unit>clock cycles</unit>
-            <Best-caseLatency>8</Best-caseLatency>
-            <Average-caseLatency>8</Average-caseLatency>
-            <Worst-caseLatency>8</Worst-caseLatency>
-            <Best-caseRealTimeLatency>64.000 ns</Best-caseRealTimeLatency>
-            <Average-caseRealTimeLatency>64.000 ns</Average-caseRealTimeLatency>
-            <Worst-caseRealTimeLatency>64.000 ns</Worst-caseRealTimeLatency>
-            <PipelineInitiationInterval>1</PipelineInitiationInterval>
-            <PipelineDepth>9</PipelineDepth>
-            <Interval-min>1</Interval-min>
-            <Interval-max>1</Interval-max>
+            <Best-caseLatency>undef</Best-caseLatency>
+            <Average-caseLatency>undef</Average-caseLatency>
+            <Worst-caseLatency>undef</Worst-caseLatency>
+            <Best-caseRealTimeLatency>undef</Best-caseRealTimeLatency>
+            <Average-caseRealTimeLatency>undef</Average-caseRealTimeLatency>
+            <Worst-caseRealTimeLatency>undef</Worst-caseRealTimeLatency>
+            <Interval-min>0</Interval-min>
+            <Interval-max>0</Interval-max>
         </SummaryOfOverallLatency>
+        <SummaryOfLoopLatency>
+            <VITIS_LOOP_27_1>
+                <Slack>5.84</Slack>
+                <TripCount>undef</TripCount>
+                <Latency>undef</Latency>
+                <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
+                <PipelineII>1</PipelineII>
+                <PipelineDepth>2</PipelineDepth>
+                <InstanceList/>
+            </VITIS_LOOP_27_1>
+        </SummaryOfLoopLatency>
         <SummaryOfViolations>
             <IssueType>-</IssueType>
             <ViolationType>-</ViolationType>
-            <SourceLocation>PSDMonitor.cpp:16</SourceLocation>
+            <SourceLocation>PSDMonitor.cpp:11</SourceLocation>
+            <SummaryOfLoopViolations>
+                <VITIS_LOOP_27_1>
+                    <Name>VITIS_LOOP_27_1</Name>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>PSDMonitor.cpp:27</SourceLocation>
+                </VITIS_LOOP_27_1>
+            </SummaryOfLoopViolations>
         </SummaryOfViolations>
     </PerformanceEstimates>
     <AreaEstimates>
         <Resources>
-            <BRAM_18K>1</BRAM_18K>
-            <FF>1381</FF>
-            <LUT>1430</LUT>
+            <BRAM_18K>0</BRAM_18K>
+            <FF>211</FF>
+            <LUT>371</LUT>
             <DSP>0</DSP>
             <URAM>0</URAM>
         </Resources>
@@ -62,8 +78,8 @@
             <Dir>in</Dir>
             <Bits>1</Bits>
             <Attribute>unknown</Attribute>
-            <CType>bool</CType>
-            <HasCtrl>0</HasCtrl>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
             <name>s_axi_CTRL_AWREADY</name>
@@ -73,8 +89,8 @@
             <Dir>out</Dir>
             <Bits>1</Bits>
             <Attribute>unknown</Attribute>
-            <CType>bool</CType>
-            <HasCtrl>0</HasCtrl>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
             <name>s_axi_CTRL_AWADDR</name>
@@ -84,8 +100,8 @@
             <Dir>in</Dir>
             <Bits>6</Bits>
             <Attribute>unknown</Attribute>
-            <CType>bool</CType>
-            <HasCtrl>0</HasCtrl>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
             <name>s_axi_CTRL_WVALID</name>
@@ -95,8 +111,8 @@
             <Dir>in</Dir>
             <Bits>1</Bits>
             <Attribute>unknown</Attribute>
-            <CType>bool</CType>
-            <HasCtrl>0</HasCtrl>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
             <name>s_axi_CTRL_WREADY</name>
@@ -106,8 +122,8 @@
             <Dir>out</Dir>
             <Bits>1</Bits>
             <Attribute>unknown</Attribute>
-            <CType>bool</CType>
-            <HasCtrl>0</HasCtrl>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
             <name>s_axi_CTRL_WDATA</name>
@@ -117,8 +133,8 @@
             <Dir>in</Dir>
             <Bits>32</Bits>
             <Attribute>unknown</Attribute>
-            <CType>bool</CType>
-            <HasCtrl>0</HasCtrl>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
             <name>s_axi_CTRL_WSTRB</name>
@@ -128,8 +144,8 @@
             <Dir>in</Dir>
             <Bits>4</Bits>
             <Attribute>unknown</Attribute>
-            <CType>bool</CType>
-            <HasCtrl>0</HasCtrl>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
             <name>s_axi_CTRL_ARVALID</name>
@@ -139,8 +155,8 @@
             <Dir>in</Dir>
             <Bits>1</Bits>
             <Attribute>unknown</Attribute>
-            <CType>bool</CType>
-            <HasCtrl>0</HasCtrl>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
             <name>s_axi_CTRL_ARREADY</name>
@@ -150,8 +166,8 @@
             <Dir>out</Dir>
             <Bits>1</Bits>
             <Attribute>unknown</Attribute>
-            <CType>bool</CType>
-            <HasCtrl>0</HasCtrl>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
             <name>s_axi_CTRL_ARADDR</name>
@@ -161,8 +177,8 @@
             <Dir>in</Dir>
             <Bits>6</Bits>
             <Attribute>unknown</Attribute>
-            <CType>bool</CType>
-            <HasCtrl>0</HasCtrl>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
             <name>s_axi_CTRL_RVALID</name>
@@ -172,8 +188,8 @@
             <Dir>out</Dir>
             <Bits>1</Bits>
             <Attribute>unknown</Attribute>
-            <CType>bool</CType>
-            <HasCtrl>0</HasCtrl>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
             <name>s_axi_CTRL_RREADY</name>
@@ -183,8 +199,8 @@
             <Dir>in</Dir>
             <Bits>1</Bits>
             <Attribute>unknown</Attribute>
-            <CType>bool</CType>
-            <HasCtrl>0</HasCtrl>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
             <name>s_axi_CTRL_RDATA</name>
@@ -194,8 +210,8 @@
             <Dir>out</Dir>
             <Bits>32</Bits>
             <Attribute>unknown</Attribute>
-            <CType>bool</CType>
-            <HasCtrl>0</HasCtrl>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
             <name>s_axi_CTRL_RRESP</name>
@@ -205,8 +221,8 @@
             <Dir>out</Dir>
             <Bits>2</Bits>
             <Attribute>unknown</Attribute>
-            <CType>bool</CType>
-            <HasCtrl>0</HasCtrl>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
             <name>s_axi_CTRL_BVALID</name>
@@ -216,8 +232,8 @@
             <Dir>out</Dir>
             <Bits>1</Bits>
             <Attribute>unknown</Attribute>
-            <CType>bool</CType>
-            <HasCtrl>0</HasCtrl>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
             <name>s_axi_CTRL_BREADY</name>
@@ -227,8 +243,8 @@
             <Dir>in</Dir>
             <Bits>1</Bits>
             <Attribute>unknown</Attribute>
-            <CType>bool</CType>
-            <HasCtrl>0</HasCtrl>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
             <name>s_axi_CTRL_BRESP</name>
@@ -238,15 +254,15 @@
             <Dir>out</Dir>
             <Bits>2</Bits>
             <Attribute>unknown</Attribute>
-            <CType>bool</CType>
-            <HasCtrl>0</HasCtrl>
+            <CType>int</CType>
+            <HasCtrl>1</HasCtrl>
         </RtlPorts>
         <RtlPorts>
             <name>ap_clk</name>
             <Object>PSDMonitorTop</Object>
             <Type>return value</Type>
             <Scope/>
-            <IOProtocol>ap_ctrl_none</IOProtocol>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
             <IOConfig/>
             <Dir>in</Dir>
             <Bits>1</Bits>
@@ -257,11 +273,22 @@
             <Object>PSDMonitorTop</Object>
             <Type>return value</Type>
             <Scope/>
-            <IOProtocol>ap_ctrl_none</IOProtocol>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
             <IOConfig/>
             <Dir>in</Dir>
             <Bits>1</Bits>
             <Attribute>control</Attribute>
+        </RtlPorts>
+        <RtlPorts>
+            <name>interrupt</name>
+            <Object>PSDMonitorTop</Object>
+            <Type>return value</Type>
+            <Scope/>
+            <IOProtocol>ap_ctrl_hs</IOProtocol>
+            <IOConfig/>
+            <Dir>out</Dir>
+            <Bits>1</Bits>
+            <Attribute>unknown</Attribute>
         </RtlPorts>
         <RtlPorts>
             <name>m_axi_gmem_AWVALID</name>
@@ -879,47 +906,69 @@
     <RTLDesignHierarchy>
         <TopModule MAX_DEPTH="2">
             <ModuleName>PSDMonitorTop</ModuleName>
-            <BindInstances>add_ln37_fu_213_p2 add_ln42_fu_243_p2 icmp_ln44_fu_254_p2 add_ln55_fu_260_p2 icmp_ln47_fu_277_p2 add_ln48_fu_294_p2 add_ln49_fu_319_p2 CTRL_s_axi_U gmem_m_axi_U</BindInstances>
+            <BindInstances>cmp_fu_109_p2 add_ln38_fu_123_p2 add_ln41_fu_143_p2 CTRL_s_axi_U</BindInstances>
         </TopModule>
     </RTLDesignHierarchy>
     <ModuleInformation>
         <Module>
             <Name>PSDMonitorTop</Name>
+            <Loops>
+                <VITIS_LOOP_27_1/>
+            </Loops>
             <PerformanceEstimates>
                 <SummaryOfTimingAnalysis>
                     <TargetClockPeriod>8.00</TargetClockPeriod>
                     <ClockUncertainty>2.16</ClockUncertainty>
-                    <TargetInitiationInterval>1</TargetInitiationInterval>
-                    <EstimatedClockPeriod>5.840</EstimatedClockPeriod>
+                    <EstimatedClockPeriod>4.658</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
-                    <Best-caseLatency>8</Best-caseLatency>
-                    <Average-caseLatency>8</Average-caseLatency>
-                    <Worst-caseLatency>8</Worst-caseLatency>
-                    <Best-caseRealTimeLatency>64.000 ns</Best-caseRealTimeLatency>
-                    <Average-caseRealTimeLatency>64.000 ns</Average-caseRealTimeLatency>
-                    <Worst-caseRealTimeLatency>64.000 ns</Worst-caseRealTimeLatency>
-                    <PipelineInitiationInterval>1</PipelineInitiationInterval>
-                    <PipelineDepth>9</PipelineDepth>
-                    <PipelineType>yes</PipelineType>
+                    <Best-caseLatency>undef</Best-caseLatency>
+                    <Average-caseLatency>undef</Average-caseLatency>
+                    <Worst-caseLatency>undef</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>undef</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>undef</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>undef</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>0</PipelineInitiationInterval>
+                    <PipelineType>loop auto-rewind (delay=0 clock cycles(s))</PipelineType>
                 </SummaryOfOverallLatency>
+                <SummaryOfLoopLatency>
+                    <VITIS_LOOP_27_1>
+                        <Name>VITIS_LOOP_27_1</Name>
+                        <Slack>5.84</Slack>
+                        <TripCount>undef</TripCount>
+                        <Latency>undef</Latency>
+                        <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
+                        <PipelineII>1</PipelineII>
+                        <PipelineDepth>2</PipelineDepth>
+                        <PipelineType>yes</PipelineType>
+                        <InstanceList/>
+                    </VITIS_LOOP_27_1>
+                </SummaryOfLoopLatency>
                 <SummaryOfViolations>
                     <IssueType>-</IssueType>
                     <ViolationType>-</ViolationType>
-                    <SourceLocation>PSDMonitor.cpp:16</SourceLocation>
+                    <SourceLocation>PSDMonitor.cpp:11</SourceLocation>
+                    <SummaryOfLoopViolations>
+                        <VITIS_LOOP_27_1>
+                            <Name>VITIS_LOOP_27_1</Name>
+                            <IssueType>-</IssueType>
+                            <ViolationType>-</ViolationType>
+                            <SourceLocation>PSDMonitor.cpp:27</SourceLocation>
+                        </VITIS_LOOP_27_1>
+                    </SummaryOfLoopViolations>
                 </SummaryOfViolations>
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
-                    <BRAM_18K>1</BRAM_18K>
+                    <BRAM_18K>0</BRAM_18K>
                     <AVAIL_BRAM>120</AVAIL_BRAM>
-                    <UTIL_BRAM>~0</UTIL_BRAM>
-                    <FF>1381</FF>
+                    <UTIL_BRAM>0</UTIL_BRAM>
+                    <FF>211</FF>
                     <AVAIL_FF>35200</AVAIL_FF>
-                    <UTIL_FF>3</UTIL_FF>
-                    <LUT>1430</LUT>
+                    <UTIL_FF>~0</UTIL_FF>
+                    <LUT>371</LUT>
                     <AVAIL_LUT>17600</AVAIL_LUT>
-                    <UTIL_LUT>8</UTIL_LUT>
+                    <UTIL_LUT>2</UTIL_LUT>
                     <DSP>0</DSP>
                     <AVAIL_DSP>80</AVAIL_DSP>
                     <UTIL_DSP>0</UTIL_DSP>
@@ -929,15 +978,10 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln37_fu_213_p2" SOURCE="PSDMonitor.cpp:37" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln37" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln42_fu_243_p2" SOURCE="PSDMonitor.cpp:42" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln42" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln44_fu_254_p2" SOURCE="PSDMonitor.cpp:44" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln44" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln55_fu_260_p2" SOURCE="PSDMonitor.cpp:55" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln55" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln47_fu_277_p2" SOURCE="PSDMonitor.cpp:47" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln47" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln48_fu_294_p2" SOURCE="PSDMonitor.cpp:48" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln48" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="" OPTYPE="add" PRAGMA="" RTLNAME="add_ln49_fu_319_p2" SOURCE="PSDMonitor.cpp:49" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln49" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="seteq" PRAGMA="" RTLNAME="cmp_fu_109_p2" SOURCE="" STORAGESUBTYPE="" URAM="0" VARIABLE="cmp" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_27_1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln38_fu_123_p2" SOURCE="PSDMonitor.cpp:38" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln38" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_27_1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln41_fu_143_p2" SOURCE="PSDMonitor.cpp:41" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln41" VISIBLE="true"/>
                 <BindNode BINDTYPE="adapter" BRAM="0" BUNDLEDNAME="CTRL" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="CTRL_s_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="s_axilite" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
-                <BindNode BINDTYPE="adapter" BRAM="1" BUNDLEDNAME="gmem" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="gmem_m_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="m_axi" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
             </BindNodes>
         </Module>
     </ModuleInformation>
@@ -949,9 +993,9 @@
                 <hwRef type="interface" interface="adc_in" name="" usage="data" direction="in"/>
             </hwRefs>
         </Arg>
-        <Arg ArgName="ram_buffer" index="1" direction="out" srcType="ap_int&lt;16&gt;*" srcSize="16">
+        <Arg ArgName="ram_buffer" index="1" direction="unused" srcType="ap_int&lt;16&gt;*" srcSize="16">
             <hwRefs>
-                <hwRef type="interface" interface="m_axi_gmem" name="" usage="data" direction="out"/>
+                <hwRef type="interface" interface="m_axi_gmem" name="" usage="data" direction="unused"/>
                 <hwRef type="register" interface="s_axi_CTRL" name="ram_buffer_1" usage="address" direction="in"/>
                 <hwRef type="register" interface="s_axi_CTRL" name="ram_buffer_2" usage="address" direction="in"/>
             </hwRefs>
@@ -959,11 +1003,6 @@
         <Arg ArgName="max_samples" index="2" direction="in" srcType="unsigned int" srcSize="32">
             <hwRefs>
                 <hwRef type="register" interface="s_axi_CTRL" name="max_samples" usage="data" direction="in"/>
-            </hwRefs>
-        </Arg>
-        <Arg ArgName="en_logging" index="3" direction="in" srcType="bool" srcSize="1">
-            <hwRefs>
-                <hwRef type="register" interface="s_axi_CTRL" name="en_logging" usage="data" direction="in"/>
             </hwRefs>
         </Arg>
     </Args>
@@ -989,6 +1028,39 @@
                 <port>s_axi_CTRL_WVALID</port>
             </ports>
             <registers>
+                <register offset="0x00" name="CTRL" access="RW" description="Control signals" range="32">
+                    <fields>
+                        <field offset="0" width="1" name="AP_START" access="RW" description="Control signal Register for 'ap_start'."/>
+                        <field offset="1" width="1" name="AP_DONE" access="R" description="Control signal Register for 'ap_done'."/>
+                        <field offset="2" width="1" name="AP_IDLE" access="R" description="Control signal Register for 'ap_idle'."/>
+                        <field offset="3" width="1" name="AP_READY" access="R" description="Control signal Register for 'ap_ready'."/>
+                        <field offset="4" width="3" name="RESERVED_1" access="R" description="Reserved.  0s on read."/>
+                        <field offset="7" width="1" name="AUTO_RESTART" access="RW" description="Control signal Register for 'auto_restart'."/>
+                        <field offset="8" width="1" name="RESERVED_2" access="R" description="Reserved.  0s on read."/>
+                        <field offset="9" width="1" name="INTERRUPT" access="R" description="Control signal Register for 'interrupt'."/>
+                        <field offset="10" width="22" name="RESERVED_3" access="R" description="Reserved.  0s on read."/>
+                    </fields>
+                </register>
+                <register offset="0x04" name="GIER" access="RW" description="Global Interrupt Enable Register" range="32">
+                    <fields>
+                        <field offset="0" width="1" name="Enable" access="RW" description="Master enable for the device interrupt output to the system interrupt controller: 0 = Disabled, 1 = Enabled"/>
+                        <field offset="1" width="31" name="RESERVED" access="R" description="Reserved.  0s on read."/>
+                    </fields>
+                </register>
+                <register offset="0x08" name="IP_IER" access="RW" description="IP Interrupt Enable Register" range="32">
+                    <fields>
+                        <field offset="0" width="1" name="CHAN0_INT_EN" access="RW" description="Enable Channel 0 (ap_done) Interrupt.  0 = Disabled, 1 = Enabled."/>
+                        <field offset="1" width="1" name="CHAN1_INT_EN" access="RW" description="Enable Channel 1 (ap_ready) Interrupt.  0 = Disabled, 1 = Enabled."/>
+                        <field offset="2" width="30" name="RESERVED_0" access="R" description="Reserved.  0s on read."/>
+                    </fields>
+                </register>
+                <register offset="0x0c" name="IP_ISR" access="RW" description="IP Interrupt Status Register" range="32">
+                    <fields>
+                        <field offset="0" width="1" name="CHAN0_INT_ST" access="RTOW" description="Channel 0 (ap_done) Interrupt Status. 0 = No Channel 0 interrupt, 1 = Channel 0 interrupt."/>
+                        <field offset="1" width="1" name="CHAN1_INT_ST" access="RTOW" description="Channel 1 (ap_ready) Interrupt Status. 0 = No Channel 1 interrupt, 1 = Channel 1 interrupt."/>
+                        <field offset="2" width="30" name="RESERVED_0" access="R" description="Reserved.  0s on read."/>
+                    </fields>
+                </register>
                 <register offset="0x10" name="ram_buffer_1" access="W" description="Data signal of ram_buffer" range="32">
                     <fields>
                         <field offset="0" width="32" name="ram_buffer" access="W" description="Bit 31 to 0 of ram_buffer"/>
@@ -1004,17 +1076,10 @@
                         <field offset="0" width="32" name="max_samples" access="W" description="Bit 31 to 0 of max_samples"/>
                     </fields>
                 </register>
-                <register offset="0x24" name="en_logging" access="W" description="Data signal of en_logging" range="32">
-                    <fields>
-                        <field offset="0" width="1" name="en_logging" access="W" description="Bit 0 to 0 of en_logging"/>
-                        <field offset="1" width="31" name="RESERVED" access="R" description="Reserved.  0s on read."/>
-                    </fields>
-                </register>
             </registers>
             <constraints>
                 <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="16" argName="ram_buffer"/>
                 <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="28" argName="max_samples"/>
-                <constraint constraint_type="pragma interface" mode="s_axilite" register_option="0" offset="36" argName="en_logging"/>
             </constraints>
         </Interface>
         <Interface InterfaceName="ap_clk" type="clock" busTypeName="clock" mode="slave">
@@ -1040,6 +1105,17 @@
                 <port>ap_rst_n</port>
             </ports>
         </Interface>
+        <Interface InterfaceName="interrupt" type="interrupt" busTypeName="interrupt" mode="master" dataWidth="1">
+            <busParams>
+                <busParam busParamName="SENSITIVITY">LEVEL_HIGH</busParam>
+            </busParams>
+            <portMaps>
+                <portMap portMapName="interrupt">INTERRUPT</portMap>
+            </portMaps>
+            <ports>
+                <port>interrupt</port>
+            </ports>
+        </Interface>
         <Interface InterfaceName="m_axi_gmem" type="axi4full" busTypeName="aximm" mode="master" dataWidth="32" addrWidth="64" portPrefix="m_axi_gmem_" paramPrefix="C_M_AXI_GMEM_" preferredUsageValue="MEMORY">
             <busParams>
                 <busParam busParamName="NUM_READ_OUTSTANDING">16</busParam>
@@ -1048,7 +1124,7 @@
                 <busParam busParamName="MAX_WRITE_BURST_LENGTH">16</busParam>
                 <busParam busParamName="MAX_BURST_LENGTH">256</busParam>
                 <busParam busParamName="PROTOCOL">AXI4</busParam>
-                <busParam busParamName="READ_WRITE_MODE">WRITE_ONLY</busParam>
+                <busParam busParamName="READ_WRITE_MODE">READ_ONLY</busParam>
                 <busParam busParamName="HAS_BURST">0</busParam>
                 <busParam busParamName="SUPPORTS_NARROW_BURST">0</busParam>
             </busParams>
@@ -1122,8 +1198,8 @@
         <section name="HW Interfaces" level="0">
             <item name="M_AXI">
                 <table>
-                    <keys size="13">Interface, Read/Write, Data Width (SW-&gt;HW), Address Width, Latency, Offset, Register, Max Widen Bitwidth, Max Read Burst Length, Max Write Burst Length, Num Read Outstanding, Num Write Outstanding, Resource Estimate</keys>
-                    <column name="m_axi_gmem">WRITE_ONLY, 16 -&gt; 16, 64, 0, slave, 0, 0, 16, 16, 16, 16, BRAM=1</column>
+                    <keys size="12">Interface, Read/Write, Data Width (SW-&gt;HW), Address Width, Latency, Offset, Register, Max Widen Bitwidth, Max Read Burst Length, Max Write Burst Length, Num Read Outstanding, Num Write Outstanding</keys>
+                    <column name="m_axi_gmem">READ_ONLY, 16 -&gt; 16, 64, 0, slave, 0, 0, 16, 16, 16, 16</column>
                 </table>
             </item>
             <item name="S_AXILITE Interfaces">
@@ -1134,11 +1210,14 @@
             </item>
             <item name="S_AXILITE Registers">
                 <table>
-                    <keys size="6">Interface, Register, Offset, Width, Access, Description</keys>
-                    <column name="s_axi_CTRL">ram_buffer_1, 0x10, 32, W, Data signal of ram_buffer</column>
-                    <column name="s_axi_CTRL">ram_buffer_2, 0x14, 32, W, Data signal of ram_buffer</column>
-                    <column name="s_axi_CTRL">max_samples, 0x1c, 32, W, Data signal of max_samples</column>
-                    <column name="s_axi_CTRL">en_logging, 0x24, 32, W, Data signal of en_logging</column>
+                    <keys size="7">Interface, Register, Offset, Width, Access, Description, Bit Fields</keys>
+                    <column name="s_axi_CTRL">CTRL, 0x00, 32, RW, Control signals, 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT</column>
+                    <column name="s_axi_CTRL">GIER, 0x04, 32, RW, Global Interrupt Enable Register, 0=Enable</column>
+                    <column name="s_axi_CTRL">IP_IER, 0x08, 32, RW, IP Interrupt Enable Register, 0=CHAN0_INT_EN 1=CHAN1_INT_EN</column>
+                    <column name="s_axi_CTRL">IP_ISR, 0x0c, 32, RW, IP Interrupt Status Register, 0=CHAN0_INT_ST 1=CHAN1_INT_ST</column>
+                    <column name="s_axi_CTRL">ram_buffer_1, 0x10, 32, W, Data signal of ram_buffer, </column>
+                    <column name="s_axi_CTRL">ram_buffer_2, 0x14, 32, W, Data signal of ram_buffer, </column>
+                    <column name="s_axi_CTRL">max_samples, 0x1c, 32, W, Data signal of max_samples, </column>
                 </table>
             </item>
             <item name="AXIS">
@@ -1152,7 +1231,8 @@
                     <keys size="3">Interface, Type, Ports</keys>
                     <column name="ap_clk">clock, ap_clk</column>
                     <column name="ap_rst_n">reset, ap_rst_n</column>
-                    <column name="ap_ctrl">ap_ctrl_none, </column>
+                    <column name="interrupt">interrupt, interrupt</column>
+                    <column name="ap_ctrl">ap_ctrl_hs, </column>
                 </table>
             </item>
         </section>
@@ -1163,9 +1243,8 @@
                 <table>
                     <keys size="3">Argument, Direction, Datatype</keys>
                     <column name="adc_in">in, stream&lt;hls::axis&lt;ap_uint&lt;32&gt; 0 0 0 '8' false&gt; 0&gt;&amp;</column>
-                    <column name="ram_buffer">out, ap_int&lt;16&gt;*</column>
+                    <column name="ram_buffer">unused, ap_int&lt;16&gt;*</column>
                     <column name="max_samples">in, unsigned int</column>
-                    <column name="en_logging">in, bool</column>
                 </table>
             </item>
             <item name="SW-to-HW Mapping">
@@ -1176,20 +1255,21 @@
                     <column name="ram_buffer">s_axi_CTRL, register, offset, name=ram_buffer_1 offset=0x10 range=32</column>
                     <column name="ram_buffer">s_axi_CTRL, register, offset, name=ram_buffer_2 offset=0x14 range=32</column>
                     <column name="max_samples">s_axi_CTRL, register, , name=max_samples offset=0x1c range=32</column>
-                    <column name="en_logging">s_axi_CTRL, register, , name=en_logging offset=0x24 range=32</column>
                 </table>
             </item>
         </section>
     </ReportSWInterface>
     <ResolutionUrl key="ZZZ">docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.1%20English&amp;url=ug1448-hls-guidance&amp;resourceid=ZZZ.html</ResolutionUrl>
+    <ReportBurst>
+        <section name="M_AXI Burst Information" level="0" HEADER_NOTE="Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings."/>
+    </ReportBurst>
     <PragmaReport>
-        <Pragma type="pipeline" location="PSDMonitor.cpp:16" status="valid" parentFunction="psdmonitortop" variable="" isDirective="0" options="II=1"/>
-        <Pragma type="interface" location="PSDMonitor.cpp:17" status="valid" parentFunction="psdmonitortop" variable="adc_in" isDirective="0" options="axis port=adc_in"/>
-        <Pragma type="interface" location="PSDMonitor.cpp:18" status="valid" parentFunction="psdmonitortop" variable="ram_buffer" isDirective="0" options="m_axi port=ram_buffer offset=slave bundle=gmem depth=2000000"/>
-        <Pragma type="interface" location="PSDMonitor.cpp:20" status="valid" parentFunction="psdmonitortop" variable="ram_buffer" isDirective="0" options="s_axilite port=ram_buffer bundle=CTRL"/>
-        <Pragma type="interface" location="PSDMonitor.cpp:21" status="valid" parentFunction="psdmonitortop" variable="max_samples" isDirective="0" options="s_axilite port=max_samples bundle=CTRL"/>
-        <Pragma type="interface" location="PSDMonitor.cpp:22" status="valid" parentFunction="psdmonitortop" variable="en_logging" isDirective="0" options="s_axilite port=en_logging bundle=CTRL"/>
-        <Pragma type="interface" location="PSDMonitor.cpp:23" status="valid" parentFunction="psdmonitortop" variable="return" isDirective="0" options="ap_ctrl_none port=return"/>
+        <Pragma type="interface" location="PSDMonitor.cpp:15" status="valid" parentFunction="psdmonitortop" variable="adc_in" isDirective="0" options="axis port=adc_in"/>
+        <Pragma type="interface" location="PSDMonitor.cpp:16" status="valid" parentFunction="psdmonitortop" variable="ram_buffer" isDirective="0" options="m_axi port=ram_buffer offset=slave bundle=gmem depth=2000000"/>
+        <Pragma type="interface" location="PSDMonitor.cpp:18" status="valid" parentFunction="psdmonitortop" variable="ram_buffer" isDirective="0" options="s_axilite port=ram_buffer bundle=CTRL"/>
+        <Pragma type="interface" location="PSDMonitor.cpp:19" status="valid" parentFunction="psdmonitortop" variable="max_samples" isDirective="0" options="s_axilite port=max_samples bundle=CTRL"/>
+        <Pragma type="interface" location="PSDMonitor.cpp:21" status="valid" parentFunction="psdmonitortop" variable="return" isDirective="0" options="s_axilite port=return bundle=CTRL"/>
+        <Pragma type="pipeline" location="PSDMonitor.cpp:28" status="valid" parentFunction="psdmonitortop" variable="" isDirective="0" options="II=1"/>
     </PragmaReport>
 </profile>
 

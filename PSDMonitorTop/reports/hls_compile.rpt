@@ -4,7 +4,7 @@
 == Synthesis Summary Report of 'PSDMonitorTop'
 ================================================================
 + General Information: 
-    * Date:           Mon Apr 20 15:20:09 2026
+    * Date:           Mon Apr 20 15:54:21 2026
     * Version:        2024.1 (Build 5069499 on May 21 2024)
     * Project:        PSDMonitorTop
     * Solution:       hls (Vivado IP Flow Target)
@@ -15,24 +15,25 @@
 + Performance & Resource Estimates: 
     
     PS: '+' for module; 'o' for loop; '*' for dataflow
-    +-----------------+------+------+---------+--------+----------+---------+------+----------+---------+----+-----------+-----------+-----+
-    |     Modules     | Issue|      | Latency | Latency| Iteration|         | Trip |          |         |    |           |           |     |
-    |     & Loops     | Type | Slack| (cycles)|  (ns)  |  Latency | Interval| Count| Pipelined|  BRAM   | DSP|     FF    |    LUT    | URAM|
-    +-----------------+------+------+---------+--------+----------+---------+------+----------+---------+----+-----------+-----------+-----+
-    |+ PSDMonitorTop  |     -|  0.00|        8|  64.000|         -|        1|     -|       yes|  1 (~0%)|   -|  1381 (3%)|  1430 (8%)|    -|
-    +-----------------+------+------+---------+--------+----------+---------+------+----------+---------+----+-----------+-----------+-----+
+    +--------------------+------+------+---------+--------+----------+---------+------+----------+------+----+-----------+----------+-----+
+    |       Modules      | Issue|      | Latency | Latency| Iteration|         | Trip |          |      |    |           |          |     |
+    |       & Loops      | Type | Slack| (cycles)|  (ns)  |  Latency | Interval| Count| Pipelined| BRAM | DSP|     FF    |    LUT   | URAM|
+    +--------------------+------+------+---------+--------+----------+---------+------+----------+------+----+-----------+----------+-----+
+    |+ PSDMonitorTop     |     -|  1.18|        -|       -|         -|        0|     -|    rewind|     -|   -|  211 (~0%)|  371 (2%)|    -|
+    | o VITIS_LOOP_27_1  |     -|  5.84|        -|       -|         2|        1|     -|       yes|     -|   -|          -|         -|    -|
+    +--------------------+------+------+---------+--------+----------+---------+------+----------+------+----+-----------+----------+-----+
 
 
 ================================================================
 == HW Interfaces
 ================================================================
 * M_AXI
-+------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
-| Interface  | Read/Write | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Resource Estimate |
-|            |            | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                   |
-+------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
-| m_axi_gmem | WRITE_ONLY | 16 -> 16   | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          | BRAM=1            |
-+------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
++------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+| Interface  | Read/Write | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   |
+|            |            | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |
++------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
+| m_axi_gmem | READ_ONLY  | 16 -> 16   | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          |
++------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+
 
 * S_AXILITE Interfaces
 +------------+------------+---------------+--------+----------+
@@ -42,14 +43,17 @@
 +------------+------------+---------------+--------+----------+
 
 * S_AXILITE Registers
-+------------+--------------+--------+-------+--------+----------------------------+
-| Interface  | Register     | Offset | Width | Access | Description                |
-+------------+--------------+--------+-------+--------+----------------------------+
-| s_axi_CTRL | ram_buffer_1 | 0x10   | 32    | W      | Data signal of ram_buffer  |
-| s_axi_CTRL | ram_buffer_2 | 0x14   | 32    | W      | Data signal of ram_buffer  |
-| s_axi_CTRL | max_samples  | 0x1c   | 32    | W      | Data signal of max_samples |
-| s_axi_CTRL | en_logging   | 0x24   | 32    | W      | Data signal of en_logging  |
-+------------+--------------+--------+-------+--------+----------------------------+
++------------+--------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface  | Register     | Offset | Width | Access | Description                      | Bit Fields                                                           |
++------------+--------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_CTRL | CTRL         | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_CTRL | GIER         | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_CTRL | IP_IER       | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_CTRL | IP_ISR       | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_CTRL | ram_buffer_1 | 0x10   | 32    | W      | Data signal of ram_buffer        |                                                                      |
+| s_axi_CTRL | ram_buffer_2 | 0x14   | 32    | W      | Data signal of ram_buffer        |                                                                      |
+| s_axi_CTRL | max_samples  | 0x1c   | 32    | W      | Data signal of max_samples       |                                                                      |
++------------+--------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
 
 * AXIS
 +-----------+-----------+---------------+-------+-------+-------+--------+-------+--------+
@@ -59,13 +63,14 @@
 +-----------+-----------+---------------+-------+-------+-------+--------+-------+--------+
 
 * TOP LEVEL CONTROL
-+-----------+--------------+----------+
-| Interface | Type         | Ports    |
-+-----------+--------------+----------+
-| ap_clk    | clock        | ap_clk   |
-| ap_rst_n  | reset        | ap_rst_n |
-| ap_ctrl   | ap_ctrl_none |          |
-+-----------+--------------+----------+
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
 
 
 ================================================================
@@ -76,9 +81,8 @@
 | Argument    | Direction | Datatype                                                |
 +-------------+-----------+---------------------------------------------------------+
 | adc_in      | in        | stream<hls::axis<ap_uint<32>, 0, 0, 0, '8', false>, 0>& |
-| ram_buffer  | out       | ap_int<16>*                                             |
+| ram_buffer  | unused    | ap_int<16>*                                             |
 | max_samples | in        | unsigned int                                            |
-| en_logging  | in        | bool                                                    |
 +-------------+-----------+---------------------------------------------------------+
 
 * SW-to-HW Mapping
@@ -90,25 +94,26 @@
 | ram_buffer  | s_axi_CTRL   | register  | offset   | name=ram_buffer_1 offset=0x10 range=32 |
 | ram_buffer  | s_axi_CTRL   | register  | offset   | name=ram_buffer_2 offset=0x14 range=32 |
 | max_samples | s_axi_CTRL   | register  |          | name=max_samples offset=0x1c range=32  |
-| en_logging  | s_axi_CTRL   | register  |          | name=en_logging offset=0x24 range=32   |
 +-------------+--------------+-----------+----------+----------------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
 
 
 ================================================================
 == Bind Op Report
 ================================================================
-+-----------------------+-----+--------+-----------+-------+--------+---------+
-| Name                  | DSP | Pragma | Variable  | Op    | Impl   | Latency |
-+-----------------------+-----+--------+-----------+-------+--------+---------+
-| + PSDMonitorTop       | 0   |        |           |       |        |         |
-|   add_ln37_fu_213_p2  |     |        | add_ln37  | add   | fabric | 0       |
-|   add_ln42_fu_243_p2  |     |        | add_ln42  | add   | fabric | 0       |
-|   icmp_ln44_fu_254_p2 |     |        | icmp_ln44 | seteq | auto   | 0       |
-|   add_ln55_fu_260_p2  |     |        | add_ln55  | add   | fabric | 0       |
-|   icmp_ln47_fu_277_p2 |     |        | icmp_ln47 | setlt | auto   | 0       |
-|   add_ln48_fu_294_p2  |     |        | add_ln48  | add   | fabric | 0       |
-|   add_ln49_fu_319_p2  |     |        | add_ln49  | add   | fabric | 0       |
-+-----------------------+-----+--------+-----------+-------+--------+---------+
++----------------------+-----+--------+----------+-------+--------+---------+
+| Name                 | DSP | Pragma | Variable | Op    | Impl   | Latency |
++----------------------+-----+--------+----------+-------+--------+---------+
+| + PSDMonitorTop      | 0   |        |          |       |        |         |
+|   cmp_fu_109_p2      |     |        | cmp      | seteq | auto   | 0       |
+|   add_ln38_fu_123_p2 |     |        | add_ln38 | add   | fabric | 0       |
+|   add_ln41_fu_143_p2 |     |        | add_ln41 | add   | fabric | 0       |
++----------------------+-----+--------+----------+-------+--------+---------+
 
 
 ================================================================
@@ -118,9 +123,8 @@
 | Name            | Usage     | Type      | BRAM | URAM | Pragma | Variable | Impl | Latency | Bitwidth, Depth, |
 |                 |           |           |      |      |        |          |      |         | Banks            |
 +-----------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
-| + PSDMonitorTop |           |           | 1    | 0    |        |          |      |         |                  |
+| + PSDMonitorTop |           |           | 0    | 0    |        |          |      |         |                  |
 |   CTRL_s_axi_U  | interface | s_axilite |      |      |        |          |      |         |                  |
-|   gmem_m_axi_U  | interface | m_axi     | 1    |      |        |          |      |         |                  |
 +-----------------+-----------+-----------+------+------+--------+----------+------+---------+------------------+
 
 
@@ -131,13 +135,12 @@
 +-----------+--------------------------------------------------------------+-------------------------------------------------+
 | Type      | Options                                                      | Location                                        |
 +-----------+--------------------------------------------------------------+-------------------------------------------------+
-| pipeline  | II=1                                                         | PSDMonitor.cpp:16 in psdmonitortop              |
-| interface | axis port=adc_in                                             | PSDMonitor.cpp:17 in psdmonitortop, adc_in      |
-| interface | m_axi port=ram_buffer offset=slave bundle=gmem depth=2000000 | PSDMonitor.cpp:18 in psdmonitortop, ram_buffer  |
-| interface | s_axilite port=ram_buffer bundle=CTRL                        | PSDMonitor.cpp:20 in psdmonitortop, ram_buffer  |
-| interface | s_axilite port=max_samples bundle=CTRL                       | PSDMonitor.cpp:21 in psdmonitortop, max_samples |
-| interface | s_axilite port=en_logging bundle=CTRL                        | PSDMonitor.cpp:22 in psdmonitortop, en_logging  |
-| interface | ap_ctrl_none port=return                                     | PSDMonitor.cpp:23 in psdmonitortop, return      |
+| interface | axis port=adc_in                                             | PSDMonitor.cpp:15 in psdmonitortop, adc_in      |
+| interface | m_axi port=ram_buffer offset=slave bundle=gmem depth=2000000 | PSDMonitor.cpp:16 in psdmonitortop, ram_buffer  |
+| interface | s_axilite port=ram_buffer bundle=CTRL                        | PSDMonitor.cpp:18 in psdmonitortop, ram_buffer  |
+| interface | s_axilite port=max_samples bundle=CTRL                       | PSDMonitor.cpp:19 in psdmonitortop, max_samples |
+| interface | s_axilite port=return bundle=CTRL                            | PSDMonitor.cpp:21 in psdmonitortop, return      |
+| pipeline  | II=1                                                         | PSDMonitor.cpp:28 in psdmonitortop              |
 +-----------+--------------------------------------------------------------+-------------------------------------------------+
 
 

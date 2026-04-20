@@ -1,6 +1,6 @@
-INFO: [vitis-run 60-1548] Creating build summary session with primary output /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/PSDMonitorTop.hlsrun_package_summary, at Mon Apr 20 15:26:56 2026
+INFO: [vitis-run 60-1548] Creating build summary session with primary output /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/PSDMonitorTop.hlsrun_package_summary, at Mon Apr 20 15:54:35 2026
 INFO: [vitis-run 82-31] Launching vitis_hls: vitis_hls -nolog -run package -work_dir /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop -config /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/hls_config.cfg -cmdlineconfig /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/config.cmdline
-INFO: [HLS 200-10] For user 'levlabcukomen' on host 'levlabcukomen-OMEN-30L-Desktop-GT13-0xxx' (Linux_x86_64 version 6.8.0-100-generic) on Mon Apr 20 15:26:58 PDT 2026
+INFO: [HLS 200-10] For user 'levlabcukomen' on host 'levlabcukomen-OMEN-30L-Desktop-GT13-0xxx' (Linux_x86_64 version 6.8.0-100-generic) on Mon Apr 20 15:54:37 PDT 2026
 INFO: [HLS 200-10] On os Ubuntu 22.04.5 LTS
 INFO: [HLS 200-10] In directory '/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor'
 INFO: [HLS 200-2005] Using work_dir /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop 
@@ -23,7 +23,7 @@ INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
   **** SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
   **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
   **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-  **** Start of session at: Mon Apr 20 15:27:01 2026
+  **** Start of session at: Mon Apr 20 15:54:40 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
@@ -37,17 +37,18 @@ INFO: Import ports from HDL: /home/levlabcukomen/Desktop/VitisProjects/PSDMonito
 INFO: Add axi4lite interface s_axi_CTRL
 INFO: Add clock interface ap_clk
 INFO: Add reset interface ap_rst_n
-INFO: Add axi4full interface m_axi_gmem
+INFO: Add interrupt interface interrupt
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/levlabcukomen/tools/Vivado/2024.1/data/ip'.
+INFO: Add axi4full interface m_axi_gmem
 INFO: Add axi4stream interface adc_in
 INFO: Calling post_process_vitis to specialize IP
 INFO: Calling post_process_sysgen to specialize IP
 Generating sysgen info xml from json file
 INFO: Created IP /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/impl/ip/component.xml
 INFO: Created IP archive /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/impl/ip/xilinx_com_hls_PSDMonitorTop_1_0.zip
-INFO: [Common 17-206] Exiting Vivado at Mon Apr 20 15:27:09 2026...
+INFO: [Common 17-206] Exiting Vivado at Mon Apr 20 15:54:48 2026...
 INFO: [HLS 200-802] Generated output file PSDMonitorTop/PSDMonitorTop.zip
-INFO: [HLS 200-112] Total CPU user time: 12.64 seconds. Total CPU system time: 0.66 seconds. Total elapsed time: 15.45 seconds; peak allocated memory: 397.844 MB.
+INFO: [HLS 200-112] Total CPU user time: 12.94 seconds. Total CPU system time: 0.65 seconds. Total elapsed time: 15.88 seconds; peak allocated memory: 398.117 MB.
 INFO: [vitis-run 60-791] Total elapsed time: 0h 0m 19s

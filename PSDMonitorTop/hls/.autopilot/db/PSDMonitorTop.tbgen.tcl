@@ -2,9 +2,9 @@ set moduleName PSDMonitorTop
 set isTopModule 1
 set isCombinational 0
 set isDatapathOnly 0
-set isPipelined 1
-set pipeline_type function
-set FunctionProtocol ap_ctrl_none
+set isPipelined 0
+set pipeline_type none
+set FunctionProtocol ap_ctrl_hs
 set isOneStateSeq 0
 set ProfileFlag 0
 set StallSigGenFlag 0
@@ -16,29 +16,27 @@ set C_modelName {PSDMonitorTop}
 set C_modelType { void 0 }
 set ap_memory_interface_dict [dict create]
 set C_modelArgList {
-	{ gmem int 16 regular {axi_master 1}  }
+	{ gmem int 16 unused {axi_master 0}  }
 	{ adc_in_V_data_V int 32 regular {axi_s 0 volatile  { adc_in Data } }  }
 	{ adc_in_V_keep_V int 4 regular {axi_s 0 volatile  { adc_in Keep } }  }
 	{ adc_in_V_strb_V int 4 regular {axi_s 0 volatile  { adc_in Strb } }  }
 	{ adc_in_V_last_V int 1 regular {axi_s 0 volatile  { adc_in Last } }  }
-	{ ram_buffer int 64 regular {axi_slave 0}  }
+	{ ram_buffer int 64 unused {axi_slave 0}  }
 	{ max_samples int 32 regular {axi_slave 0}  }
-	{ en_logging uint 1 regular {axi_slave 0}  }
 }
 set hasAXIMCache 0
 set hasAXIML2Cache 0
 set AXIMCacheInstDict [dict create]
 set C_modelArgMapList {[ 
-	{ "Name" : "gmem", "interface" : "axi_master", "bitwidth" : 16, "direction" : "WRITEONLY", "bitSlice":[ {"cElement": [{"cName": "ram_buffer","offset": { "type": "dynamic","port_name": "ram_buffer","bundle": "CTRL"},"direction": "WRITEONLY"}]}]} , 
+	{ "Name" : "gmem", "interface" : "axi_master", "bitwidth" : 16, "direction" : "READONLY", "bitSlice":[ {"cElement": [{"cName": "ram_buffer","offset": { "type": "dynamic","port_name": "ram_buffer","bundle": "CTRL"}}]}]} , 
  	{ "Name" : "adc_in_V_data_V", "interface" : "axis", "bitwidth" : 32, "direction" : "READONLY"} , 
  	{ "Name" : "adc_in_V_keep_V", "interface" : "axis", "bitwidth" : 4, "direction" : "READONLY"} , 
  	{ "Name" : "adc_in_V_strb_V", "interface" : "axis", "bitwidth" : 4, "direction" : "READONLY"} , 
  	{ "Name" : "adc_in_V_last_V", "interface" : "axis", "bitwidth" : 1, "direction" : "READONLY"} , 
  	{ "Name" : "ram_buffer", "interface" : "axi_slave", "bundle":"CTRL","type":"ap_none","bitwidth" : 64, "direction" : "READONLY", "offset" : {"in":16}, "offset_end" : {"in":27}} , 
- 	{ "Name" : "max_samples", "interface" : "axi_slave", "bundle":"CTRL","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":28}, "offset_end" : {"in":35}} , 
- 	{ "Name" : "en_logging", "interface" : "axi_slave", "bundle":"CTRL","type":"ap_none","bitwidth" : 1, "direction" : "READONLY", "offset" : {"in":36}, "offset_end" : {"in":43}} ]}
+ 	{ "Name" : "max_samples", "interface" : "axi_slave", "bundle":"CTRL","type":"ap_none","bitwidth" : 32, "direction" : "READONLY", "offset" : {"in":28}, "offset_end" : {"in":35}} ]}
 # RTL Port declarations: 
-set portNum 70
+set portNum 71
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst_n sc_in sc_logic 1 reset -1 active_low_sync } 
@@ -110,16 +108,17 @@ set portList {
 	{ s_axi_CTRL_BVALID sc_out sc_logic 1 signal -1 } 
 	{ s_axi_CTRL_BREADY sc_in sc_logic 1 signal -1 } 
 	{ s_axi_CTRL_BRESP sc_out sc_lv 2 signal -1 } 
+	{ interrupt sc_out sc_logic 1 signal -1 } 
 }
 set NewPortList {[ 
-	{ "name": "s_axi_CTRL_AWADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "CTRL", "role": "AWADDR" },"address":[{"name":"ram_buffer","role":"data","value":"16"},{"name":"max_samples","role":"data","value":"28"},{"name":"en_logging","role":"data","value":"36"}] },
+	{ "name": "s_axi_CTRL_AWADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "CTRL", "role": "AWADDR" },"address":[{"name":"PSDMonitorTop","role":"start","value":"0","valid_bit":"0"},{"name":"PSDMonitorTop","role":"continue","value":"0","valid_bit":"4"},{"name":"PSDMonitorTop","role":"auto_start","value":"0","valid_bit":"7"},{"name":"ram_buffer","role":"data","value":"16"},{"name":"max_samples","role":"data","value":"28"}] },
 	{ "name": "s_axi_CTRL_AWVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "CTRL", "role": "AWVALID" } },
 	{ "name": "s_axi_CTRL_AWREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "CTRL", "role": "AWREADY" } },
 	{ "name": "s_axi_CTRL_WVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "CTRL", "role": "WVALID" } },
 	{ "name": "s_axi_CTRL_WREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "CTRL", "role": "WREADY" } },
 	{ "name": "s_axi_CTRL_WDATA", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "CTRL", "role": "WDATA" } },
 	{ "name": "s_axi_CTRL_WSTRB", "direction": "in", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "CTRL", "role": "WSTRB" } },
-	{ "name": "s_axi_CTRL_ARADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "CTRL", "role": "ARADDR" },"address":[] },
+	{ "name": "s_axi_CTRL_ARADDR", "direction": "in", "datatype": "sc_lv", "bitwidth":6, "type": "signal", "bundle":{"name": "CTRL", "role": "ARADDR" },"address":[{"name":"PSDMonitorTop","role":"start","value":"0","valid_bit":"0"},{"name":"PSDMonitorTop","role":"done","value":"0","valid_bit":"1"},{"name":"PSDMonitorTop","role":"idle","value":"0","valid_bit":"2"},{"name":"PSDMonitorTop","role":"ready","value":"0","valid_bit":"3"},{"name":"PSDMonitorTop","role":"auto_start","value":"0","valid_bit":"7"}] },
 	{ "name": "s_axi_CTRL_ARVALID", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "CTRL", "role": "ARVALID" } },
 	{ "name": "s_axi_CTRL_ARREADY", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "CTRL", "role": "ARREADY" } },
 	{ "name": "s_axi_CTRL_RVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "CTRL", "role": "RVALID" } },
@@ -128,7 +127,8 @@ set NewPortList {[
 	{ "name": "s_axi_CTRL_RRESP", "direction": "out", "datatype": "sc_lv", "bitwidth":2, "type": "signal", "bundle":{"name": "CTRL", "role": "RRESP" } },
 	{ "name": "s_axi_CTRL_BVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "CTRL", "role": "BVALID" } },
 	{ "name": "s_axi_CTRL_BREADY", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "CTRL", "role": "BREADY" } },
-	{ "name": "s_axi_CTRL_BRESP", "direction": "out", "datatype": "sc_lv", "bitwidth":2, "type": "signal", "bundle":{"name": "CTRL", "role": "BRESP" } }, 
+	{ "name": "s_axi_CTRL_BRESP", "direction": "out", "datatype": "sc_lv", "bitwidth":2, "type": "signal", "bundle":{"name": "CTRL", "role": "BRESP" } },
+	{ "name": "interrupt", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "CTRL", "role": "interrupt" } }, 
  	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
  	{ "name": "ap_rst_n", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "reset", "bundle":{"name": "ap_rst_n", "role": "default" }} , 
  	{ "name": "m_axi_gmem_AWVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "gmem", "role": "AWVALID" }} , 
@@ -186,11 +186,11 @@ set NewPortList {[
 set RtlHierarchyInfo {[
 	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6"],
 		"CDFG" : "PSDMonitorTop",
-		"Protocol" : "ap_ctrl_none",
-		"ControlExist" : "0", "ap_start" : "0", "ap_ready" : "0", "ap_done" : "0", "ap_continue" : "0", "ap_idle" : "0", "real_start" : "0",
-		"Pipeline" : "Aligned", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
-		"II" : "1",
-		"VariableLatency" : "0", "ExactLatency" : "8", "EstimateLatencyMin" : "8", "EstimateLatencyMax" : "8",
+		"Protocol" : "ap_ctrl_hs",
+		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
+		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
+		"II" : "0",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "-1", "EstimateLatencyMax" : "-1",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -199,24 +199,20 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "1",
 		"IsBlackBox" : "0",
 		"Port" : [
-			{"Name" : "gmem", "Type" : "MAXI", "Direction" : "O",
-				"BlockSignal" : [
-					{"Name" : "gmem_blk_n_AW", "Type" : "RtlSignal"},
-					{"Name" : "gmem_blk_n_W", "Type" : "RtlSignal"},
-					{"Name" : "gmem_blk_n_B", "Type" : "RtlSignal"}]},
+			{"Name" : "gmem", "Type" : "MAXI", "Direction" : "I"},
 			{"Name" : "adc_in_V_data_V", "Type" : "Axis", "Direction" : "I", "BaseName" : "adc_in"},
 			{"Name" : "adc_in_V_keep_V", "Type" : "Axis", "Direction" : "I", "BaseName" : "adc_in"},
 			{"Name" : "adc_in_V_strb_V", "Type" : "Axis", "Direction" : "I", "BaseName" : "adc_in"},
 			{"Name" : "adc_in_V_last_V", "Type" : "Axis", "Direction" : "I", "BaseName" : "adc_in"},
 			{"Name" : "ram_buffer", "Type" : "None", "Direction" : "I"},
 			{"Name" : "max_samples", "Type" : "None", "Direction" : "I"},
-			{"Name" : "en_logging", "Type" : "None", "Direction" : "I"},
 			{"Name" : "fake_counter", "Type" : "OVld", "Direction" : "IO"},
-			{"Name" : "error_accum", "Type" : "OVld", "Direction" : "IO"},
-			{"Name" : "mem_idx", "Type" : "OVld", "Direction" : "IO"},
-			{"Name" : "counter", "Type" : "OVld", "Direction" : "IO"}]},
+			{"Name" : "error_accum", "Type" : "OVld", "Direction" : "IO"}],
+		"Loop" : [
+			{"Name" : "VITIS_LOOP_27_1", "PipelineType" : "UPC",
+				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter1", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter1", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
 	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.CTRL_s_axi_U", "Parent" : "0"},
-	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.gmem_m_axi_U", "Parent" : "0"},
+	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.flow_control_loop_pipe_U", "Parent" : "0"},
 	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.regslice_both_adc_in_V_data_V_U", "Parent" : "0"},
 	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.regslice_both_adc_in_V_keep_V_U", "Parent" : "0"},
 	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.regslice_both_adc_in_V_strb_V_U", "Parent" : "0"},
@@ -225,24 +221,21 @@ set RtlHierarchyInfo {[
 
 set ArgLastReadFirstWriteLatency {
 	PSDMonitorTop {
-		gmem {Type O LastRead 4 FirstWrite 3}
+		gmem {Type I LastRead -1 FirstWrite -1}
 		adc_in_V_data_V {Type I LastRead 0 FirstWrite -1}
 		adc_in_V_keep_V {Type I LastRead 0 FirstWrite -1}
 		adc_in_V_strb_V {Type I LastRead 0 FirstWrite -1}
 		adc_in_V_last_V {Type I LastRead 0 FirstWrite -1}
-		ram_buffer {Type I LastRead 0 FirstWrite -1}
+		ram_buffer {Type I LastRead -1 FirstWrite -1}
 		max_samples {Type I LastRead 0 FirstWrite -1}
-		en_logging {Type I LastRead 0 FirstWrite -1}
 		fake_counter {Type IO LastRead -1 FirstWrite -1}
-		error_accum {Type IO LastRead -1 FirstWrite -1}
-		mem_idx {Type IO LastRead -1 FirstWrite -1}
-		counter {Type IO LastRead -1 FirstWrite -1}}}
+		error_accum {Type IO LastRead -1 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "8", "Max" : "8"}
-	, {"Name" : "Interval", "Min" : "1", "Max" : "1"}
+	{"Name" : "Latency", "Min" : "-1", "Max" : "-1"}
+	, {"Name" : "Interval", "Min" : "0", "Max" : "0"}
 ]}
 
 set PipelineEnableSignalInfo {[
@@ -258,7 +251,7 @@ set Spec2ImplPortList {
 }
 
 set maxi_interface_dict [dict create]
-dict set maxi_interface_dict gmem { CHANNEL_NUM 0 BUNDLE gmem NUM_READ_OUTSTANDING 16 NUM_WRITE_OUTSTANDING 16 MAX_READ_BURST_LENGTH 16 MAX_WRITE_BURST_LENGTH 16 READ_WRITE_MODE WRITE_ONLY}
+dict set maxi_interface_dict gmem { CHANNEL_NUM 0 BUNDLE gmem NUM_READ_OUTSTANDING 16 NUM_WRITE_OUTSTANDING 16 MAX_READ_BURST_LENGTH 16 MAX_WRITE_BURST_LENGTH 16 READ_WRITE_MODE READ_ONLY}
 
 # RTL port scheduling information:
 set fifoSchedulingInfoList { 

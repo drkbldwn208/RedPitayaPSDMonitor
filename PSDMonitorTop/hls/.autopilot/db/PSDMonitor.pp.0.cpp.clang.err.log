@@ -1,25 +1,22 @@
 directive:1:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=top_XLX_SEP_ PragmaContext=directive_XLX_SEP_ PragmaFunction=PSDMonitorTop_XLX_SEP_ PragmaOptions=name=PSDMonitorTop_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLSDIRECTIVE TOP name=PSDMonitorTop
         ^
-PSDMonitor.cpp:16:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=PSDMonitorTop_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
-#pragma HLS PIPELINE II=1
-        ^
-PSDMonitor.cpp:17:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=PSDMonitorTop_XLX_SEP_ PragmaOptions=axis port=adc_in_XLX_SEP_ [-Wdump-hls-pragmas]
+PSDMonitor.cpp:15:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=PSDMonitorTop_XLX_SEP_ PragmaOptions=axis port=adc_in_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS INTERFACE axis port=adc_in
         ^
-PSDMonitor.cpp:18:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=PSDMonitorTop_XLX_SEP_ PragmaOptions=m_axi port=ram_buffer offset=slave bundle=gmem depth=2000000_XLX_SEP_ [-Wdump-hls-pragmas]
+PSDMonitor.cpp:16:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=PSDMonitorTop_XLX_SEP_ PragmaOptions=m_axi port=ram_buffer offset=slave bundle=gmem depth=2000000_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS INTERFACE m_axi port=ram_buffer offset=slave bundle=gmem depth=2000000
         ^
-PSDMonitor.cpp:20:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=PSDMonitorTop_XLX_SEP_ PragmaOptions=s_axilite port=ram_buffer bundle=CTRL_XLX_SEP_ [-Wdump-hls-pragmas]
+PSDMonitor.cpp:18:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=PSDMonitorTop_XLX_SEP_ PragmaOptions=s_axilite port=ram_buffer bundle=CTRL_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS INTERFACE s_axilite port=ram_buffer bundle=CTRL
         ^
-PSDMonitor.cpp:21:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=PSDMonitorTop_XLX_SEP_ PragmaOptions=s_axilite port=max_samples bundle=CTRL_XLX_SEP_ [-Wdump-hls-pragmas]
+PSDMonitor.cpp:19:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=PSDMonitorTop_XLX_SEP_ PragmaOptions=s_axilite port=max_samples bundle=CTRL_XLX_SEP_ [-Wdump-hls-pragmas]
 #pragma HLS INTERFACE s_axilite port=max_samples bundle=CTRL
         ^
-PSDMonitor.cpp:22:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=PSDMonitorTop_XLX_SEP_ PragmaOptions=s_axilite port=en_logging bundle=CTRL_XLX_SEP_ [-Wdump-hls-pragmas]
-#pragma HLS INTERFACE s_axilite port=en_logging bundle=CTRL
+PSDMonitor.cpp:21:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=PSDMonitorTop_XLX_SEP_ PragmaOptions=s_axilite port=return bundle=CTRL_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS INTERFACE s_axilite port=return bundle=CTRL
         ^
-PSDMonitor.cpp:23:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=PSDMonitorTop_XLX_SEP_ PragmaOptions=ap_ctrl_none port=return_XLX_SEP_ [-Wdump-hls-pragmas]
-#pragma HLS INTERFACE ap_ctrl_none port=return
+PSDMonitor.cpp:28:9: warning: HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=pipeline_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=PSDMonitorTop_XLX_SEP_ PragmaOptions=II=1_XLX_SEP_ [-Wdump-hls-pragmas]
+#pragma HLS PIPELINE II=1
         ^
-8 warnings generated.
+7 warnings generated.

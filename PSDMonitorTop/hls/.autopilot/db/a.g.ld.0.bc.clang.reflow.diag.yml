@@ -1,0 +1,28 @@
+--- !Missed
+Pass:            reflow-burst-inference
+Name:            CouldNotAnalyzeBoundsPattern
+DebugLoc:        { File: PSDMonitor.cpp, Line: 27, Column: 22 }
+Function:        _Z13PSDMonitorTopRN3hls6streamINS_4axisI7ap_uintILi32EELm0ELm0ELm0ELh56ELb0EEELi0EEEP6ap_intILi16EEj
+Args:            
+  - String:          Could not analyze the loop bounds
+  - String:          ' _XLX_SEP_ '
+  - LoopName:        VITIS_LOOP_27_1
+  - String:          ' '
+  - LoopLoc:         'PSDMonitor.cpp:27:22'
+  - String:          ' '
+  - Function:        'PSDMonitorTop(hls::stream<hls::axis<ap_uint<32>, 0ul, 0ul, 0ul, (unsigned char)56, false>, 0>&, ap_int<16>*, unsigned int)'
+    DebugLoc:        { File: PSDMonitor.cpp, Line: 14, Column: 0 }
+  - String:          ' '
+...
+--- !Failure
+Pass:            reflow-occurrence-inference
+Name:            NonComputableLoopForm
+DebugLoc:        { File: PSDMonitor.cpp, Line: 27, Column: 22 }
+Function:        _Z13PSDMonitorTopRN3hls6streamINS_4axisI7ap_uintILi32EELm0ELm0ELm0ELh56ELb0EEELi0EEEP6ap_intILi16EEj
+Args:            
+  - String:          'Could not analyze occurrence information within '''
+  - LoopName:        VITIS_LOOP_27_1
+  - String:          '''('
+  - LoopLoc:         'PSDMonitor.cpp:27:22'
+  - String:          ') . Requires loop in simplify form and with single exit.'
+...

@@ -70,10 +70,10 @@ vlog -work xil_defaultlib  -incr -v2k5 "+incdir+../../../../PSDMonitor.gen/sourc
 "../../../bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0_clk_wiz.v" \
 "../../../bd/design_1/ip/design_1_clk_wiz_0_0/design_1_clk_wiz_0_0.v" \
 "../../../bd/design_1/ip/design_1_axis_red_pitaya_adc_0_0/sim/design_1_axis_red_pitaya_adc_0_0.v" \
-"../../../../PSDMonitor.gen/sources_1/bd/design_1/ipshared/ca7b/hdl/verilog/PSDMonitorTop_CTRL_s_axi.v" \
-"../../../../PSDMonitor.gen/sources_1/bd/design_1/ipshared/ca7b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v" \
-"../../../../PSDMonitor.gen/sources_1/bd/design_1/ipshared/ca7b/hdl/verilog/PSDMonitorTop_regslice_both.v" \
-"../../../../PSDMonitor.gen/sources_1/bd/design_1/ipshared/ca7b/hdl/verilog/PSDMonitorTop.v" \
+"../../../../PSDMonitor.gen/sources_1/bd/design_1/ipshared/d660/hdl/verilog/PSDMonitorTop_CTRL_s_axi.v" \
+"../../../../PSDMonitor.gen/sources_1/bd/design_1/ipshared/d660/hdl/verilog/PSDMonitorTop_flow_control_loop_pipe.v" \
+"../../../../PSDMonitor.gen/sources_1/bd/design_1/ipshared/d660/hdl/verilog/PSDMonitorTop_regslice_both.v" \
+"../../../../PSDMonitor.gen/sources_1/bd/design_1/ipshared/d660/hdl/verilog/PSDMonitorTop.v" \
 "../../../bd/design_1/ip/design_1_PSDMonitorTop_0_0/sim/design_1_PSDMonitorTop_0_0.v" \
 
 vcom -work lib_cdc_v1_0_3 -93  -incr \

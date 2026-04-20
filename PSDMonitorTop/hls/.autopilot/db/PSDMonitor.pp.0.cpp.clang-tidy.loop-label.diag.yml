@@ -46,4 +46,13 @@ Diagnostics:
         Offset:          572121
         Length:          0
         ReplacementText: 'VITIS_LOOP_1247_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_27_1:  '
+    FileOffset:      27
+    FilePath:        PSDMonitor.cpp
+    Replacements:    
+      - FilePath:        /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/.autopilot/db/PSDMonitor.pp.0.cpp
+        Offset:          1031056
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_27_1: '
 ...

@@ -39,8 +39,6 @@ using namespace std;
 #define AUTOTB_TVOUT_ram_buffer "../tv/cdatafile/c.PSDMonitorTop.autotvout_ram_buffer.dat"
 #define AUTOTB_TVIN_max_samples "../tv/cdatafile/c.PSDMonitorTop.autotvin_max_samples.dat"
 #define AUTOTB_TVOUT_max_samples "../tv/cdatafile/c.PSDMonitorTop.autotvout_max_samples.dat"
-#define AUTOTB_TVIN_en_logging "../tv/cdatafile/c.PSDMonitorTop.autotvin_en_logging.dat"
-#define AUTOTB_TVOUT_en_logging "../tv/cdatafile/c.PSDMonitorTop.autotvout_en_logging.dat"
 #define AUTOTB_TVIN_gmem "../tv/cdatafile/c.PSDMonitorTop.autotvin_gmem.dat"
 #define AUTOTB_TVOUT_gmem "../tv/cdatafile/c.PSDMonitorTop.autotvout_gmem.dat"
 
@@ -1181,10 +1179,10 @@ namespace hls::sim
 
 
 extern "C"
-void PSDMonitorTop_hw_stub_wrapper(void*, void*, void*, void*, void*, hls::sim::Byte<4>, hls::sim::Byte<1>);
+void PSDMonitorTop_hw_stub_wrapper(void*, void*, void*, void*, void*, hls::sim::Byte<4>);
 
 extern "C"
-void apatb_PSDMonitorTop_hw(void* __xlx_apatb_param_adc_in_V_data_V, void* __xlx_apatb_param_adc_in_V_keep_V, void* __xlx_apatb_param_adc_in_V_strb_V, void* __xlx_apatb_param_adc_in_V_last_V, void* __xlx_apatb_param_ram_buffer, hls::sim::Byte<4> __xlx_apatb_param_max_samples, hls::sim::Byte<1> __xlx_apatb_param_en_logging)
+void apatb_PSDMonitorTop_hw(void* __xlx_apatb_param_adc_in_V_data_V, void* __xlx_apatb_param_adc_in_V_keep_V, void* __xlx_apatb_param_adc_in_V_strb_V, void* __xlx_apatb_param_adc_in_V_last_V, void* __xlx_apatb_param_ram_buffer, hls::sim::Byte<4> __xlx_apatb_param_max_samples)
 {
   static hls::sim::Stream<hls::sim::Byte<4>> port0 {
     .width = 32,
@@ -1265,38 +1263,18 @@ void apatb_PSDMonitorTop_hw(void* __xlx_apatb_param_adc_in_V_data_V, void* __xlx
   };
   port5.param = &__xlx_apatb_param_max_samples;
 
-  static hls::sim::Register port6 {
-    .name = "en_logging",
-    .width = 1,
-#ifdef POST_CHECK
-#else
-    .owriter = nullptr,
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_en_logging),
-#endif
-  };
-  port6.param = &__xlx_apatb_param_en_logging;
-
 #ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port7 {
+  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port6 {
 #else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port7 {
+  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port6 {
 #endif
     .width = 16,
     .asize = 2,
     .hbm = false,
     .name = { "gmem" },
 #ifdef POST_CHECK
-#ifdef USE_BINARY_TV_FILE
-    .reader = new hls::sim::Input(AUTOTB_TVOUT_PC_gmem),
 #else
-    .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_gmem),
-#endif
-#else
-#ifdef USE_BINARY_TV_FILE
-    .owriter = new hls::sim::Output(AUTOTB_TVOUT_gmem),
-#else
-    .owriter = new hls::sim::Writer(AUTOTB_TVOUT_gmem),
-#endif
+    .owriter = nullptr,
 #ifdef USE_BINARY_TV_FILE
     .iwriter = new hls::sim::Output(AUTOTB_TVIN_gmem),
 #else
@@ -1304,15 +1282,14 @@ void apatb_PSDMonitorTop_hw(void* __xlx_apatb_param_adc_in_V_data_V, void* __xlx
 #endif
 #endif
   };
-  port7.param = { __xlx_apatb_param_ram_buffer };
-  port7.nbytes = { 4000000 };
-  port7.offset = {  };
-  port7.hasWrite = { true };
+  port6.param = { __xlx_apatb_param_ram_buffer };
+  port6.nbytes = { 4000000 };
+  port6.offset = {  };
+  port6.hasWrite = { false };
 
   try {
 #ifdef POST_CHECK
     CodeState = ENTER_WRAPC_PC;
-    check(port7);
     check(port0);
     check(port1);
     check(port2);
@@ -1323,11 +1300,9 @@ void apatb_PSDMonitorTop_hw(void* __xlx_apatb_param_adc_in_V_data_V, void* __xlx
     dump(port4, port4.iwriter, tcl.AESL_transaction);
     dump(port5, port5.iwriter, tcl.AESL_transaction);
     dump(port6, port6.iwriter, tcl.AESL_transaction);
-    dump(port7, port7.iwriter, tcl.AESL_transaction);
     port4.doTCL(tcl);
     port5.doTCL(tcl);
     port6.doTCL(tcl);
-    port7.doTCL(tcl);
     port0.markSize();
     port1.markSize();
     port2.markSize();
@@ -1337,7 +1312,7 @@ void apatb_PSDMonitorTop_hw(void* __xlx_apatb_param_adc_in_V_data_V, void* __xlx
     port2.buffer();
     port3.buffer();
     CodeState = CALL_C_DUT;
-    PSDMonitorTop_hw_stub_wrapper(__xlx_apatb_param_adc_in_V_data_V, __xlx_apatb_param_adc_in_V_keep_V, __xlx_apatb_param_adc_in_V_strb_V, __xlx_apatb_param_adc_in_V_last_V, __xlx_apatb_param_ram_buffer, __xlx_apatb_param_max_samples, __xlx_apatb_param_en_logging);
+    PSDMonitorTop_hw_stub_wrapper(__xlx_apatb_param_adc_in_V_data_V, __xlx_apatb_param_adc_in_V_keep_V, __xlx_apatb_param_adc_in_V_strb_V, __xlx_apatb_param_adc_in_V_last_V, __xlx_apatb_param_ram_buffer, __xlx_apatb_param_max_samples);
     dump(port0, tcl.AESL_transaction);
     dump(port1, tcl.AESL_transaction);
     dump(port2, tcl.AESL_transaction);
@@ -1347,7 +1322,6 @@ void apatb_PSDMonitorTop_hw(void* __xlx_apatb_param_adc_in_V_data_V, void* __xlx
     port2.doTCL(tcl);
     port3.doTCL(tcl);
     CodeState = DUMP_OUTPUTS;
-    dump(port7, port7.owriter, tcl.AESL_transaction);
     tcl.AESL_transaction++;
 #endif
   } catch (const hls::sim::SimException &e) {

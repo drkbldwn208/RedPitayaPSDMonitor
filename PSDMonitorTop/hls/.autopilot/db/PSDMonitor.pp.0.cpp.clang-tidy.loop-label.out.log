@@ -23,3 +23,8 @@
       ^~~
       VITIS_LOOP_1247_1: 
 /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/.autopilot/db/PSDMonitor.pp.0.cpp:4072:7: note: FIX-IT applied suggested code changes
+/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/.autopilot/db/PSDMonitor.pp.0.cpp:9047:5: warning: Added loop label VITIS_LOOP_27_1:   [xilinx-label-all-loops]
+    for (unsigned int mem_idx = 0; mem_idx < max_samples;) {
+    ^~~
+    VITIS_LOOP_27_1: 
+/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/.autopilot/db/PSDMonitor.pp.0.cpp:9047:5: note: FIX-IT applied suggested code changes

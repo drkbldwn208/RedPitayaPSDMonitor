@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Mon Apr 20 15:27:01 2026
-# Process ID: 3942860
+# Start of session at: Mon Apr 20 15:54:40 2026
+# Process ID: 4051570
 # Current directory: /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/impl/ip
 # Command line: vivado -notrace -mode batch -source run_ippack.tcl
 # Log file: /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/impl/ip/vivado.log
@@ -13,13 +13,13 @@
 # Platform          :Ubuntu
 # Operating System  :Ubuntu 22.04.5 LTS
 # Processor Detail  :Intel(R) Core(TM) i9-10900KF CPU @ 3.70GHz
-# CPU Frequency     :4901.464 MHz
+# CPU Frequency     :4899.642 MHz
 # CPU Physical cores:10
 # CPU Logical cores :20
 # Host memory       :67280 MB
 # Swap memory       :0 MB
 # Total Virtual     :67280 MB
-# Available Virtual :44570 MB
+# Available Virtual :43354 MB
 #-----------------------------------------------------------
 source run_ippack.tcl -notrace
 INFO: calling package_hls_ip ip_types=vitis sysgen json_file=/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/hls_data.json outdir=/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/impl/ip srcdir=/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls sort_interfaces_ports=false
@@ -31,14 +31,15 @@ INFO: Import ports from HDL: /home/levlabcukomen/Desktop/VitisProjects/PSDMonito
 INFO: Add axi4lite interface s_axi_CTRL
 INFO: Add clock interface ap_clk
 INFO: Add reset interface ap_rst_n
-INFO: Add axi4full interface m_axi_gmem
+INFO: Add interrupt interface interrupt
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/levlabcukomen/tools/Vivado/2024.1/data/ip'.
+INFO: Add axi4full interface m_axi_gmem
 INFO: Add axi4stream interface adc_in
 INFO: Calling post_process_vitis to specialize IP
 INFO: Calling post_process_sysgen to specialize IP
 Generating sysgen info xml from json file
 INFO: Created IP /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/impl/ip/component.xml
 INFO: Created IP archive /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/impl/ip/xilinx_com_hls_PSDMonitorTop_1_0.zip
-INFO: [Common 17-206] Exiting Vivado at Mon Apr 20 15:27:09 2026...
+INFO: [Common 17-206] Exiting Vivado at Mon Apr 20 15:54:48 2026...

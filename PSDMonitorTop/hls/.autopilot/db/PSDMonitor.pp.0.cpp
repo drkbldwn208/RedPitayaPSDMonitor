@@ -9026,39 +9026,38 @@ typedef ap_axiu<16, 0, 0, 0> axis_t_16;
 
 __attribute__((sdx_kernel("PSDMonitorTop", 0))) void PSDMonitorTop(hls::stream<axis_t> &adc_in,
                     ap_int<16> *ram_buffer,
-                    unsigned int max_samples,
-                    bool en_logging
+                    unsigned int max_samples
 ) {
 #line 1 "directive"
 #pragma HLSDIRECTIVE TOP name=PSDMonitorTop
-# 15 "PSDMonitor.cpp"
+# 14 "PSDMonitor.cpp"
 
-#pragma HLS PIPELINE II=1
 #pragma HLS INTERFACE axis port=adc_in
 #pragma HLS INTERFACE m_axi port=ram_buffer offset=slave bundle=gmem depth=2000000
 
 #pragma HLS INTERFACE s_axilite port=ram_buffer bundle=CTRL
 #pragma HLS INTERFACE s_axilite port=max_samples bundle=CTRL
-#pragma HLS INTERFACE s_axilite port=en_logging bundle=CTRL
-#pragma HLS INTERFACE ap_ctrl_none port=return
+
+#pragma HLS INTERFACE s_axilite port=return bundle=CTRL
 
  static int error_accum=0;
     static ap_int<11> counter = 0;
-    static unsigned int mem_idx = 0;
-
-    axis_t val_adc;
-    short val_adc1 = 0;
-
-    if (adc_in.read_nb(val_adc)) {
-        short val_adc1 = (short)(val_adc.data & 0xFFFF);
-    } else {
-        static short fake_counter = 0;
-        val_adc1 = fake_counter;
-        fake_counter += 100;
-    }
 
 
-    if (en_logging) {
+    VITIS_LOOP_27_1: for (unsigned int mem_idx = 0; mem_idx < max_samples;) {
+#pragma HLS PIPELINE II=1
+
+ axis_t val_adc;
+        short val_adc1 = 0;
+
+        if (adc_in.read_nb(val_adc)) {
+            short val_adc1 = (short)(val_adc.data & 0xFFFF);
+        } else {
+            static short fake_counter = 0;
+            val_adc1 = fake_counter;
+            fake_counter += 100;
+        }
+
         error_accum += val_adc1;
 
         if (counter == ((1 << 10) - 1)) {
@@ -9072,11 +9071,7 @@ __attribute__((sdx_kernel("PSDMonitorTop", 0))) void PSDMonitorTop(hls::stream<a
             error_accum = 0;
             counter = 0;
         } else {
-            counter++;
+            counter=0;
         }
-    } else {
-        mem_idx = 0;
-        error_accum = 0;
-        counter=0;
     }
 }

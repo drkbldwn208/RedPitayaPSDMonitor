@@ -92,13 +92,25 @@ int XPsdmonitortop_Initialize(XPsdmonitortop *InstancePtr, const char* InstanceN
 int XPsdmonitortop_Release(XPsdmonitortop *InstancePtr);
 #endif
 
+void XPsdmonitortop_Start(XPsdmonitortop *InstancePtr);
+u32 XPsdmonitortop_IsDone(XPsdmonitortop *InstancePtr);
+u32 XPsdmonitortop_IsIdle(XPsdmonitortop *InstancePtr);
+u32 XPsdmonitortop_IsReady(XPsdmonitortop *InstancePtr);
+void XPsdmonitortop_EnableAutoRestart(XPsdmonitortop *InstancePtr);
+void XPsdmonitortop_DisableAutoRestart(XPsdmonitortop *InstancePtr);
 
 void XPsdmonitortop_Set_ram_buffer(XPsdmonitortop *InstancePtr, u64 Data);
 u64 XPsdmonitortop_Get_ram_buffer(XPsdmonitortop *InstancePtr);
 void XPsdmonitortop_Set_max_samples(XPsdmonitortop *InstancePtr, u32 Data);
 u32 XPsdmonitortop_Get_max_samples(XPsdmonitortop *InstancePtr);
-void XPsdmonitortop_Set_en_logging(XPsdmonitortop *InstancePtr, u32 Data);
-u32 XPsdmonitortop_Get_en_logging(XPsdmonitortop *InstancePtr);
+
+void XPsdmonitortop_InterruptGlobalEnable(XPsdmonitortop *InstancePtr);
+void XPsdmonitortop_InterruptGlobalDisable(XPsdmonitortop *InstancePtr);
+void XPsdmonitortop_InterruptEnable(XPsdmonitortop *InstancePtr, u32 Mask);
+void XPsdmonitortop_InterruptDisable(XPsdmonitortop *InstancePtr, u32 Mask);
+void XPsdmonitortop_InterruptClear(XPsdmonitortop *InstancePtr, u32 Mask);
+u32 XPsdmonitortop_InterruptGetEnabled(XPsdmonitortop *InstancePtr);
+u32 XPsdmonitortop_InterruptGetStatus(XPsdmonitortop *InstancePtr);
 
 #ifdef __cplusplus
 }
