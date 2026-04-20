@@ -635,7 +635,7 @@
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>READ_WRITE_MODE</spirit:name>
-          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXI_GMEM.READ_WRITE_MODE">READ_ONLY</spirit:value>
+          <spirit:value spirit:id="BUSIFPARAM_VALUE.M_AXI_GMEM.READ_WRITE_MODE">WRITE_ONLY</spirit:value>
         </spirit:parameter>
         <spirit:parameter>
           <spirit:name>HAS_BURST</spirit:name>
@@ -1104,7 +1104,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>bc951ee3</spirit:value>
+            <spirit:value>658c194e</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1120,7 +1120,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>7690cbc7</spirit:value>
+            <spirit:value>d8933695</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1136,7 +1136,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>98486636</spirit:value>
+            <spirit:value>d16b0e0f</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -1152,7 +1152,7 @@
         <spirit:parameters>
           <spirit:parameter>
             <spirit:name>viewChecksum</spirit:name>
-            <spirit:value>2bd63f13</spirit:value>
+            <spirit:value>fb713286</spirit:value>
           </spirit:parameter>
         </spirit:parameters>
       </spirit:view>
@@ -2535,7 +2535,15 @@
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/PSDMonitorTop_flow_control_loop_pipe.v</spirit:name>
+        <spirit:name>hdl/verilog/PSDMonitorTop_flow_control_loop_pipe_sequential_init.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/verilog/PSDMonitorTop_gmem_m_axi.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/verilog/PSDMonitorTop_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -2555,7 +2563,17 @@
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/verilog/PSDMonitorTop_flow_control_loop_pipe.v</spirit:name>
+        <spirit:name>hdl/verilog/PSDMonitorTop_flow_control_loop_pipe_sequential_init.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/verilog/PSDMonitorTop_gmem_m_axi.v</spirit:name>
+        <spirit:fileType>verilogSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/verilog/PSDMonitorTop_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1.v</spirit:name>
         <spirit:fileType>verilogSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -2582,7 +2600,15 @@
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/PSDMonitorTop_flow_control_loop_pipe.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/PSDMonitorTop_flow_control_loop_pipe_sequential_init.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/vhdl/PSDMonitorTop_gmem_m_axi.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/vhdl/PSDMonitorTop_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
       </spirit:file>
       <spirit:file>
@@ -2592,7 +2618,7 @@
       <spirit:file>
         <spirit:name>hdl/vhdl/PSDMonitorTop.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
-        <spirit:userFileType>CHECKSUM_eba52448</spirit:userFileType>
+        <spirit:userFileType>CHECKSUM_ab6d2417</spirit:userFileType>
       </spirit:file>
     </spirit:fileSet>
     <spirit:fileSet>
@@ -2603,7 +2629,17 @@
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
       <spirit:file>
-        <spirit:name>hdl/vhdl/PSDMonitorTop_flow_control_loop_pipe.vhd</spirit:name>
+        <spirit:name>hdl/vhdl/PSDMonitorTop_flow_control_loop_pipe_sequential_init.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/vhdl/PSDMonitorTop_gmem_m_axi.vhd</spirit:name>
+        <spirit:fileType>vhdlSource</spirit:fileType>
+        <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
+      </spirit:file>
+      <spirit:file>
+        <spirit:name>hdl/vhdl/PSDMonitorTop_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1.vhd</spirit:name>
         <spirit:fileType>vhdlSource</spirit:fileType>
         <spirit:userFileType>USED_IN_ipstatic</spirit:userFileType>
       </spirit:file>
@@ -2826,7 +2862,7 @@
     </spirit:parameter>
     <spirit:parameter>
       <spirit:name>II</spirit:name>
-      <spirit:value spirit:id="PARAM_VALUE.II" spirit:order="17">0</spirit:value>
+      <spirit:value spirit:id="PARAM_VALUE.II" spirit:order="17">undef</spirit:value>
     </spirit:parameter>
   </spirit:parameters>
   <spirit:vendorExtensions>
@@ -2839,8 +2875,8 @@
       </xilinx:taxonomies>
       <xilinx:displayName>Psdmonitortop</xilinx:displayName>
       <xilinx:definitionSource>HLS</xilinx:definitionSource>
-      <xilinx:coreRevision>2114574054</xilinx:coreRevision>
-      <xilinx:coreCreationDateTime>2026-04-20T22:54:48Z</xilinx:coreCreationDateTime>
+      <xilinx:coreRevision>2114574071</xilinx:coreRevision>
+      <xilinx:coreCreationDateTime>2026-04-20T23:11:20Z</xilinx:coreCreationDateTime>
       <xilinx:sdxKernelAttributes>
         <xilinx:sdx_kernel>true</xilinx:sdx_kernel>
         <xilinx:sdx_kernel_type>hls</xilinx:sdx_kernel_type>
@@ -2848,13 +2884,13 @@
     </xilinx:coreExtensions>
     <xilinx:packagingInfo>
       <xilinx:xilinxVersion>2024.1</xilinx:xilinxVersion>
-      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="7144e213"/>
+      <xilinx:checksum xilinx:scope="busInterfaces" xilinx:value="0a3c7d4a"/>
       <xilinx:checksum xilinx:scope="addressSpaces" xilinx:value="dbf0574b"/>
       <xilinx:checksum xilinx:scope="memoryMaps" xilinx:value="bd843768"/>
-      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="3a69e760"/>
+      <xilinx:checksum xilinx:scope="fileGroups" xilinx:value="a6944f40"/>
       <xilinx:checksum xilinx:scope="ports" xilinx:value="247db310"/>
       <xilinx:checksum xilinx:scope="hdlParameters" xilinx:value="b86788fb"/>
-      <xilinx:checksum xilinx:scope="parameters" xilinx:value="2710adf1"/>
+      <xilinx:checksum xilinx:scope="parameters" xilinx:value="dc73b0fd"/>
     </xilinx:packagingInfo>
   </spirit:vendorExtensions>
 </spirit:component>

@@ -16,19 +16,19 @@ set C_modelName {PSDMonitorTop}
 set C_modelType { void 0 }
 set ap_memory_interface_dict [dict create]
 set C_modelArgList {
-	{ gmem int 16 unused {axi_master 0}  }
+	{ gmem int 16 regular {axi_master 1}  }
 	{ adc_in_V_data_V int 32 regular {axi_s 0 volatile  { adc_in Data } }  }
 	{ adc_in_V_keep_V int 4 regular {axi_s 0 volatile  { adc_in Keep } }  }
 	{ adc_in_V_strb_V int 4 regular {axi_s 0 volatile  { adc_in Strb } }  }
 	{ adc_in_V_last_V int 1 regular {axi_s 0 volatile  { adc_in Last } }  }
-	{ ram_buffer int 64 unused {axi_slave 0}  }
+	{ ram_buffer int 64 regular {axi_slave 0}  }
 	{ max_samples int 32 regular {axi_slave 0}  }
 }
 set hasAXIMCache 0
 set hasAXIML2Cache 0
 set AXIMCacheInstDict [dict create]
 set C_modelArgMapList {[ 
-	{ "Name" : "gmem", "interface" : "axi_master", "bitwidth" : 16, "direction" : "READONLY", "bitSlice":[ {"cElement": [{"cName": "ram_buffer","offset": { "type": "dynamic","port_name": "ram_buffer","bundle": "CTRL"}}]}]} , 
+	{ "Name" : "gmem", "interface" : "axi_master", "bitwidth" : 16, "direction" : "WRITEONLY", "bitSlice":[ {"cElement": [{"cName": "ram_buffer","offset": { "type": "dynamic","port_name": "ram_buffer","bundle": "CTRL"},"direction": "WRITEONLY"}]}]} , 
  	{ "Name" : "adc_in_V_data_V", "interface" : "axis", "bitwidth" : 32, "direction" : "READONLY"} , 
  	{ "Name" : "adc_in_V_keep_V", "interface" : "axis", "bitwidth" : 4, "direction" : "READONLY"} , 
  	{ "Name" : "adc_in_V_strb_V", "interface" : "axis", "bitwidth" : 4, "direction" : "READONLY"} , 
@@ -184,8 +184,47 @@ set NewPortList {[
  	{ "name": "adc_in_TLAST", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "adc_in_V_last_V", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
-	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "5", "6"],
+	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "3", "4", "5", "6", "7", "8"],
 		"CDFG" : "PSDMonitorTop",
+		"Protocol" : "ap_ctrl_hs",
+		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
+		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
+		"II" : "0",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "-1", "EstimateLatencyMax" : "-1",
+		"Combinational" : "0",
+		"Datapath" : "0",
+		"ClockEnable" : "0",
+		"HasSubDataflow" : "0",
+		"InDataflowNetwork" : "0",
+		"HasNonBlockingOperation" : "0",
+		"IsBlackBox" : "0",
+		"Port" : [
+			{"Name" : "gmem", "Type" : "MAXI", "Direction" : "O",
+				"SubConnect" : [
+					{"ID" : "1", "SubInstance" : "grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98", "Port" : "gmem", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+			{"Name" : "adc_in_V_data_V", "Type" : "Axis", "Direction" : "I", "BaseName" : "adc_in",
+				"SubConnect" : [
+					{"ID" : "1", "SubInstance" : "grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98", "Port" : "adc_in_V_data_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+			{"Name" : "adc_in_V_keep_V", "Type" : "Axis", "Direction" : "I", "BaseName" : "adc_in",
+				"SubConnect" : [
+					{"ID" : "1", "SubInstance" : "grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98", "Port" : "adc_in_V_keep_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+			{"Name" : "adc_in_V_strb_V", "Type" : "Axis", "Direction" : "I", "BaseName" : "adc_in",
+				"SubConnect" : [
+					{"ID" : "1", "SubInstance" : "grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98", "Port" : "adc_in_V_strb_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+			{"Name" : "adc_in_V_last_V", "Type" : "Axis", "Direction" : "I", "BaseName" : "adc_in",
+				"SubConnect" : [
+					{"ID" : "1", "SubInstance" : "grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98", "Port" : "adc_in_V_last_V", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+			{"Name" : "ram_buffer", "Type" : "None", "Direction" : "I"},
+			{"Name" : "max_samples", "Type" : "None", "Direction" : "I"},
+			{"Name" : "error_accum", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "counter", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "1", "SubInstance" : "grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98", "Port" : "counter", "Inst_start_state" : "2", "Inst_end_state" : "3"}]},
+			{"Name" : "fake_counter", "Type" : "OVld", "Direction" : "IO",
+				"SubConnect" : [
+					{"ID" : "1", "SubInstance" : "grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98", "Port" : "fake_counter", "Inst_start_state" : "2", "Inst_end_state" : "3"}]}]},
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98", "Parent" : "0", "Child" : ["2"],
+		"CDFG" : "PSDMonitorTop_Pipeline_VITIS_LOOP_27_1",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
@@ -199,37 +238,59 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "1",
 		"IsBlackBox" : "0",
 		"Port" : [
-			{"Name" : "gmem", "Type" : "MAXI", "Direction" : "I"},
+			{"Name" : "error_accum_load", "Type" : "None", "Direction" : "I"},
+			{"Name" : "gmem", "Type" : "MAXI", "Direction" : "O",
+				"BlockSignal" : [
+					{"Name" : "gmem_blk_n_AW", "Type" : "RtlSignal"},
+					{"Name" : "gmem_blk_n_W", "Type" : "RtlSignal"},
+					{"Name" : "gmem_blk_n_B", "Type" : "RtlSignal"}]},
+			{"Name" : "max_samples", "Type" : "None", "Direction" : "I"},
+			{"Name" : "ram_buffer", "Type" : "None", "Direction" : "I"},
 			{"Name" : "adc_in_V_data_V", "Type" : "Axis", "Direction" : "I", "BaseName" : "adc_in"},
 			{"Name" : "adc_in_V_keep_V", "Type" : "Axis", "Direction" : "I", "BaseName" : "adc_in"},
 			{"Name" : "adc_in_V_strb_V", "Type" : "Axis", "Direction" : "I", "BaseName" : "adc_in"},
 			{"Name" : "adc_in_V_last_V", "Type" : "Axis", "Direction" : "I", "BaseName" : "adc_in"},
-			{"Name" : "ram_buffer", "Type" : "None", "Direction" : "I"},
-			{"Name" : "max_samples", "Type" : "None", "Direction" : "I"},
-			{"Name" : "fake_counter", "Type" : "OVld", "Direction" : "IO"},
-			{"Name" : "error_accum", "Type" : "OVld", "Direction" : "IO"}],
+			{"Name" : "error_accum_flag_0_out", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "error_accum_loc_0_out", "Type" : "Vld", "Direction" : "O"},
+			{"Name" : "counter", "Type" : "OVld", "Direction" : "IO"},
+			{"Name" : "fake_counter", "Type" : "OVld", "Direction" : "IO"}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_27_1", "PipelineType" : "UPC",
-				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter1", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter1", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.CTRL_s_axi_U", "Parent" : "0"},
-	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.flow_control_loop_pipe_U", "Parent" : "0"},
-	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.regslice_both_adc_in_V_data_V_U", "Parent" : "0"},
-	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.regslice_both_adc_in_V_keep_V_U", "Parent" : "0"},
-	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.regslice_both_adc_in_V_strb_V_U", "Parent" : "0"},
-	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.regslice_both_adc_in_V_last_V_U", "Parent" : "0"}]}
+				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter8", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter8", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
+	{"ID" : "2", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98.flow_control_loop_pipe_sequential_init_U", "Parent" : "1"},
+	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.CTRL_s_axi_U", "Parent" : "0"},
+	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.gmem_m_axi_U", "Parent" : "0"},
+	{"ID" : "5", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.regslice_both_adc_in_V_data_V_U", "Parent" : "0"},
+	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.regslice_both_adc_in_V_keep_V_U", "Parent" : "0"},
+	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.regslice_both_adc_in_V_strb_V_U", "Parent" : "0"},
+	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.regslice_both_adc_in_V_last_V_U", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	PSDMonitorTop {
-		gmem {Type I LastRead -1 FirstWrite -1}
+		gmem {Type O LastRead 4 FirstWrite 3}
 		adc_in_V_data_V {Type I LastRead 0 FirstWrite -1}
 		adc_in_V_keep_V {Type I LastRead 0 FirstWrite -1}
 		adc_in_V_strb_V {Type I LastRead 0 FirstWrite -1}
 		adc_in_V_last_V {Type I LastRead 0 FirstWrite -1}
-		ram_buffer {Type I LastRead -1 FirstWrite -1}
+		ram_buffer {Type I LastRead 0 FirstWrite -1}
 		max_samples {Type I LastRead 0 FirstWrite -1}
-		fake_counter {Type IO LastRead -1 FirstWrite -1}
-		error_accum {Type IO LastRead -1 FirstWrite -1}}}
+		error_accum {Type IO LastRead -1 FirstWrite -1}
+		counter {Type IO LastRead -1 FirstWrite -1}
+		fake_counter {Type IO LastRead -1 FirstWrite -1}}
+	PSDMonitorTop_Pipeline_VITIS_LOOP_27_1 {
+		error_accum_load {Type I LastRead 0 FirstWrite -1}
+		gmem {Type O LastRead 4 FirstWrite 3}
+		max_samples {Type I LastRead 0 FirstWrite -1}
+		ram_buffer {Type I LastRead 0 FirstWrite -1}
+		adc_in_V_data_V {Type I LastRead 0 FirstWrite -1}
+		adc_in_V_keep_V {Type I LastRead 0 FirstWrite -1}
+		adc_in_V_strb_V {Type I LastRead 0 FirstWrite -1}
+		adc_in_V_last_V {Type I LastRead 0 FirstWrite -1}
+		error_accum_flag_0_out {Type O LastRead -1 FirstWrite 7}
+		error_accum_loc_0_out {Type O LastRead -1 FirstWrite 7}
+		counter {Type IO LastRead -1 FirstWrite -1}
+		fake_counter {Type IO LastRead -1 FirstWrite -1}}}
 
 set hasDtUnsupportedChannel 0
 
@@ -239,7 +300,6 @@ set PerformanceInfo {[
 ]}
 
 set PipelineEnableSignalInfo {[
-	{"Pipeline" : "0", "EnableSignal" : "ap_enable_pp0"}
 ]}
 
 set Spec2ImplPortList { 
@@ -251,7 +311,7 @@ set Spec2ImplPortList {
 }
 
 set maxi_interface_dict [dict create]
-dict set maxi_interface_dict gmem { CHANNEL_NUM 0 BUNDLE gmem NUM_READ_OUTSTANDING 16 NUM_WRITE_OUTSTANDING 16 MAX_READ_BURST_LENGTH 16 MAX_WRITE_BURST_LENGTH 16 READ_WRITE_MODE READ_ONLY}
+dict set maxi_interface_dict gmem { CHANNEL_NUM 0 BUNDLE gmem NUM_READ_OUTSTANDING 16 NUM_WRITE_OUTSTANDING 16 MAX_READ_BURST_LENGTH 16 MAX_WRITE_BURST_LENGTH 16 READ_WRITE_MODE WRITE_ONLY}
 
 # RTL port scheduling information:
 set fifoSchedulingInfoList { 

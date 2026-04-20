@@ -6,7 +6,7 @@
 
 `timescale 1 ns / 1 ps 
 
-(* CORE_GENERATION_INFO="PSDMonitorTop_PSDMonitorTop,hls_ip_2024_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z010-clg400-1,HLS_INPUT_CLOCK=8.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=4.658000,HLS_SYN_LAT=-1,HLS_SYN_TPT=none,HLS_SYN_MEM=0,HLS_SYN_DSP=0,HLS_SYN_FF=211,HLS_SYN_LUT=371,HLS_VERSION=2024_1}" *)
+(* CORE_GENERATION_INFO="PSDMonitorTop_PSDMonitorTop,hls_ip_2024_1,{HLS_INPUT_TYPE=cxx,HLS_INPUT_FLOAT=0,HLS_INPUT_FIXED=0,HLS_INPUT_PART=xc7z010-clg400-1,HLS_INPUT_CLOCK=8.000000,HLS_INPUT_ARCH=others,HLS_SYN_CLOCK=5.840000,HLS_SYN_LAT=-1,HLS_SYN_TPT=none,HLS_SYN_MEM=1,HLS_SYN_DSP=0,HLS_SYN_FF=1400,HLS_SYN_LUT=1509,HLS_VERSION=2024_1}" *)
 
 module PSDMonitorTop (
         ap_clk,
@@ -82,7 +82,10 @@ module PSDMonitorTop (
         interrupt
 );
 
-parameter    ap_ST_fsm_pp0_stage0 = 1'd1;
+parameter    ap_ST_fsm_state1 = 4'd1;
+parameter    ap_ST_fsm_state2 = 4'd2;
+parameter    ap_ST_fsm_state3 = 4'd4;
+parameter    ap_ST_fsm_state4 = 4'd8;
 parameter    C_S_AXI_CTRL_DATA_WIDTH = 32;
 parameter    C_S_AXI_CTRL_ADDR_WIDTH = 6;
 parameter    C_S_AXI_DATA_WIDTH = 32;
@@ -97,10 +100,12 @@ parameter    C_M_AXI_GMEM_BUSER_WIDTH = 1;
 parameter    C_M_AXI_GMEM_USER_VALUE = 0;
 parameter    C_M_AXI_GMEM_PROT_VALUE = 0;
 parameter    C_M_AXI_GMEM_CACHE_VALUE = 3;
+parameter    C_M_AXI_DATA_WIDTH = 32;
 
 parameter C_S_AXI_CTRL_WSTRB_WIDTH = (32 / 8);
 parameter C_S_AXI_WSTRB_WIDTH = (32 / 8);
 parameter C_M_AXI_GMEM_WSTRB_WIDTH = (32 / 8);
+parameter C_M_AXI_WSTRB_WIDTH = (32 / 8);
 
 input   ap_clk;
 input   ap_rst_n;
@@ -176,41 +181,78 @@ output   interrupt;
 
  reg    ap_rst_n_inv;
 wire    ap_start;
-wire    ap_done;
+reg    ap_done;
 reg    ap_idle;
-(* fsm_encoding = "none" *) reg   [0:0] ap_CS_fsm;
-wire    ap_CS_fsm_pp0_stage0;
-wire    ap_enable_reg_pp0_iter0;
-reg    ap_enable_reg_pp0_iter1;
-reg    ap_idle_pp0;
-wire    ap_ready;
-wire    ap_block_pp0_stage0_subdone;
-wire   [0:0] cmp_fu_109_p2;
-reg    ap_condition_exit_pp0_iter0_stage0;
-wire    ap_loop_exit_ready;
-reg    ap_ready_int;
+(* fsm_encoding = "none" *) reg   [3:0] ap_CS_fsm;
+wire    ap_CS_fsm_state1;
+reg    ap_ready;
 wire   [63:0] ram_buffer;
 wire   [31:0] max_samples;
-reg   [15:0] fake_counter;
 reg   [31:0] error_accum;
-wire    ap_block_pp0_stage0_11001;
-wire   [0:0] p_vld_fu_115_p1;
-wire   [15:0] ap_phi_reg_pp0_iter0_val_adc1_1_reg_98;
-reg   [15:0] ap_phi_reg_pp0_iter1_val_adc1_1_reg_98;
-wire   [15:0] add_ln38_fu_123_p2;
-wire    ap_block_pp0_stage0;
-wire   [31:0] add_ln41_fu_143_p2;
-wire   [0:0] empty_nbread_fu_86_p5_0;
-wire  signed [31:0] sext_ln41_fu_135_p1;
-reg    ap_done_reg;
-wire    ap_continue_int;
-reg    ap_done_int;
-reg   [0:0] ap_NS_fsm;
-wire    ap_enable_pp0;
-wire    ap_start_int;
-wire    ap_ready_sig;
-wire    ap_done_sig;
-wire    ap_loop_init;
+reg   [31:0] max_samples_read_reg_138;
+reg   [63:0] ram_buffer_read_reg_143;
+wire    grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_ap_start;
+wire    grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_ap_done;
+wire    grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_ap_idle;
+wire    grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_ap_ready;
+wire    grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_AWVALID;
+wire   [63:0] grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_AWADDR;
+wire   [0:0] grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_AWID;
+wire   [31:0] grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_AWLEN;
+wire   [2:0] grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_AWSIZE;
+wire   [1:0] grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_AWBURST;
+wire   [1:0] grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_AWLOCK;
+wire   [3:0] grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_AWCACHE;
+wire   [2:0] grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_AWPROT;
+wire   [3:0] grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_AWQOS;
+wire   [3:0] grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_AWREGION;
+wire   [0:0] grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_AWUSER;
+wire    grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_WVALID;
+wire   [15:0] grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_WDATA;
+wire   [1:0] grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_WSTRB;
+wire    grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_WLAST;
+wire   [0:0] grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_WID;
+wire   [0:0] grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_WUSER;
+wire    grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_ARVALID;
+wire   [63:0] grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_ARADDR;
+wire   [0:0] grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_ARID;
+wire   [31:0] grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_ARLEN;
+wire   [2:0] grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_ARSIZE;
+wire   [1:0] grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_ARBURST;
+wire   [1:0] grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_ARLOCK;
+wire   [3:0] grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_ARCACHE;
+wire   [2:0] grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_ARPROT;
+wire   [3:0] grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_ARQOS;
+wire   [3:0] grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_ARREGION;
+wire   [0:0] grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_ARUSER;
+wire    grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_RREADY;
+wire    grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_BREADY;
+wire    grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_adc_in_TREADY;
+wire   [0:0] grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_error_accum_flag_0_out;
+wire    grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_error_accum_flag_0_out_ap_vld;
+wire   [31:0] grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_error_accum_loc_0_out;
+wire    grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_error_accum_loc_0_out_ap_vld;
+reg    gmem_AWVALID;
+wire    gmem_AWREADY;
+reg    gmem_WVALID;
+wire    gmem_WREADY;
+wire    gmem_ARREADY;
+wire    gmem_RVALID;
+wire   [15:0] gmem_RDATA;
+wire   [9:0] gmem_RFIFONUM;
+wire    gmem_BVALID;
+reg    gmem_BREADY;
+reg    grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_ap_start_reg;
+wire    ap_CS_fsm_state2;
+wire    ap_CS_fsm_state3;
+reg   [0:0] error_accum_flag_0_loc_fu_82;
+wire    ap_CS_fsm_state4;
+wire   [0:0] error_accum_flag_0_loc_load_load_fu_126_p1;
+reg   [3:0] ap_NS_fsm;
+reg    ap_ST_fsm_state1_blk;
+wire    ap_ST_fsm_state2_blk;
+reg    ap_ST_fsm_state3_blk;
+wire    ap_ST_fsm_state4_blk;
 wire    regslice_both_adc_in_V_data_V_U_apdone_blk;
 wire   [31:0] adc_in_TDATA_int_regslice;
 wire    adc_in_TVALID_int_regslice;
@@ -228,17 +270,82 @@ wire    regslice_both_adc_in_V_last_V_U_apdone_blk;
 wire   [0:0] adc_in_TLAST_int_regslice;
 wire    regslice_both_adc_in_V_last_V_U_vld_out;
 wire    regslice_both_adc_in_V_last_V_U_ack_in;
-reg    ap_condition_172;
 wire    ap_ce_reg;
 
 // power-on initialization
 initial begin
-#0 ap_CS_fsm = 1'd1;
-#0 ap_enable_reg_pp0_iter1 = 1'b0;
-#0 fake_counter = 16'd0;
+#0 ap_CS_fsm = 4'd1;
 #0 error_accum = 32'd0;
-#0 ap_done_reg = 1'b0;
+#0 grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_ap_start_reg = 1'b0;
 end
+
+PSDMonitorTop_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1 grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98(
+    .ap_clk(ap_clk),
+    .ap_rst(ap_rst_n_inv),
+    .ap_start(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_ap_start),
+    .ap_done(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_ap_done),
+    .ap_idle(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_ap_idle),
+    .ap_ready(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_ap_ready),
+    .m_axi_gmem_AWVALID(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_AWVALID),
+    .m_axi_gmem_AWREADY(gmem_AWREADY),
+    .m_axi_gmem_AWADDR(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_AWADDR),
+    .m_axi_gmem_AWID(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_AWID),
+    .m_axi_gmem_AWLEN(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_AWLEN),
+    .m_axi_gmem_AWSIZE(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_AWSIZE),
+    .m_axi_gmem_AWBURST(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_AWBURST),
+    .m_axi_gmem_AWLOCK(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_AWLOCK),
+    .m_axi_gmem_AWCACHE(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_AWCACHE),
+    .m_axi_gmem_AWPROT(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_AWPROT),
+    .m_axi_gmem_AWQOS(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_AWQOS),
+    .m_axi_gmem_AWREGION(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_AWREGION),
+    .m_axi_gmem_AWUSER(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_AWUSER),
+    .m_axi_gmem_WVALID(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_WVALID),
+    .m_axi_gmem_WREADY(gmem_WREADY),
+    .m_axi_gmem_WDATA(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_WDATA),
+    .m_axi_gmem_WSTRB(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_WSTRB),
+    .m_axi_gmem_WLAST(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_WLAST),
+    .m_axi_gmem_WID(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_WID),
+    .m_axi_gmem_WUSER(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_WUSER),
+    .m_axi_gmem_ARVALID(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_ARVALID),
+    .m_axi_gmem_ARREADY(1'b0),
+    .m_axi_gmem_ARADDR(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_ARADDR),
+    .m_axi_gmem_ARID(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_ARID),
+    .m_axi_gmem_ARLEN(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_ARLEN),
+    .m_axi_gmem_ARSIZE(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_ARSIZE),
+    .m_axi_gmem_ARBURST(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_ARBURST),
+    .m_axi_gmem_ARLOCK(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_ARLOCK),
+    .m_axi_gmem_ARCACHE(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_ARCACHE),
+    .m_axi_gmem_ARPROT(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_ARPROT),
+    .m_axi_gmem_ARQOS(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_ARQOS),
+    .m_axi_gmem_ARREGION(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_ARREGION),
+    .m_axi_gmem_ARUSER(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_ARUSER),
+    .m_axi_gmem_RVALID(1'b0),
+    .m_axi_gmem_RREADY(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_RREADY),
+    .m_axi_gmem_RDATA(16'd0),
+    .m_axi_gmem_RLAST(1'b0),
+    .m_axi_gmem_RID(1'd0),
+    .m_axi_gmem_RFIFONUM(10'd0),
+    .m_axi_gmem_RUSER(1'd0),
+    .m_axi_gmem_RRESP(2'd0),
+    .m_axi_gmem_BVALID(gmem_BVALID),
+    .m_axi_gmem_BREADY(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_BREADY),
+    .m_axi_gmem_BRESP(2'd0),
+    .m_axi_gmem_BID(1'd0),
+    .m_axi_gmem_BUSER(1'd0),
+    .error_accum_load(error_accum),
+    .max_samples(max_samples_read_reg_138),
+    .ram_buffer(ram_buffer_read_reg_143),
+    .adc_in_TDATA(adc_in_TDATA_int_regslice),
+    .adc_in_TVALID(adc_in_TVALID_int_regslice),
+    .adc_in_TREADY(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_adc_in_TREADY),
+    .adc_in_TKEEP(adc_in_TKEEP_int_regslice),
+    .adc_in_TSTRB(adc_in_TSTRB_int_regslice),
+    .adc_in_TLAST(adc_in_TLAST_int_regslice),
+    .error_accum_flag_0_out(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_error_accum_flag_0_out),
+    .error_accum_flag_0_out_ap_vld(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_error_accum_flag_0_out_ap_vld),
+    .error_accum_loc_0_out(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_error_accum_loc_0_out),
+    .error_accum_loc_0_out_ap_vld(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_error_accum_loc_0_out_ap_vld)
+);
 
 PSDMonitorTop_CTRL_s_axi #(
     .C_S_AXI_ADDR_WIDTH( C_S_AXI_CTRL_ADDR_WIDTH ),
@@ -273,20 +380,94 @@ CTRL_s_axi_U(
     .ap_idle(ap_idle)
 );
 
-PSDMonitorTop_flow_control_loop_pipe flow_control_loop_pipe_U(
-    .ap_clk(ap_clk),
-    .ap_rst(ap_rst_n_inv),
-    .ap_start(ap_start),
-    .ap_ready(ap_ready_sig),
-    .ap_done(ap_done_sig),
-    .ap_start_int(ap_start_int),
-    .ap_loop_init(ap_loop_init),
-    .ap_ready_int(ap_ready_int),
-    .ap_loop_exit_ready(ap_condition_exit_pp0_iter0_stage0),
-    .ap_loop_exit_done(ap_done_int),
-    .ap_continue_int(ap_continue_int),
-    .ap_done_int(ap_done_int),
-    .ap_continue(1'b1)
+PSDMonitorTop_gmem_m_axi #(
+    .CONSERVATIVE( 1 ),
+    .USER_MAXREQS( 4 ),
+    .MAX_READ_BURST_LENGTH( 16 ),
+    .MAX_WRITE_BURST_LENGTH( 16 ),
+    .C_M_AXI_ID_WIDTH( C_M_AXI_GMEM_ID_WIDTH ),
+    .C_M_AXI_ADDR_WIDTH( C_M_AXI_GMEM_ADDR_WIDTH ),
+    .C_M_AXI_DATA_WIDTH( C_M_AXI_GMEM_DATA_WIDTH ),
+    .C_M_AXI_AWUSER_WIDTH( C_M_AXI_GMEM_AWUSER_WIDTH ),
+    .C_M_AXI_ARUSER_WIDTH( C_M_AXI_GMEM_ARUSER_WIDTH ),
+    .C_M_AXI_WUSER_WIDTH( C_M_AXI_GMEM_WUSER_WIDTH ),
+    .C_M_AXI_RUSER_WIDTH( C_M_AXI_GMEM_RUSER_WIDTH ),
+    .C_M_AXI_BUSER_WIDTH( C_M_AXI_GMEM_BUSER_WIDTH ),
+    .C_USER_VALUE( C_M_AXI_GMEM_USER_VALUE ),
+    .C_PROT_VALUE( C_M_AXI_GMEM_PROT_VALUE ),
+    .C_CACHE_VALUE( C_M_AXI_GMEM_CACHE_VALUE ),
+    .CH0_USER_RFIFONUM_WIDTH( 10 ),
+    .CH0_USER_DW( 16 ),
+    .CH0_USER_AW( 64 ),
+    .NUM_READ_OUTSTANDING( 0 ),
+    .NUM_WRITE_OUTSTANDING( 16 ))
+gmem_m_axi_U(
+    .AWVALID(m_axi_gmem_AWVALID),
+    .AWREADY(m_axi_gmem_AWREADY),
+    .AWADDR(m_axi_gmem_AWADDR),
+    .AWID(m_axi_gmem_AWID),
+    .AWLEN(m_axi_gmem_AWLEN),
+    .AWSIZE(m_axi_gmem_AWSIZE),
+    .AWBURST(m_axi_gmem_AWBURST),
+    .AWLOCK(m_axi_gmem_AWLOCK),
+    .AWCACHE(m_axi_gmem_AWCACHE),
+    .AWPROT(m_axi_gmem_AWPROT),
+    .AWQOS(m_axi_gmem_AWQOS),
+    .AWREGION(m_axi_gmem_AWREGION),
+    .AWUSER(m_axi_gmem_AWUSER),
+    .WVALID(m_axi_gmem_WVALID),
+    .WREADY(m_axi_gmem_WREADY),
+    .WDATA(m_axi_gmem_WDATA),
+    .WSTRB(m_axi_gmem_WSTRB),
+    .WLAST(m_axi_gmem_WLAST),
+    .WID(m_axi_gmem_WID),
+    .WUSER(m_axi_gmem_WUSER),
+    .ARVALID(m_axi_gmem_ARVALID),
+    .ARREADY(m_axi_gmem_ARREADY),
+    .ARADDR(m_axi_gmem_ARADDR),
+    .ARID(m_axi_gmem_ARID),
+    .ARLEN(m_axi_gmem_ARLEN),
+    .ARSIZE(m_axi_gmem_ARSIZE),
+    .ARBURST(m_axi_gmem_ARBURST),
+    .ARLOCK(m_axi_gmem_ARLOCK),
+    .ARCACHE(m_axi_gmem_ARCACHE),
+    .ARPROT(m_axi_gmem_ARPROT),
+    .ARQOS(m_axi_gmem_ARQOS),
+    .ARREGION(m_axi_gmem_ARREGION),
+    .ARUSER(m_axi_gmem_ARUSER),
+    .RVALID(m_axi_gmem_RVALID),
+    .RREADY(m_axi_gmem_RREADY),
+    .RDATA(m_axi_gmem_RDATA),
+    .RLAST(m_axi_gmem_RLAST),
+    .RID(m_axi_gmem_RID),
+    .RUSER(m_axi_gmem_RUSER),
+    .RRESP(m_axi_gmem_RRESP),
+    .BVALID(m_axi_gmem_BVALID),
+    .BREADY(m_axi_gmem_BREADY),
+    .BRESP(m_axi_gmem_BRESP),
+    .BID(m_axi_gmem_BID),
+    .BUSER(m_axi_gmem_BUSER),
+    .ACLK(ap_clk),
+    .ARESET(ap_rst_n_inv),
+    .ACLK_EN(1'b1),
+    .I_CH0_ARVALID(1'b0),
+    .I_CH0_ARREADY(gmem_ARREADY),
+    .I_CH0_ARADDR(64'd0),
+    .I_CH0_ARLEN(32'd0),
+    .I_CH0_RVALID(gmem_RVALID),
+    .I_CH0_RREADY(1'b0),
+    .I_CH0_RDATA(gmem_RDATA),
+    .I_CH0_RFIFONUM(gmem_RFIFONUM),
+    .I_CH0_AWVALID(gmem_AWVALID),
+    .I_CH0_AWREADY(gmem_AWREADY),
+    .I_CH0_AWADDR(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_AWADDR),
+    .I_CH0_AWLEN(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_AWLEN),
+    .I_CH0_WVALID(gmem_WVALID),
+    .I_CH0_WREADY(gmem_WREADY),
+    .I_CH0_WDATA(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_WDATA),
+    .I_CH0_WSTRB(grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_WSTRB),
+    .I_CH0_BVALID(gmem_BVALID),
+    .I_CH0_BREADY(gmem_BREADY)
 );
 
 PSDMonitorTop_regslice_both #(
@@ -347,7 +528,7 @@ regslice_both_adc_in_V_last_V_U(
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        ap_CS_fsm <= ap_ST_fsm_pp0_stage0;
+        ap_CS_fsm <= ap_ST_fsm_state1;
     end else begin
         ap_CS_fsm <= ap_NS_fsm;
     end
@@ -355,78 +536,73 @@ end
 
 always @ (posedge ap_clk) begin
     if (ap_rst_n_inv == 1'b1) begin
-        ap_done_reg <= 1'b0;
+        grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_ap_start_reg <= 1'b0;
     end else begin
-        if ((ap_continue_int == 1'b1)) begin
-            ap_done_reg <= 1'b0;
-        end else if (((ap_loop_exit_ready == 1'b1) & (1'b0 == ap_block_pp0_stage0_subdone) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-            ap_done_reg <= 1'b1;
+        if ((1'b1 == ap_CS_fsm_state2)) begin
+            grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_ap_start_reg <= 1'b1;
+        end else if ((grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_ap_ready == 1'b1)) begin
+            grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_ap_start_reg <= 1'b0;
         end
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (ap_rst_n_inv == 1'b1) begin
-        ap_enable_reg_pp0_iter1 <= 1'b0;
-    end else begin
-        if ((1'b1 == ap_condition_exit_pp0_iter0_stage0)) begin
-            ap_enable_reg_pp0_iter1 <= 1'b0;
-        end else if (((1'b0 == ap_block_pp0_stage0_subdone) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-            ap_enable_reg_pp0_iter1 <= ap_start_int;
-        end
+    if (((error_accum_flag_0_loc_load_load_fu_126_p1 == 1'd1) & (1'b1 == ap_CS_fsm_state4))) begin
+        error_accum <= grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_error_accum_loc_0_out;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if ((1'b1 == ap_condition_172)) begin
-        if (((cmp_fu_109_p2 == 1'd0) & (p_vld_fu_115_p1 == 1'd1))) begin
-            ap_phi_reg_pp0_iter1_val_adc1_1_reg_98 <= 16'd0;
-        end else if (((cmp_fu_109_p2 == 1'd0) & (p_vld_fu_115_p1 == 1'd0))) begin
-            ap_phi_reg_pp0_iter1_val_adc1_1_reg_98 <= fake_counter;
-        end else if ((1'b1 == 1'b1)) begin
-            ap_phi_reg_pp0_iter1_val_adc1_1_reg_98 <= ap_phi_reg_pp0_iter0_val_adc1_1_reg_98;
-        end
+    if (((1'b1 == ap_CS_fsm_state3) & (grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_error_accum_flag_0_out_ap_vld == 1'b1))) begin
+        error_accum_flag_0_loc_fu_82 <= grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_error_accum_flag_0_out;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter1 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        error_accum <= add_ln41_fu_143_p2;
-    end
-end
-
-always @ (posedge ap_clk) begin
-    if (((cmp_fu_109_p2 == 1'd0) & (1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0) & (p_vld_fu_115_p1 == 1'd0))) begin
-        fake_counter <= add_ln38_fu_123_p2;
+    if ((1'b1 == ap_CS_fsm_state1)) begin
+        max_samples_read_reg_138 <= max_samples;
+        ram_buffer_read_reg_143 <= ram_buffer;
     end
 end
 
 always @ (*) begin
-    if (((cmp_fu_109_p2 == 1'd0) & (1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == adc_in_TVALID_int_regslice) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        adc_in_TREADY_int_regslice = 1'b1;
+    if ((1'b1 == ap_CS_fsm_state3)) begin
+        adc_in_TREADY_int_regslice = grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_adc_in_TREADY;
     end else begin
         adc_in_TREADY_int_regslice = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((cmp_fu_109_p2 == 1'd1) & (1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        ap_condition_exit_pp0_iter0_stage0 = 1'b1;
+    if ((ap_start == 1'b0)) begin
+        ap_ST_fsm_state1_blk = 1'b1;
     end else begin
-        ap_condition_exit_pp0_iter0_stage0 = 1'b0;
+        ap_ST_fsm_state1_blk = 1'b0;
+    end
+end
+
+assign ap_ST_fsm_state2_blk = 1'b0;
+
+always @ (*) begin
+    if ((grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_ap_done == 1'b0)) begin
+        ap_ST_fsm_state3_blk = 1'b1;
+    end else begin
+        ap_ST_fsm_state3_blk = 1'b0;
+    end
+end
+
+assign ap_ST_fsm_state4_blk = 1'b0;
+
+always @ (*) begin
+    if ((1'b1 == ap_CS_fsm_state4)) begin
+        ap_done = 1'b1;
+    end else begin
+        ap_done = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((ap_loop_exit_ready == 1'b1) & (1'b0 == ap_block_pp0_stage0_subdone) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        ap_done_int = 1'b1;
-    end else begin
-        ap_done_int = ap_done_reg;
-    end
-end
-
-always @ (*) begin
-    if (((ap_idle_pp0 == 1'b1) & (ap_start_int == 1'b0) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
+    if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b0))) begin
         ap_idle = 1'b1;
     end else begin
         ap_idle = 1'b0;
@@ -434,25 +610,58 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((ap_enable_reg_pp0_iter1 == 1'b0) & (ap_enable_reg_pp0_iter0 == 1'b0))) begin
-        ap_idle_pp0 = 1'b1;
+    if ((1'b1 == ap_CS_fsm_state4)) begin
+        ap_ready = 1'b1;
     end else begin
-        ap_idle_pp0 = 1'b0;
+        ap_ready = 1'b0;
     end
 end
 
 always @ (*) begin
-    if (((1'b0 == ap_block_pp0_stage0_subdone) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0))) begin
-        ap_ready_int = 1'b1;
+    if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
+        gmem_AWVALID = grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_AWVALID;
     end else begin
-        ap_ready_int = 1'b0;
+        gmem_AWVALID = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
+        gmem_BREADY = grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_BREADY;
+    end else begin
+        gmem_BREADY = 1'b0;
+    end
+end
+
+always @ (*) begin
+    if (((1'b1 == ap_CS_fsm_state3) | (1'b1 == ap_CS_fsm_state2))) begin
+        gmem_WVALID = grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_m_axi_gmem_WVALID;
+    end else begin
+        gmem_WVALID = 1'b0;
     end
 end
 
 always @ (*) begin
     case (ap_CS_fsm)
-        ap_ST_fsm_pp0_stage0 : begin
-            ap_NS_fsm = ap_ST_fsm_pp0_stage0;
+        ap_ST_fsm_state1 : begin
+            if (((1'b1 == ap_CS_fsm_state1) & (ap_start == 1'b1))) begin
+                ap_NS_fsm = ap_ST_fsm_state2;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state1;
+            end
+        end
+        ap_ST_fsm_state2 : begin
+            ap_NS_fsm = ap_ST_fsm_state3;
+        end
+        ap_ST_fsm_state3 : begin
+            if (((grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_ap_done == 1'b1) & (1'b1 == ap_CS_fsm_state3))) begin
+                ap_NS_fsm = ap_ST_fsm_state4;
+            end else begin
+                ap_NS_fsm = ap_ST_fsm_state3;
+            end
+        end
+        ap_ST_fsm_state4 : begin
+            ap_NS_fsm = ap_ST_fsm_state1;
         end
         default : begin
             ap_NS_fsm = 'bx;
@@ -462,108 +671,20 @@ end
 
 assign adc_in_TREADY = regslice_both_adc_in_V_data_V_U_ack_in;
 
-assign add_ln38_fu_123_p2 = (fake_counter + 16'd100);
+assign ap_CS_fsm_state1 = ap_CS_fsm[32'd0];
 
-assign add_ln41_fu_143_p2 = ($signed(error_accum) + $signed(sext_ln41_fu_135_p1));
+assign ap_CS_fsm_state2 = ap_CS_fsm[32'd1];
 
-assign ap_CS_fsm_pp0_stage0 = ap_CS_fsm[32'd0];
+assign ap_CS_fsm_state3 = ap_CS_fsm[32'd2];
 
-assign ap_block_pp0_stage0 = ~(1'b1 == 1'b1);
-
-assign ap_block_pp0_stage0_11001 = ~(1'b1 == 1'b1);
-
-assign ap_block_pp0_stage0_subdone = ~(1'b1 == 1'b1);
-
-always @ (*) begin
-    ap_condition_172 = ((1'b0 == ap_block_pp0_stage0_11001) & (ap_enable_reg_pp0_iter0 == 1'b1) & (1'b1 == ap_CS_fsm_pp0_stage0));
-end
-
-assign ap_done = ap_done_sig;
-
-assign ap_enable_pp0 = (ap_idle_pp0 ^ 1'b1);
-
-assign ap_enable_reg_pp0_iter0 = ap_start_int;
-
-assign ap_loop_exit_ready = ap_condition_exit_pp0_iter0_stage0;
-
-assign ap_phi_reg_pp0_iter0_val_adc1_1_reg_98 = 'bx;
-
-assign ap_ready = ap_ready_sig;
+assign ap_CS_fsm_state4 = ap_CS_fsm[32'd3];
 
 always @ (*) begin
     ap_rst_n_inv = ~ap_rst_n;
 end
 
-assign cmp_fu_109_p2 = ((max_samples == 32'd0) ? 1'b1 : 1'b0);
+assign error_accum_flag_0_loc_load_load_fu_126_p1 = error_accum_flag_0_loc_fu_82;
 
-assign empty_nbread_fu_86_p5_0 = adc_in_TVALID_int_regslice;
-
-assign m_axi_gmem_ARADDR = 64'd0;
-
-assign m_axi_gmem_ARBURST = 2'd0;
-
-assign m_axi_gmem_ARCACHE = 4'd0;
-
-assign m_axi_gmem_ARID = 1'd0;
-
-assign m_axi_gmem_ARLEN = 8'd0;
-
-assign m_axi_gmem_ARLOCK = 2'd0;
-
-assign m_axi_gmem_ARPROT = 3'd0;
-
-assign m_axi_gmem_ARQOS = 4'd0;
-
-assign m_axi_gmem_ARREGION = 4'd0;
-
-assign m_axi_gmem_ARSIZE = 3'd0;
-
-assign m_axi_gmem_ARUSER = 1'd0;
-
-assign m_axi_gmem_ARVALID = 1'b0;
-
-assign m_axi_gmem_AWADDR = 64'd0;
-
-assign m_axi_gmem_AWBURST = 2'd0;
-
-assign m_axi_gmem_AWCACHE = 4'd0;
-
-assign m_axi_gmem_AWID = 1'd0;
-
-assign m_axi_gmem_AWLEN = 8'd0;
-
-assign m_axi_gmem_AWLOCK = 2'd0;
-
-assign m_axi_gmem_AWPROT = 3'd0;
-
-assign m_axi_gmem_AWQOS = 4'd0;
-
-assign m_axi_gmem_AWREGION = 4'd0;
-
-assign m_axi_gmem_AWSIZE = 3'd0;
-
-assign m_axi_gmem_AWUSER = 1'd0;
-
-assign m_axi_gmem_AWVALID = 1'b0;
-
-assign m_axi_gmem_BREADY = 1'b0;
-
-assign m_axi_gmem_RREADY = 1'b0;
-
-assign m_axi_gmem_WDATA = 32'd0;
-
-assign m_axi_gmem_WID = 1'd0;
-
-assign m_axi_gmem_WLAST = 1'b0;
-
-assign m_axi_gmem_WSTRB = 4'd0;
-
-assign m_axi_gmem_WUSER = 1'd0;
-
-assign m_axi_gmem_WVALID = 1'b0;
-
-assign p_vld_fu_115_p1 = empty_nbread_fu_86_p5_0;
-
-assign sext_ln41_fu_135_p1 = $signed(ap_phi_reg_pp0_iter1_val_adc1_1_reg_98);
+assign grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_ap_start = grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98_ap_start_reg;
 
 endmodule //PSDMonitorTop

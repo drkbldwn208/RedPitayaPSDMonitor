@@ -4,15 +4,16 @@
     "calls": "",
     "file": "PSDMonitor.cpp",
     "fileloc": 11,
-    "instructions": 78,
+    "instructions": 85,
     "loads": {
-      "G": 4
+      "G": 5,
+      "L": 1
     },
     "name": "PSDMonitorTop",
     "stores": {
       "G": 5,
       "T": 1
     },
-    "total_instructions": 78
+    "total_instructions": 85
   }
 }

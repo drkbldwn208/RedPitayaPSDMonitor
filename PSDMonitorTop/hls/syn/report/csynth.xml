@@ -12,10 +12,10 @@
         <FlowTarget>vivado</FlowTarget>
     </UserAssignments>
     <PerformanceEstimates>
-        <PipelineType>loop auto-rewind stp(delay=0 clock cycles(s))</PipelineType>
+        <PipelineType>no</PipelineType>
         <SummaryOfTimingAnalysis>
             <unit>ns</unit>
-            <EstimatedClockPeriod>4.658</EstimatedClockPeriod>
+            <EstimatedClockPeriod>5.840</EstimatedClockPeriod>
         </SummaryOfTimingAnalysis>
         <SummaryOfOverallLatency>
             <unit>clock cycles</unit>
@@ -25,39 +25,20 @@
             <Best-caseRealTimeLatency>undef</Best-caseRealTimeLatency>
             <Average-caseRealTimeLatency>undef</Average-caseRealTimeLatency>
             <Worst-caseRealTimeLatency>undef</Worst-caseRealTimeLatency>
-            <Interval-min>0</Interval-min>
-            <Interval-max>0</Interval-max>
+            <Interval-min>undef</Interval-min>
+            <Interval-max>undef</Interval-max>
         </SummaryOfOverallLatency>
-        <SummaryOfLoopLatency>
-            <VITIS_LOOP_27_1>
-                <Slack>5.84</Slack>
-                <TripCount>undef</TripCount>
-                <Latency>undef</Latency>
-                <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
-                <PipelineII>1</PipelineII>
-                <PipelineDepth>2</PipelineDepth>
-                <InstanceList/>
-            </VITIS_LOOP_27_1>
-        </SummaryOfLoopLatency>
         <SummaryOfViolations>
             <IssueType>-</IssueType>
             <ViolationType>-</ViolationType>
             <SourceLocation>PSDMonitor.cpp:11</SourceLocation>
-            <SummaryOfLoopViolations>
-                <VITIS_LOOP_27_1>
-                    <Name>VITIS_LOOP_27_1</Name>
-                    <IssueType>-</IssueType>
-                    <ViolationType>-</ViolationType>
-                    <SourceLocation>PSDMonitor.cpp:27</SourceLocation>
-                </VITIS_LOOP_27_1>
-            </SummaryOfLoopViolations>
         </SummaryOfViolations>
     </PerformanceEstimates>
     <AreaEstimates>
         <Resources>
-            <BRAM_18K>0</BRAM_18K>
-            <FF>211</FF>
-            <LUT>371</LUT>
+            <BRAM_18K>1</BRAM_18K>
+            <FF>1400</FF>
+            <LUT>1509</LUT>
             <DSP>0</DSP>
             <URAM>0</URAM>
         </Resources>
@@ -904,14 +885,23 @@
         </RtlPorts>
     </InterfaceSummary>
     <RTLDesignHierarchy>
-        <TopModule MAX_DEPTH="2">
+        <TopModule MAX_DEPTH="3">
             <ModuleName>PSDMonitorTop</ModuleName>
-            <BindInstances>cmp_fu_109_p2 add_ln38_fu_123_p2 add_ln41_fu_143_p2 CTRL_s_axi_U</BindInstances>
+            <InstancesList>
+                <Instance>
+                    <InstName>grp_PSDMonitorTop_Pipeline_VITIS_LOOP_27_1_fu_98</InstName>
+                    <ModuleName>PSDMonitorTop_Pipeline_VITIS_LOOP_27_1</ModuleName>
+                    <IsCompInst>true</IsCompInst>
+                    <ID>98</ID>
+                    <BindInstances>icmp_ln27_fu_219_p2 add_ln38_fu_313_p2 add_ln41_fu_332_p2 icmp_ln43_fu_241_p2 add_ln54_fu_247_p2 add_ln47_fu_266_p2 mem_idx_3_fu_292_p2</BindInstances>
+                </Instance>
+            </InstancesList>
+            <BindInstances>CTRL_s_axi_U gmem_m_axi_U</BindInstances>
         </TopModule>
     </RTLDesignHierarchy>
     <ModuleInformation>
         <Module>
-            <Name>PSDMonitorTop</Name>
+            <Name>PSDMonitorTop_Pipeline_VITIS_LOOP_27_1</Name>
             <Loops>
                 <VITIS_LOOP_27_1/>
             </Loops>
@@ -919,7 +909,7 @@
                 <SummaryOfTimingAnalysis>
                     <TargetClockPeriod>8.00</TargetClockPeriod>
                     <ClockUncertainty>2.16</ClockUncertainty>
-                    <EstimatedClockPeriod>4.658</EstimatedClockPeriod>
+                    <EstimatedClockPeriod>5.840</EstimatedClockPeriod>
                 </SummaryOfTimingAnalysis>
                 <SummaryOfOverallLatency>
                     <Best-caseLatency>undef</Best-caseLatency>
@@ -939,7 +929,7 @@
                         <Latency>undef</Latency>
                         <AbsoluteTimeLatency>undef</AbsoluteTimeLatency>
                         <PipelineII>1</PipelineII>
-                        <PipelineDepth>2</PipelineDepth>
+                        <PipelineDepth>9</PipelineDepth>
                         <PipelineType>yes</PipelineType>
                         <InstanceList/>
                     </VITIS_LOOP_27_1>
@@ -947,28 +937,28 @@
                 <SummaryOfViolations>
                     <IssueType>-</IssueType>
                     <ViolationType>-</ViolationType>
-                    <SourceLocation>PSDMonitor.cpp:11</SourceLocation>
+                    <SourceLocation>PSDMonitor.cpp:27</SourceLocation>
                     <SummaryOfLoopViolations>
                         <VITIS_LOOP_27_1>
                             <Name>VITIS_LOOP_27_1</Name>
                             <IssueType>-</IssueType>
                             <ViolationType>-</ViolationType>
-                            <SourceLocation>PSDMonitor.cpp:27</SourceLocation>
+                            <SourceLocation>PSDMonitor.cpp:48</SourceLocation>
                         </VITIS_LOOP_27_1>
                     </SummaryOfLoopViolations>
                 </SummaryOfViolations>
             </PerformanceEstimates>
             <AreaEstimates>
                 <Resources>
+                    <FF>432</FF>
+                    <AVAIL_FF>35200</AVAIL_FF>
+                    <UTIL_FF>1</UTIL_FF>
+                    <LUT>473</LUT>
+                    <AVAIL_LUT>17600</AVAIL_LUT>
+                    <UTIL_LUT>2</UTIL_LUT>
                     <BRAM_18K>0</BRAM_18K>
                     <AVAIL_BRAM>120</AVAIL_BRAM>
                     <UTIL_BRAM>0</UTIL_BRAM>
-                    <FF>211</FF>
-                    <AVAIL_FF>35200</AVAIL_FF>
-                    <UTIL_FF>~0</UTIL_FF>
-                    <LUT>371</LUT>
-                    <AVAIL_LUT>17600</AVAIL_LUT>
-                    <UTIL_LUT>2</UTIL_LUT>
                     <DSP>0</DSP>
                     <AVAIL_DSP>80</AVAIL_DSP>
                     <UTIL_DSP>0</UTIL_DSP>
@@ -978,10 +968,61 @@
                 </Resources>
             </AreaEstimates>
             <BindNodes>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="" OPTYPE="seteq" PRAGMA="" RTLNAME="cmp_fu_109_p2" SOURCE="" STORAGESUBTYPE="" URAM="0" VARIABLE="cmp" VISIBLE="false"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_27_1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln38_fu_123_p2" SOURCE="PSDMonitor.cpp:38" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln38" VISIBLE="true"/>
-                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_27_1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln41_fu_143_p2" SOURCE="PSDMonitor.cpp:41" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln41" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op setlt" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_27_1" OPTYPE="setlt" PRAGMA="" RTLNAME="icmp_ln27_fu_219_p2" SOURCE="PSDMonitor.cpp:27" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln27" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_27_1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln38_fu_313_p2" SOURCE="PSDMonitor.cpp:38" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln38" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_27_1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln41_fu_332_p2" SOURCE="PSDMonitor.cpp:41" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln41" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op seteq" DSP="0" ID="" IMPL="auto" LATENCY="0" LOOP="VITIS_LOOP_27_1" OPTYPE="seteq" PRAGMA="" RTLNAME="icmp_ln43_fu_241_p2" SOURCE="PSDMonitor.cpp:43" STORAGESUBTYPE="" URAM="0" VARIABLE="icmp_ln43" VISIBLE="false"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_27_1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln54_fu_247_p2" SOURCE="PSDMonitor.cpp:54" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln54" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_27_1" OPTYPE="add" PRAGMA="" RTLNAME="add_ln47_fu_266_p2" SOURCE="PSDMonitor.cpp:47" STORAGESUBTYPE="" URAM="0" VARIABLE="add_ln47" VISIBLE="true"/>
+                <BindNode BINDTYPE="op" BRAM="0" BUNDLEDNAME="" DISPNAME="bind_op add" DSP="0" ID="" IMPL="fabric" LATENCY="0" LOOP="VITIS_LOOP_27_1" OPTYPE="add" PRAGMA="" RTLNAME="mem_idx_3_fu_292_p2" SOURCE="PSDMonitor.cpp:48" STORAGESUBTYPE="" URAM="0" VARIABLE="mem_idx_3" VISIBLE="true"/>
+            </BindNodes>
+        </Module>
+        <Module>
+            <Name>PSDMonitorTop</Name>
+            <PerformanceEstimates>
+                <SummaryOfTimingAnalysis>
+                    <TargetClockPeriod>8.00</TargetClockPeriod>
+                    <ClockUncertainty>2.16</ClockUncertainty>
+                    <EstimatedClockPeriod>5.840</EstimatedClockPeriod>
+                </SummaryOfTimingAnalysis>
+                <SummaryOfOverallLatency>
+                    <Best-caseLatency>undef</Best-caseLatency>
+                    <Average-caseLatency>undef</Average-caseLatency>
+                    <Worst-caseLatency>undef</Worst-caseLatency>
+                    <Best-caseRealTimeLatency>undef</Best-caseRealTimeLatency>
+                    <Average-caseRealTimeLatency>undef</Average-caseRealTimeLatency>
+                    <Worst-caseRealTimeLatency>undef</Worst-caseRealTimeLatency>
+                    <PipelineInitiationInterval>undef</PipelineInitiationInterval>
+                    <PipelineType>no</PipelineType>
+                </SummaryOfOverallLatency>
+                <SummaryOfViolations>
+                    <IssueType>-</IssueType>
+                    <ViolationType>-</ViolationType>
+                    <SourceLocation>PSDMonitor.cpp:11</SourceLocation>
+                </SummaryOfViolations>
+            </PerformanceEstimates>
+            <AreaEstimates>
+                <Resources>
+                    <BRAM_18K>1</BRAM_18K>
+                    <AVAIL_BRAM>120</AVAIL_BRAM>
+                    <UTIL_BRAM>~0</UTIL_BRAM>
+                    <FF>1400</FF>
+                    <AVAIL_FF>35200</AVAIL_FF>
+                    <UTIL_FF>3</UTIL_FF>
+                    <LUT>1509</LUT>
+                    <AVAIL_LUT>17600</AVAIL_LUT>
+                    <UTIL_LUT>8</UTIL_LUT>
+                    <DSP>0</DSP>
+                    <AVAIL_DSP>80</AVAIL_DSP>
+                    <UTIL_DSP>0</UTIL_DSP>
+                    <URAM>0</URAM>
+                    <AVAIL_URAM>0</AVAIL_URAM>
+                    <UTIL_URAM>0</UTIL_URAM>
+                </Resources>
+            </AreaEstimates>
+            <BindNodes>
                 <BindNode BINDTYPE="adapter" BRAM="0" BUNDLEDNAME="CTRL" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="CTRL_s_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="s_axilite" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
+                <BindNode BINDTYPE="adapter" BRAM="1" BUNDLEDNAME="gmem" DISPNAME="bind_adapter " DSP="0" ID="" IMPL="" LATENCY="" LOOP="" OPTYPE="" PRAGMA="" RTLNAME="gmem_m_axi_U" SOURCE="" STORAGESIZE="" STORAGESUBTYPE="m_axi" STORAGEUSAGE="interface" URAM="0" VARIABLE=""/>
             </BindNodes>
         </Module>
     </ModuleInformation>
@@ -993,9 +1034,9 @@
                 <hwRef type="interface" interface="adc_in" name="" usage="data" direction="in"/>
             </hwRefs>
         </Arg>
-        <Arg ArgName="ram_buffer" index="1" direction="unused" srcType="ap_int&lt;16&gt;*" srcSize="16">
+        <Arg ArgName="ram_buffer" index="1" direction="out" srcType="ap_int&lt;16&gt;*" srcSize="16">
             <hwRefs>
-                <hwRef type="interface" interface="m_axi_gmem" name="" usage="data" direction="unused"/>
+                <hwRef type="interface" interface="m_axi_gmem" name="" usage="data" direction="out"/>
                 <hwRef type="register" interface="s_axi_CTRL" name="ram_buffer_1" usage="address" direction="in"/>
                 <hwRef type="register" interface="s_axi_CTRL" name="ram_buffer_2" usage="address" direction="in"/>
             </hwRefs>
@@ -1124,7 +1165,7 @@
                 <busParam busParamName="MAX_WRITE_BURST_LENGTH">16</busParam>
                 <busParam busParamName="MAX_BURST_LENGTH">256</busParam>
                 <busParam busParamName="PROTOCOL">AXI4</busParam>
-                <busParam busParamName="READ_WRITE_MODE">READ_ONLY</busParam>
+                <busParam busParamName="READ_WRITE_MODE">WRITE_ONLY</busParam>
                 <busParam busParamName="HAS_BURST">0</busParam>
                 <busParam busParamName="SUPPORTS_NARROW_BURST">0</busParam>
             </busParams>
@@ -1198,8 +1239,8 @@
         <section name="HW Interfaces" level="0">
             <item name="M_AXI">
                 <table>
-                    <keys size="12">Interface, Read/Write, Data Width (SW-&gt;HW), Address Width, Latency, Offset, Register, Max Widen Bitwidth, Max Read Burst Length, Max Write Burst Length, Num Read Outstanding, Num Write Outstanding</keys>
-                    <column name="m_axi_gmem">READ_ONLY, 16 -&gt; 16, 64, 0, slave, 0, 0, 16, 16, 16, 16</column>
+                    <keys size="13">Interface, Read/Write, Data Width (SW-&gt;HW), Address Width, Latency, Offset, Register, Max Widen Bitwidth, Max Read Burst Length, Max Write Burst Length, Num Read Outstanding, Num Write Outstanding, Resource Estimate</keys>
+                    <column name="m_axi_gmem">WRITE_ONLY, 16 -&gt; 16, 64, 0, slave, 0, 0, 16, 16, 16, 16, BRAM=1</column>
                 </table>
             </item>
             <item name="S_AXILITE Interfaces">
@@ -1243,7 +1284,7 @@
                 <table>
                     <keys size="3">Argument, Direction, Datatype</keys>
                     <column name="adc_in">in, stream&lt;hls::axis&lt;ap_uint&lt;32&gt; 0 0 0 '8' false&gt; 0&gt;&amp;</column>
-                    <column name="ram_buffer">unused, ap_int&lt;16&gt;*</column>
+                    <column name="ram_buffer">out, ap_int&lt;16&gt;*</column>
                     <column name="max_samples">in, unsigned int</column>
                 </table>
             </item>

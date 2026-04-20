@@ -9051,7 +9051,7 @@ __attribute__((sdx_kernel("PSDMonitorTop", 0))) void PSDMonitorTop(hls::stream<a
         short val_adc1 = 0;
 
         if (adc_in.read_nb(val_adc)) {
-            short val_adc1 = (short)(val_adc.data & 0xFFFF);
+            val_adc1 = (short)(val_adc.data & 0xFFFF);
         } else {
             static short fake_counter = 0;
             val_adc1 = fake_counter;
@@ -9071,7 +9071,7 @@ __attribute__((sdx_kernel("PSDMonitorTop", 0))) void PSDMonitorTop(hls::stream<a
             error_accum = 0;
             counter = 0;
         } else {
-            counter=0;
+            counter++;
         }
     }
 }

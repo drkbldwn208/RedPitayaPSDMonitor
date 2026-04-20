@@ -30,8 +30,7 @@ entry:
   %ram_buffer_copy = bitcast i8* %malloccall to [2000000 x i16]*
   %0 = bitcast %"struct.ap_int<16>"* %ram_buffer to [2000000 x %"struct.ap_int<16>"]*
   call fastcc void @copy_in(%"class.hls::stream<hls::axis<ap_uint<32>, 0, 0, 0, '8', false>, 0>"* nonnull %adc_in, i32* nonnull align 512 %adc_in_copy.data, i4* nonnull align 512 %adc_in_copy.keep, i4* nonnull align 512 %adc_in_copy.strb, i1* nonnull align 512 %adc_in_copy.last, [2000000 x %"struct.ap_int<16>"]* nonnull %0, [2000000 x i16]* %ram_buffer_copy)
-  %1 = getelementptr [2000000 x i16], [2000000 x i16]* %ram_buffer_copy, i64 0, i64 0
-  call void @apatb_PSDMonitorTop_hw(i32* %adc_in_copy.data, i4* %adc_in_copy.keep, i4* %adc_in_copy.strb, i1* %adc_in_copy.last, i16* %1, i32 %max_samples)
+  call void @apatb_PSDMonitorTop_hw(i32* %adc_in_copy.data, i4* %adc_in_copy.keep, i4* %adc_in_copy.strb, i1* %adc_in_copy.last, [2000000 x i16]* %ram_buffer_copy, i32 %max_samples)
   call void @copy_back(%"class.hls::stream<hls::axis<ap_uint<32>, 0, 0, 0, '8', false>, 0>"* %adc_in, i32* %adc_in_copy.data, i4* %adc_in_copy.keep, i4* %adc_in_copy.strb, i1* %adc_in_copy.last, [2000000 x %"struct.ap_int<16>"]* %0, [2000000 x i16]* %ram_buffer_copy)
   call void @free(i8* %malloccall)
   ret void
@@ -42,7 +41,7 @@ declare noalias i8* @malloc(i64) local_unnamed_addr
 ; Function Attrs: argmemonly noinline willreturn
 define internal fastcc void @copy_in(%"class.hls::stream<hls::axis<ap_uint<32>, 0, 0, 0, '8', false>, 0>"* noalias "unpacked"="0", i32* noalias align 512 "unpacked"="1.0" %_V_data_V, i4* noalias align 512 "unpacked"="1.1" %_V_keep_V, i4* noalias align 512 "unpacked"="1.2" %_V_strb_V, i1* noalias align 512 "unpacked"="1.3" %_V_last_V, [2000000 x %"struct.ap_int<16>"]* noalias readonly "unpacked"="2", [2000000 x i16]* noalias nocapture "unpacked"="3.0") unnamed_addr #1 {
 entry:
-  call fastcc void @"onebyonecpy_hls.p0class.hls::stream<hls::axis<ap_uint<32>, 0, 0, 0, '8', false>, 0>.16"(i32* align 512 %_V_data_V, i4* align 512 %_V_keep_V, i4* align 512 %_V_strb_V, i1* align 512 %_V_last_V, %"class.hls::stream<hls::axis<ap_uint<32>, 0, 0, 0, '8', false>, 0>"* %0)
+  call fastcc void @"onebyonecpy_hls.p0class.hls::stream<hls::axis<ap_uint<32>, 0, 0, 0, '8', false>, 0>.18"(i32* align 512 %_V_data_V, i4* align 512 %_V_keep_V, i4* align 512 %_V_strb_V, i1* align 512 %_V_last_V, %"class.hls::stream<hls::axis<ap_uint<32>, 0, 0, 0, '8', false>, 0>"* %0)
   call fastcc void @"onebyonecpy_hls.p0a2000000struct.ap_int<16>"([2000000 x i16]* %2, [2000000 x %"struct.ap_int<16>"]* %1)
   ret void
 }
@@ -212,13 +211,13 @@ ret:                                              ; preds = %copy.split, %entry
 }
 
 ; Function Attrs: argmemonly noinline willreturn
-define internal fastcc void @"onebyonecpy_hls.p0class.hls::stream<hls::axis<ap_uint<32>, 0, 0, 0, '8', false>, 0>.16"(i32* noalias align 512 "unpacked"="0.0" %dst_V_data_V, i4* noalias align 512 "unpacked"="0.1" %dst_V_keep_V, i4* noalias align 512 "unpacked"="0.2" %dst_V_strb_V, i1* noalias align 512 "unpacked"="0.3" %dst_V_last_V, %"class.hls::stream<hls::axis<ap_uint<32>, 0, 0, 0, '8', false>, 0>"* noalias %src) unnamed_addr #2 {
+define internal fastcc void @"onebyonecpy_hls.p0class.hls::stream<hls::axis<ap_uint<32>, 0, 0, 0, '8', false>, 0>.18"(i32* noalias align 512 "unpacked"="0.0" %dst_V_data_V, i4* noalias align 512 "unpacked"="0.1" %dst_V_keep_V, i4* noalias align 512 "unpacked"="0.2" %dst_V_strb_V, i1* noalias align 512 "unpacked"="0.3" %dst_V_last_V, %"class.hls::stream<hls::axis<ap_uint<32>, 0, 0, 0, '8', false>, 0>"* noalias %src) unnamed_addr #2 {
 entry:
   %0 = icmp eq %"class.hls::stream<hls::axis<ap_uint<32>, 0, 0, 0, '8', false>, 0>"* %src, null
   br i1 %0, label %ret, label %copy
 
 copy:                                             ; preds = %entry
-  call fastcc void @"streamcpy_hls.p0class.hls::stream<hls::axis<ap_uint<32>, 0, 0, 0, '8', false>, 0>.19"(i32* align 512 %dst_V_data_V, i4* align 512 %dst_V_keep_V, i4* align 512 %dst_V_strb_V, i1* align 512 %dst_V_last_V, %"class.hls::stream<hls::axis<ap_uint<32>, 0, 0, 0, '8', false>, 0>"* nonnull %src)
+  call fastcc void @"streamcpy_hls.p0class.hls::stream<hls::axis<ap_uint<32>, 0, 0, 0, '8', false>, 0>.21"(i32* align 512 %dst_V_data_V, i4* align 512 %dst_V_keep_V, i4* align 512 %dst_V_strb_V, i1* align 512 %dst_V_last_V, %"class.hls::stream<hls::axis<ap_uint<32>, 0, 0, 0, '8', false>, 0>"* nonnull %src)
   br label %ret
 
 ret:                                              ; preds = %copy, %entry
@@ -226,7 +225,7 @@ ret:                                              ; preds = %copy, %entry
 }
 
 ; Function Attrs: argmemonly noinline willreturn
-define internal fastcc void @"streamcpy_hls.p0class.hls::stream<hls::axis<ap_uint<32>, 0, 0, 0, '8', false>, 0>.19"(i32* noalias nocapture align 512 "unpacked"="0.0" %_V_data_V, i4* noalias nocapture align 512 "unpacked"="0.1" %_V_keep_V, i4* noalias nocapture align 512 "unpacked"="0.2" %_V_strb_V, i1* noalias nocapture align 512 "unpacked"="0.3" %_V_last_V, %"class.hls::stream<hls::axis<ap_uint<32>, 0, 0, 0, '8', false>, 0>"* noalias nocapture) unnamed_addr #3 {
+define internal fastcc void @"streamcpy_hls.p0class.hls::stream<hls::axis<ap_uint<32>, 0, 0, 0, '8', false>, 0>.21"(i32* noalias nocapture align 512 "unpacked"="0.0" %_V_data_V, i4* noalias nocapture align 512 "unpacked"="0.1" %_V_keep_V, i4* noalias nocapture align 512 "unpacked"="0.2" %_V_strb_V, i1* noalias nocapture align 512 "unpacked"="0.3" %_V_last_V, %"class.hls::stream<hls::axis<ap_uint<32>, 0, 0, 0, '8', false>, 0>"* noalias nocapture) unnamed_addr #3 {
 entry:
   %1 = alloca %"class.hls::stream<hls::axis<ap_uint<32>, 0, 0, 0, '8', false>, 0>"
   %2 = alloca i32
@@ -271,7 +270,7 @@ ret:                                              ; preds = %empty
   ret void
 }
 
-declare void @apatb_PSDMonitorTop_hw(i32*, i4*, i4*, i1*, i16*, i32)
+declare void @apatb_PSDMonitorTop_hw(i32*, i4*, i4*, i1*, [2000000 x i16]*, i32)
 
 ; Function Attrs: argmemonly noinline willreturn
 define internal fastcc void @copy_back(%"class.hls::stream<hls::axis<ap_uint<32>, 0, 0, 0, '8', false>, 0>"* noalias "unpacked"="0", i32* noalias align 512 "unpacked"="1.0" %_V_data_V, i4* noalias align 512 "unpacked"="1.1" %_V_keep_V, i4* noalias align 512 "unpacked"="1.2" %_V_strb_V, i1* noalias align 512 "unpacked"="1.3" %_V_last_V, [2000000 x %"struct.ap_int<16>"]* noalias "unpacked"="2", [2000000 x i16]* noalias nocapture readonly "unpacked"="3.0") unnamed_addr #6 {
@@ -281,16 +280,15 @@ entry:
   ret void
 }
 
-define void @PSDMonitorTop_hw_stub_wrapper(i32*, i4*, i4*, i1*, i16*, i32) #7 {
+define void @PSDMonitorTop_hw_stub_wrapper(i32*, i4*, i4*, i1*, [2000000 x i16]*, i32) #7 {
 entry:
   %6 = alloca %"class.hls::stream<hls::axis<ap_uint<32>, 0, 0, 0, '8', false>, 0>"
   %malloccall = tail call i8* @malloc(i64 4000000)
   %7 = bitcast i8* %malloccall to [2000000 x %"struct.ap_int<16>"]*
-  %8 = bitcast i16* %4 to [2000000 x i16]*
-  call void @copy_out(%"class.hls::stream<hls::axis<ap_uint<32>, 0, 0, 0, '8', false>, 0>"* %6, i32* %0, i4* %1, i4* %2, i1* %3, [2000000 x %"struct.ap_int<16>"]* %7, [2000000 x i16]* %8)
-  %9 = bitcast [2000000 x %"struct.ap_int<16>"]* %7 to %"struct.ap_int<16>"*
-  call void @PSDMonitorTop_hw_stub(%"class.hls::stream<hls::axis<ap_uint<32>, 0, 0, 0, '8', false>, 0>"* %6, %"struct.ap_int<16>"* %9, i32 %5)
-  call void @copy_in(%"class.hls::stream<hls::axis<ap_uint<32>, 0, 0, 0, '8', false>, 0>"* %6, i32* %0, i4* %1, i4* %2, i1* %3, [2000000 x %"struct.ap_int<16>"]* %7, [2000000 x i16]* %8)
+  call void @copy_out(%"class.hls::stream<hls::axis<ap_uint<32>, 0, 0, 0, '8', false>, 0>"* %6, i32* %0, i4* %1, i4* %2, i1* %3, [2000000 x %"struct.ap_int<16>"]* %7, [2000000 x i16]* %4)
+  %8 = bitcast [2000000 x %"struct.ap_int<16>"]* %7 to %"struct.ap_int<16>"*
+  call void @PSDMonitorTop_hw_stub(%"class.hls::stream<hls::axis<ap_uint<32>, 0, 0, 0, '8', false>, 0>"* %6, %"struct.ap_int<16>"* %8, i32 %5)
+  call void @copy_in(%"class.hls::stream<hls::axis<ap_uint<32>, 0, 0, 0, '8', false>, 0>"* %6, i32* %0, i4* %1, i4* %2, i1* %3, [2000000 x %"struct.ap_int<16>"]* %7, [2000000 x i16]* %4)
   ret void
 }
 

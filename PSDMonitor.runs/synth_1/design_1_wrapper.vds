@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Mon Apr 20 15:57:42 2026
-# Process ID: 4059019
+# Start of session at: Mon Apr 20 16:11:56 2026
+# Process ID: 4113364
 # Current directory: /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1
 # Command line: vivado -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
 # Log file: /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1/design_1_wrapper.vds
@@ -13,13 +13,13 @@
 # Platform          :Ubuntu
 # Operating System  :Ubuntu 22.04.5 LTS
 # Processor Detail  :Intel(R) Core(TM) i9-10900KF CPU @ 3.70GHz
-# CPU Frequency     :4900.795 MHz
+# CPU Frequency     :5002.449 MHz
 # CPU Physical cores:10
 # CPU Logical cores :20
 # Host memory       :67280 MB
 # Swap memory       :0 MB
 # Total Virtual     :67280 MB
-# Available Virtual :43826 MB
+# Available Virtual :43245 MB
 #-----------------------------------------------------------
 source design_1_wrapper.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
@@ -38,78 +38,77 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 4059421
+INFO: [Synth 8-7075] Helper process launched with PID 4113796
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2220.043 ; gain = 413.715 ; free physical = 11085 ; free virtual = 40242
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2221.047 ; gain = 413.715 ; free physical = 10626 ; free virtual = 39807
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'design_1_wrapper' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:13]
 INFO: [Synth 8-6157] synthesizing module 'design_1' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:13]
-INFO: [Synth 8-6157] synthesizing module 'design_1_PSDMonitorTop_0_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1/.Xil/Vivado-4059019-levlabcukomen-OMEN-30L-Desktop-GT13-0xxx/realtime/design_1_PSDMonitorTop_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_PSDMonitorTop_0_0' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1/.Xil/Vivado-4059019-levlabcukomen-OMEN-30L-Desktop-GT13-0xxx/realtime/design_1_PSDMonitorTop_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'interrupt' of module 'design_1_PSDMonitorTop_0_0' is unconnected for instance 'PSDMonitorTop_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:199]
-WARNING: [Synth 8-7071] port 'm_axi_gmem_AWADDR' of module 'design_1_PSDMonitorTop_0_0' is unconnected for instance 'PSDMonitorTop_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:199]
-WARNING: [Synth 8-7071] port 'm_axi_gmem_AWBURST' of module 'design_1_PSDMonitorTop_0_0' is unconnected for instance 'PSDMonitorTop_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:199]
-WARNING: [Synth 8-7071] port 'm_axi_gmem_AWCACHE' of module 'design_1_PSDMonitorTop_0_0' is unconnected for instance 'PSDMonitorTop_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:199]
-WARNING: [Synth 8-7071] port 'm_axi_gmem_AWID' of module 'design_1_PSDMonitorTop_0_0' is unconnected for instance 'PSDMonitorTop_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:199]
-WARNING: [Synth 8-7071] port 'm_axi_gmem_AWLEN' of module 'design_1_PSDMonitorTop_0_0' is unconnected for instance 'PSDMonitorTop_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:199]
-WARNING: [Synth 8-7071] port 'm_axi_gmem_AWLOCK' of module 'design_1_PSDMonitorTop_0_0' is unconnected for instance 'PSDMonitorTop_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:199]
-WARNING: [Synth 8-7071] port 'm_axi_gmem_AWPROT' of module 'design_1_PSDMonitorTop_0_0' is unconnected for instance 'PSDMonitorTop_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:199]
-WARNING: [Synth 8-7071] port 'm_axi_gmem_AWQOS' of module 'design_1_PSDMonitorTop_0_0' is unconnected for instance 'PSDMonitorTop_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:199]
-WARNING: [Synth 8-7071] port 'm_axi_gmem_AWREGION' of module 'design_1_PSDMonitorTop_0_0' is unconnected for instance 'PSDMonitorTop_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:199]
-WARNING: [Synth 8-7071] port 'm_axi_gmem_AWSIZE' of module 'design_1_PSDMonitorTop_0_0' is unconnected for instance 'PSDMonitorTop_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:199]
-WARNING: [Synth 8-7071] port 'm_axi_gmem_AWVALID' of module 'design_1_PSDMonitorTop_0_0' is unconnected for instance 'PSDMonitorTop_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:199]
-WARNING: [Synth 8-7071] port 'm_axi_gmem_BREADY' of module 'design_1_PSDMonitorTop_0_0' is unconnected for instance 'PSDMonitorTop_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:199]
-WARNING: [Synth 8-7071] port 'm_axi_gmem_WDATA' of module 'design_1_PSDMonitorTop_0_0' is unconnected for instance 'PSDMonitorTop_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:199]
-WARNING: [Synth 8-7071] port 'm_axi_gmem_WID' of module 'design_1_PSDMonitorTop_0_0' is unconnected for instance 'PSDMonitorTop_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:199]
-WARNING: [Synth 8-7071] port 'm_axi_gmem_WLAST' of module 'design_1_PSDMonitorTop_0_0' is unconnected for instance 'PSDMonitorTop_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:199]
-WARNING: [Synth 8-7071] port 'm_axi_gmem_WSTRB' of module 'design_1_PSDMonitorTop_0_0' is unconnected for instance 'PSDMonitorTop_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:199]
-WARNING: [Synth 8-7071] port 'm_axi_gmem_WVALID' of module 'design_1_PSDMonitorTop_0_0' is unconnected for instance 'PSDMonitorTop_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:199]
-WARNING: [Synth 8-7071] port 'adc_in_TREADY' of module 'design_1_PSDMonitorTop_0_0' is unconnected for instance 'PSDMonitorTop_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:199]
-WARNING: [Synth 8-7023] instance 'PSDMonitorTop_0' of module 'design_1_PSDMonitorTop_0_0' has 66 connections declared, but only 47 given [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:199]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axi_mem_intercon_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:466]
-INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_7HNO1D' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:966]
-INFO: [Synth 8-6157] synthesizing module 'design_1_auto_pc_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1/.Xil/Vivado-4059019-levlabcukomen-OMEN-30L-Desktop-GT13-0xxx/realtime/design_1_auto_pc_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_pc_0' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1/.Xil/Vivado-4059019-levlabcukomen-OMEN-30L-Desktop-GT13-0xxx/realtime/design_1_auto_pc_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_auto_us_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1/.Xil/Vivado-4059019-levlabcukomen-OMEN-30L-Desktop-GT13-0xxx/realtime/design_1_auto_us_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_us_0' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1/.Xil/Vivado-4059019-levlabcukomen-OMEN-30L-Desktop-GT13-0xxx/realtime/design_1_auto_us_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_7HNO1D' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:966]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_mem_intercon_0' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:466]
-INFO: [Synth 8-6157] synthesizing module 'design_1_axis_red_pitaya_adc_0_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1/.Xil/Vivado-4059019-levlabcukomen-OMEN-30L-Desktop-GT13-0xxx/realtime/design_1_axis_red_pitaya_adc_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_axis_red_pitaya_adc_0_0' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1/.Xil/Vivado-4059019-levlabcukomen-OMEN-30L-Desktop-GT13-0xxx/realtime/design_1_axis_red_pitaya_adc_0_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'design_1_clk_wiz_0_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1/.Xil/Vivado-4059019-levlabcukomen-OMEN-30L-Desktop-GT13-0xxx/realtime/design_1_clk_wiz_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_clk_wiz_0_0' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1/.Xil/Vivado-4059019-levlabcukomen-OMEN-30L-Desktop-GT13-0xxx/realtime/design_1_clk_wiz_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'locked' of module 'design_1_clk_wiz_0_0' is unconnected for instance 'clk_wiz_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:294]
-WARNING: [Synth 8-7023] instance 'clk_wiz_0' of module 'design_1_clk_wiz_0_0' has 4 connections declared, but only 3 given [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:294]
-INFO: [Synth 8-6157] synthesizing module 'design_1_processing_system7_0_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1/.Xil/Vivado-4059019-levlabcukomen-OMEN-30L-Desktop-GT13-0xxx/realtime/design_1_processing_system7_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_processing_system7_0_0' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1/.Xil/Vivado-4059019-levlabcukomen-OMEN-30L-Desktop-GT13-0xxx/realtime/design_1_processing_system7_0_0_stub.v:6]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_AWREADY' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:298]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_BVALID' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:298]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_WREADY' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:298]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_BRESP' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:298]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_BID' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:298]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_RID' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:298]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_RCOUNT' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:298]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_WCOUNT' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:298]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_RACOUNT' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:298]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_WACOUNT' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:298]
-WARNING: [Synth 8-7071] port 'FCLK_CLK0' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:298]
-WARNING: [Synth 8-7023] instance 'processing_system7_0' of module 'design_1_processing_system7_0_0' has 107 connections declared, but only 96 given [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:298]
-INFO: [Synth 8-6157] synthesizing module 'design_1_ps7_0_axi_periph_1' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:661]
-INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_UYSKKA' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:1205]
-INFO: [Synth 8-6157] synthesizing module 'design_1_auto_pc_1' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1/.Xil/Vivado-4059019-levlabcukomen-OMEN-30L-Desktop-GT13-0xxx/realtime/design_1_auto_pc_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_pc_1' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1/.Xil/Vivado-4059019-levlabcukomen-OMEN-30L-Desktop-GT13-0xxx/realtime/design_1_auto_pc_1_stub.v:6]
-WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'design_1_auto_pc_1' is unconnected for instance 'auto_pc' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:1440]
-WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'design_1_auto_pc_1' is unconnected for instance 'auto_pc' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:1440]
-WARNING: [Synth 8-7023] instance 'auto_pc' of module 'design_1_auto_pc_1' has 59 connections declared, but only 57 given [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:1440]
-INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_UYSKKA' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:1205]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_ps7_0_axi_periph_1' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:661]
-INFO: [Synth 8-6157] synthesizing module 'design_1_rst_clk_wiz_0_125M_1' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1/.Xil/Vivado-4059019-levlabcukomen-OMEN-30L-Desktop-GT13-0xxx/realtime/design_1_rst_clk_wiz_0_125M_1_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'design_1_rst_clk_wiz_0_125M_1' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1/.Xil/Vivado-4059019-levlabcukomen-OMEN-30L-Desktop-GT13-0xxx/realtime/design_1_rst_clk_wiz_0_125M_1_stub.v:6]
-WARNING: [Synth 8-7071] port 'mb_reset' of module 'design_1_rst_clk_wiz_0_125M_1' is unconnected for instance 'rst_clk_wiz_0_125M' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:457]
-WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'design_1_rst_clk_wiz_0_125M_1' is unconnected for instance 'rst_clk_wiz_0_125M' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:457]
-WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'design_1_rst_clk_wiz_0_125M_1' is unconnected for instance 'rst_clk_wiz_0_125M' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:457]
-WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'design_1_rst_clk_wiz_0_125M_1' is unconnected for instance 'rst_clk_wiz_0_125M' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:457]
-WARNING: [Synth 8-7023] instance 'rst_clk_wiz_0_125M' of module 'design_1_rst_clk_wiz_0_125M_1' has 10 connections declared, but only 6 given [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:457]
+INFO: [Synth 8-6157] synthesizing module 'design_1_PSDMonitorTop_0_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1/.Xil/Vivado-4113364-levlabcukomen-OMEN-30L-Desktop-GT13-0xxx/realtime/design_1_PSDMonitorTop_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_PSDMonitorTop_0_0' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1/.Xil/Vivado-4113364-levlabcukomen-OMEN-30L-Desktop-GT13-0xxx/realtime/design_1_PSDMonitorTop_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'interrupt' of module 'design_1_PSDMonitorTop_0_0' is unconnected for instance 'PSDMonitorTop_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:205]
+WARNING: [Synth 8-7071] port 'm_axi_gmem_ARADDR' of module 'design_1_PSDMonitorTop_0_0' is unconnected for instance 'PSDMonitorTop_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:205]
+WARNING: [Synth 8-7071] port 'm_axi_gmem_ARBURST' of module 'design_1_PSDMonitorTop_0_0' is unconnected for instance 'PSDMonitorTop_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:205]
+WARNING: [Synth 8-7071] port 'm_axi_gmem_ARCACHE' of module 'design_1_PSDMonitorTop_0_0' is unconnected for instance 'PSDMonitorTop_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:205]
+WARNING: [Synth 8-7071] port 'm_axi_gmem_ARID' of module 'design_1_PSDMonitorTop_0_0' is unconnected for instance 'PSDMonitorTop_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:205]
+WARNING: [Synth 8-7071] port 'm_axi_gmem_ARLEN' of module 'design_1_PSDMonitorTop_0_0' is unconnected for instance 'PSDMonitorTop_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:205]
+WARNING: [Synth 8-7071] port 'm_axi_gmem_ARLOCK' of module 'design_1_PSDMonitorTop_0_0' is unconnected for instance 'PSDMonitorTop_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:205]
+WARNING: [Synth 8-7071] port 'm_axi_gmem_ARPROT' of module 'design_1_PSDMonitorTop_0_0' is unconnected for instance 'PSDMonitorTop_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:205]
+WARNING: [Synth 8-7071] port 'm_axi_gmem_ARQOS' of module 'design_1_PSDMonitorTop_0_0' is unconnected for instance 'PSDMonitorTop_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:205]
+WARNING: [Synth 8-7071] port 'm_axi_gmem_ARREGION' of module 'design_1_PSDMonitorTop_0_0' is unconnected for instance 'PSDMonitorTop_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:205]
+WARNING: [Synth 8-7071] port 'm_axi_gmem_ARSIZE' of module 'design_1_PSDMonitorTop_0_0' is unconnected for instance 'PSDMonitorTop_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:205]
+WARNING: [Synth 8-7071] port 'm_axi_gmem_ARVALID' of module 'design_1_PSDMonitorTop_0_0' is unconnected for instance 'PSDMonitorTop_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:205]
+WARNING: [Synth 8-7071] port 'm_axi_gmem_RREADY' of module 'design_1_PSDMonitorTop_0_0' is unconnected for instance 'PSDMonitorTop_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:205]
+WARNING: [Synth 8-7071] port 'm_axi_gmem_WID' of module 'design_1_PSDMonitorTop_0_0' is unconnected for instance 'PSDMonitorTop_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:205]
+WARNING: [Synth 8-7071] port 'adc_in_TREADY' of module 'design_1_PSDMonitorTop_0_0' is unconnected for instance 'PSDMonitorTop_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:205]
+WARNING: [Synth 8-7023] instance 'PSDMonitorTop_0' of module 'design_1_PSDMonitorTop_0_0' has 66 connections declared, but only 51 given [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:205]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axi_mem_intercon_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:481]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_7HNO1D' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:1011]
+INFO: [Synth 8-6157] synthesizing module 'design_1_auto_pc_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1/.Xil/Vivado-4113364-levlabcukomen-OMEN-30L-Desktop-GT13-0xxx/realtime/design_1_auto_pc_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_pc_0' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1/.Xil/Vivado-4113364-levlabcukomen-OMEN-30L-Desktop-GT13-0xxx/realtime/design_1_auto_pc_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'm_axi_wid' of module 'design_1_auto_pc_0' is unconnected for instance 'auto_pc' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:1202]
+WARNING: [Synth 8-7023] instance 'auto_pc' of module 'design_1_auto_pc_0' has 44 connections declared, but only 43 given [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:1202]
+INFO: [Synth 8-6157] synthesizing module 'design_1_auto_us_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1/.Xil/Vivado-4113364-levlabcukomen-OMEN-30L-Desktop-GT13-0xxx/realtime/design_1_auto_us_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_us_0' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1/.Xil/Vivado-4113364-levlabcukomen-OMEN-30L-Desktop-GT13-0xxx/realtime/design_1_auto_us_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_7HNO1D' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:1011]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axi_mem_intercon_0' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:481]
+INFO: [Synth 8-6157] synthesizing module 'design_1_axis_red_pitaya_adc_0_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1/.Xil/Vivado-4113364-levlabcukomen-OMEN-30L-Desktop-GT13-0xxx/realtime/design_1_axis_red_pitaya_adc_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_axis_red_pitaya_adc_0_0' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1/.Xil/Vivado-4113364-levlabcukomen-OMEN-30L-Desktop-GT13-0xxx/realtime/design_1_axis_red_pitaya_adc_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'design_1_clk_wiz_0_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1/.Xil/Vivado-4113364-levlabcukomen-OMEN-30L-Desktop-GT13-0xxx/realtime/design_1_clk_wiz_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_clk_wiz_0_0' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1/.Xil/Vivado-4113364-levlabcukomen-OMEN-30L-Desktop-GT13-0xxx/realtime/design_1_clk_wiz_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'locked' of module 'design_1_clk_wiz_0_0' is unconnected for instance 'clk_wiz_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:310]
+WARNING: [Synth 8-7023] instance 'clk_wiz_0' of module 'design_1_clk_wiz_0_0' has 4 connections declared, but only 3 given [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:310]
+INFO: [Synth 8-6157] synthesizing module 'design_1_processing_system7_0_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1/.Xil/Vivado-4113364-levlabcukomen-OMEN-30L-Desktop-GT13-0xxx/realtime/design_1_processing_system7_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_processing_system7_0_0' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1/.Xil/Vivado-4113364-levlabcukomen-OMEN-30L-Desktop-GT13-0xxx/realtime/design_1_processing_system7_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_ARREADY' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:314]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RLAST' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:314]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RVALID' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:314]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RRESP' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:314]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_BID' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:314]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RID' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:314]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RDATA' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:314]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RCOUNT' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:314]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_WCOUNT' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:314]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_RACOUNT' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:314]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_WACOUNT' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:314]
+WARNING: [Synth 8-7071] port 'FCLK_CLK0' of module 'design_1_processing_system7_0_0' is unconnected for instance 'processing_system7_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:314]
+WARNING: [Synth 8-7023] instance 'processing_system7_0' of module 'design_1_processing_system7_0_0' has 107 connections declared, but only 95 given [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:314]
+INFO: [Synth 8-6157] synthesizing module 'design_1_ps7_0_axi_periph_1' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:706]
+INFO: [Synth 8-6157] synthesizing module 's00_couplers_imp_UYSKKA' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:1289]
+INFO: [Synth 8-6157] synthesizing module 'design_1_auto_pc_1' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1/.Xil/Vivado-4113364-levlabcukomen-OMEN-30L-Desktop-GT13-0xxx/realtime/design_1_auto_pc_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_auto_pc_1' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1/.Xil/Vivado-4113364-levlabcukomen-OMEN-30L-Desktop-GT13-0xxx/realtime/design_1_auto_pc_1_stub.v:6]
+WARNING: [Synth 8-7071] port 'm_axi_awprot' of module 'design_1_auto_pc_1' is unconnected for instance 'auto_pc' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:1524]
+WARNING: [Synth 8-7071] port 'm_axi_arprot' of module 'design_1_auto_pc_1' is unconnected for instance 'auto_pc' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:1524]
+WARNING: [Synth 8-7023] instance 'auto_pc' of module 'design_1_auto_pc_1' has 59 connections declared, but only 57 given [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:1524]
+INFO: [Synth 8-6155] done synthesizing module 's00_couplers_imp_UYSKKA' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:1289]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_ps7_0_axi_periph_1' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:706]
+INFO: [Synth 8-6157] synthesizing module 'design_1_rst_clk_wiz_0_125M_1' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1/.Xil/Vivado-4113364-levlabcukomen-OMEN-30L-Desktop-GT13-0xxx/realtime/design_1_rst_clk_wiz_0_125M_1_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'design_1_rst_clk_wiz_0_125M_1' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1/.Xil/Vivado-4113364-levlabcukomen-OMEN-30L-Desktop-GT13-0xxx/realtime/design_1_rst_clk_wiz_0_125M_1_stub.v:6]
+WARNING: [Synth 8-7071] port 'mb_reset' of module 'design_1_rst_clk_wiz_0_125M_1' is unconnected for instance 'rst_clk_wiz_0_125M' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:472]
+WARNING: [Synth 8-7071] port 'bus_struct_reset' of module 'design_1_rst_clk_wiz_0_125M_1' is unconnected for instance 'rst_clk_wiz_0_125M' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:472]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'design_1_rst_clk_wiz_0_125M_1' is unconnected for instance 'rst_clk_wiz_0_125M' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:472]
+WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'design_1_rst_clk_wiz_0_125M_1' is unconnected for instance 'rst_clk_wiz_0_125M' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:472]
+WARNING: [Synth 8-7023] instance 'rst_clk_wiz_0_125M' of module 'design_1_rst_clk_wiz_0_125M_1' has 10 connections declared, but only 6 given [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:472]
 INFO: [Synth 8-6155] done synthesizing module 'design_1' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:13]
 INFO: [Synth 8-6155] done synthesizing module 'design_1_wrapper' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/hdl/design_1_wrapper.v:13]
 WARNING: [Synth 8-3848] Net adc_enc_n_o in module/entity design_1 does not have driver. [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/synth/design_1.v:70]
@@ -121,7 +120,7 @@ WARNING: [Synth 8-7129] Port ACLK in module design_1_ps7_0_axi_periph_1 is eithe
 WARNING: [Synth 8-7129] Port ARESETN in module design_1_ps7_0_axi_periph_1 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port M_ACLK in module s00_couplers_imp_7HNO1D is either unconnected or has no load
 WARNING: [Synth 8-7129] Port M_ARESETN in module s00_couplers_imp_7HNO1D is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S_AXI_arlock[1] in module s00_couplers_imp_7HNO1D is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_awlock[1] in module s00_couplers_imp_7HNO1D is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ACLK in module design_1_axi_mem_intercon_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ARESETN in module design_1_axi_mem_intercon_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port adc_enc_n_o in module design_1 is either unconnected or has no load
@@ -141,18 +140,18 @@ WARNING: [Synth 8-7129] Port dac_dat_o[2] in module design_1 is either unconnect
 WARNING: [Synth 8-7129] Port dac_dat_o[1] in module design_1 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port dac_dat_o[0] in module design_1 is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2310.012 ; gain = 503.684 ; free physical = 10984 ; free virtual = 40139
+Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2309.984 ; gain = 502.652 ; free physical = 10512 ; free virtual = 39691
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2327.824 ; gain = 521.496 ; free physical = 10984 ; free virtual = 40139
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2324.828 ; gain = 517.496 ; free physical = 10519 ; free virtual = 39698
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2327.824 ; gain = 521.496 ; free physical = 10984 ; free virtual = 40139
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2324.828 ; gain = 517.496 ; free physical = 10519 ; free virtual = 39698
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2327.824 ; gain = 0.000 ; free physical = 10984 ; free virtual = 40139
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2324.828 ; gain = 0.000 ; free physical = 10519 ; free virtual = 39698
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -186,22 +185,22 @@ Parsing XDC File [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonito
 Finished Parsing XDC File [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2397.793 ; gain = 0.000 ; free physical = 10982 ; free virtual = 40140
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2394.797 ; gain = 0.000 ; free physical = 10455 ; free virtual = 39637
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2397.793 ; gain = 0.000 ; free physical = 10981 ; free virtual = 40139
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2394.797 ; gain = 0.000 ; free physical = 10455 ; free virtual = 39637
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2397.793 ; gain = 591.465 ; free physical = 10973 ; free virtual = 40128
+Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2394.797 ; gain = 587.465 ; free physical = 10461 ; free virtual = 39640
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2405.797 ; gain = 599.469 ; free physical = 10973 ; free virtual = 40128
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2402.801 ; gain = 595.469 ; free physical = 10461 ; free virtual = 39640
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -482,10 +481,10 @@ Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/axi_mem_intercon/s00_c
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/axi_mem_intercon/s00_couplers/auto_us. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/axi_mem_intercon. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2405.797 ; gain = 599.469 ; free physical = 10973 ; free virtual = 40128
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2402.801 ; gain = 595.469 ; free physical = 10461 ; free virtual = 39640
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2405.797 ; gain = 599.469 ; free physical = 10972 ; free virtual = 40128
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 2402.801 ; gain = 595.469 ; free physical = 10453 ; free virtual = 39633
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -515,7 +514,7 @@ WARNING: [Synth 8-7129] Port ACLK in module design_1_axi_mem_intercon_0 is eithe
 WARNING: [Synth 8-7129] Port ARESETN in module design_1_axi_mem_intercon_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port M00_ACLK in module design_1_axi_mem_intercon_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port M00_ARESETN in module design_1_axi_mem_intercon_0 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port S00_AXI_arlock[1] in module design_1_axi_mem_intercon_0 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S00_AXI_awlock[1] in module design_1_axi_mem_intercon_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port adc_enc_n_o in module design_1 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port adc_enc_p_o in module design_1 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port dac_dat_o[13] in module design_1 is either unconnected or has no load
@@ -533,25 +532,25 @@ WARNING: [Synth 8-7129] Port dac_dat_o[2] in module design_1 is either unconnect
 WARNING: [Synth 8-7129] Port dac_dat_o[1] in module design_1 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port dac_dat_o[0] in module design_1 is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2405.797 ; gain = 599.469 ; free physical = 10965 ; free virtual = 40128
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2402.801 ; gain = 595.469 ; free physical = 10425 ; free virtual = 39612
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2405.797 ; gain = 599.469 ; free physical = 11057 ; free virtual = 40217
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2402.801 ; gain = 595.469 ; free physical = 10518 ; free virtual = 39702
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2405.797 ; gain = 599.469 ; free physical = 11057 ; free virtual = 40217
+Finished Timing Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2402.801 ; gain = 595.469 ; free physical = 10518 ; free virtual = 39702
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2405.797 ; gain = 599.469 ; free physical = 11058 ; free virtual = 40218
+Finished Technology Mapping : Time (s): cpu = 00:00:13 ; elapsed = 00:00:13 . Memory (MB): peak = 2402.801 ; gain = 595.469 ; free physical = 10518 ; free virtual = 39702
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -569,37 +568,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2405.797 ; gain = 599.469 ; free physical = 11016 ; free virtual = 40175
+Finished IO Insertion : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2402.801 ; gain = 595.469 ; free physical = 10452 ; free virtual = 39636
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2405.797 ; gain = 599.469 ; free physical = 11016 ; free virtual = 40175
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2402.801 ; gain = 595.469 ; free physical = 10452 ; free virtual = 39636
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2405.797 ; gain = 599.469 ; free physical = 11016 ; free virtual = 40175
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2402.801 ; gain = 595.469 ; free physical = 10452 ; free virtual = 39636
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2405.797 ; gain = 599.469 ; free physical = 11016 ; free virtual = 40175
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2402.801 ; gain = 595.469 ; free physical = 10452 ; free virtual = 39636
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2405.797 ; gain = 599.469 ; free physical = 11016 ; free virtual = 40175
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2402.801 ; gain = 595.469 ; free physical = 10452 ; free virtual = 39636
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2405.797 ; gain = 599.469 ; free physical = 11016 ; free virtual = 40175
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2402.801 ; gain = 595.469 ; free physical = 10452 ; free virtual = 39636
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -635,27 +634,27 @@ Report Cell Usage:
 |11    |OBUFT                          |    16|
 +------+-------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2405.797 ; gain = 599.469 ; free physical = 11016 ; free virtual = 40175
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2402.801 ; gain = 595.469 ; free physical = 10452 ; free virtual = 39636
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 26 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 2405.797 ; gain = 529.500 ; free physical = 11017 ; free virtual = 40177
-Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2405.805 ; gain = 599.469 ; free physical = 11017 ; free virtual = 40177
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:15 . Memory (MB): peak = 2402.801 ; gain = 525.500 ; free physical = 10452 ; free virtual = 39636
+Synthesis Optimization Complete : Time (s): cpu = 00:00:16 ; elapsed = 00:00:16 . Memory (MB): peak = 2402.809 ; gain = 595.469 ; free physical = 10452 ; free virtual = 39636
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2405.805 ; gain = 0.000 ; free physical = 11349 ; free virtual = 40509
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2402.809 ; gain = 0.000 ; free physical = 10795 ; free virtual = 39979
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2405.805 ; gain = 0.000 ; free physical = 11345 ; free virtual = 40508
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2402.809 ; gain = 0.000 ; free physical = 10806 ; free virtual = 39994
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: d8a73c39
+Synth Design complete | Checksum: 5d67d919
 INFO: [Common 17-83] Releasing license: Synthesis
-51 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
+51 Infos, 100 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:20 . Memory (MB): peak = 2405.805 ; gain = 934.625 ; free physical = 11344 ; free virtual = 40508
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1932.944; main = 1543.980; forked = 414.585
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3501.426; main = 2405.801; forked = 1095.625
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2429.809 ; gain = 0.000 ; free physical = 11344 ; free virtual = 40507
+synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:19 . Memory (MB): peak = 2402.809 ; gain = 931.625 ; free physical = 10806 ; free virtual = 39994
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1932.184; main = 1543.787; forked = 414.536
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3498.430; main = 2402.805; forked = 1095.625
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2426.812 ; gain = 0.000 ; free physical = 10806 ; free virtual = 39994
 INFO: [Common 17-1381] The checkpoint '/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/synth_1/design_1_wrapper.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Apr 20 15:58:10 2026...
+INFO: [Common 17-206] Exiting Vivado at Mon Apr 20 16:12:23 2026...

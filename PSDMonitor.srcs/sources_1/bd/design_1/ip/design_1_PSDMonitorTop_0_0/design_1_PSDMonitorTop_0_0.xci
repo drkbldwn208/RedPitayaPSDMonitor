@@ -4,7 +4,7 @@
     "xci_name": "design_1_PSDMonitorTop_0_0",
     "cell_name": "PSDMonitorTop_0",
     "component_reference": "xilinx.com:hls:PSDMonitorTop:1.0",
-    "ip_revision": "2114574054",
+    "ip_revision": "2114574071",
     "gen_directory": "../../../../../../PSDMonitor.gen/sources_1/bd/design_1/ip/design_1_PSDMonitorTop_0_0",
     "parameters": {
       "component_parameters": {
@@ -25,7 +25,7 @@
         "machine": [ { "value": "64", "enabled": false, "usage": "all" } ],
         "combinational": [ { "value": "0", "enabled": false, "usage": "all" } ],
         "latency": [ { "value": "undef", "enabled": false, "usage": "all" } ],
-        "II": [ { "value": "0", "enabled": false, "usage": "all" } ]
+        "II": [ { "value": "undef", "enabled": false, "usage": "all" } ]
       },
       "model_parameters": {
         "C_S_AXI_CTRL_ADDR_WIDTH": [ { "value": "6", "resolve_type": "generated", "format": "long", "usage": "all" } ],
@@ -58,7 +58,7 @@
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
-        "IPREVISION": [ { "value": "2114574054" } ],
+        "IPREVISION": [ { "value": "2114574071" } ],
         "MANAGED": [ { "value": "TRUE" } ],
         "OUTPUTDIR": [ { "value": "../../../../../../PSDMonitor.gen/sources_1/bd/design_1/ip/design_1_PSDMonitorTop_0_0" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],
@@ -249,7 +249,7 @@
             "MAX_WRITE_BURST_LENGTH": [ { "value": "16", "value_src": "constant", "value_permission": "bd_and_user", "usage": "all" } ],
             "MAX_BURST_LENGTH": [ { "value": "256", "value_src": "constant", "value_permission": "bd_and_user", "usage": "all" } ],
             "PROTOCOL": [ { "value": "AXI4", "value_src": "constant", "value_permission": "bd_and_user", "usage": "all" } ],
-            "READ_WRITE_MODE": [ { "value": "READ_ONLY", "value_src": "constant", "value_permission": "bd_and_user", "usage": "all" } ],
+            "READ_WRITE_MODE": [ { "value": "WRITE_ONLY", "value_src": "constant", "value_permission": "bd_and_user", "usage": "all" } ],
             "HAS_BURST": [ { "value": "0", "value_src": "constant", "value_permission": "bd_and_user", "usage": "all" } ],
             "SUPPORTS_NARROW_BURST": [ { "value": "0", "value_src": "constant", "value_permission": "bd_and_user", "usage": "all" } ],
             "ADDR_WIDTH": [ { "value": "64", "value_src": "constant", "value_permission": "bd_and_user", "usage": "all" } ],
