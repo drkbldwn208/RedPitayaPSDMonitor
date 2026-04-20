@@ -41,7 +41,7 @@ set ExportMCPathFlag 0
 set SCTraceFileName mytrace
 set SCTraceFileFormat vcd
 set SCTraceOption all
-set TargetInfo xc7z020:-clg400:-1
+set TargetInfo xc7z010:-clg400:-1
 set SourceFiles {sc {} c ../../PSDMonitor.cpp}
 set SourceFlags {sc {} c {{}}}
 set DirectiveFile {}

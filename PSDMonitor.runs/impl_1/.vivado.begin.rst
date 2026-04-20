@@ -18,3 +18,13 @@
     <Process Command="vivado" Owner="levlabcukomen" Host="levlabcukomen-OMEN-30L-Desktop-GT13-0xxx" Pid="3486798" HostCore="20" HostMemory="65703724">
     </Process>
 </ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="levlabcukomen" Host="levlabcukomen-OMEN-30L-Desktop-GT13-0xxx" Pid="3741167" HostCore="20" HostMemory="65703724">
+    </Process>
+</ProcessHandle>
+<?xml version="1.0"?>
+<ProcessHandle Version="1" Minor="0">
+    <Process Command="vivado" Owner="levlabcukomen" Host="levlabcukomen-OMEN-30L-Desktop-GT13-0xxx" Pid="3794920" HostCore="20" HostMemory="65703724">
+    </Process>
+</ProcessHandle>

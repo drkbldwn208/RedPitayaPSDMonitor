@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Apr 20 11:59:16 2026" VIVADOVERSION="2024.1">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Mon Apr 20 14:43:12 2026" VIVADOVERSION="2024.1">
 
-  <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="design_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
+  <SYSTEMINFO ARCH="zynq" DEVICE="7z010" NAME="design_1" PACKAGE="clg400" SPEEDGRADE="-1"/>
 
   <EXTERNALPORTS>
     <PORT DIR="IO" LEFT="14" NAME="DDR_addr" RIGHT="0" SIGIS="undef" SIGNAME="processing_system7_0_DDR_Addr">
@@ -119,7 +119,11 @@
         <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_in1_p"/>
       </CONNECTIONS>
     </PORT>
-    <PORT DIR="O" NAME="adc_csn_o" SIGIS="undef"/>
+    <PORT DIR="O" NAME="adc_csn_o" SIGIS="undef" SIGNAME="axis_red_pitaya_adc_0_adc_csn">
+      <CONNECTIONS>
+        <CONNECTION INSTANCE="axis_red_pitaya_adc_0" PORT="adc_csn"/>
+      </CONNECTIONS>
+    </PORT>
     <PORT DIR="I" LEFT="15" NAME="adc_dat_a_i" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_adc_dat_a_i">
       <CONNECTIONS>
         <CONNECTION INSTANCE="axis_red_pitaya_adc_0" PORT="adc_dat_a"/>
@@ -183,7 +187,7 @@
   </EXTERNALINTERFACES>
 
   <MODULES>
-    <MODULE COREREVISION="2114573818" FULLNAME="/PSDMonitorTop_0" HWVERSION="1.0" INSTANCE="PSDMonitorTop_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="PSDMonitorTop" VLNV="xilinx.com:hls:PSDMonitorTop:1.0">
+    <MODULE COREREVISION="2114573982" FULLNAME="/PSDMonitorTop_0" HWVERSION="1.0" INSTANCE="PSDMonitorTop_0" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="PSDMonitorTop" VLNV="xilinx.com:hls:PSDMonitorTop:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="read-write" INTERFACE="s_axi_CTRL" NAME="Reg" RANGE="65536" USAGE="register">
@@ -1617,7 +1621,11 @@
             <CONNECTION INSTANCE="clk_wiz_0" PORT="clk_out1"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="O" NAME="adc_csn" SIGIS="undef"/>
+        <PORT DIR="O" NAME="adc_csn" SIGIS="undef" SIGNAME="axis_red_pitaya_adc_0_adc_csn">
+          <CONNECTIONS>
+            <CONNECTION INSTANCE="External_Ports" PORT="adc_csn_o"/>
+          </CONNECTIONS>
+        </PORT>
         <PORT DIR="I" LEFT="15" NAME="adc_dat_a" RIGHT="0" SIGIS="undef" SIGNAME="External_Ports_adc_dat_a_i">
           <CONNECTIONS>
             <CONNECTION INSTANCE="External_Ports" PORT="adc_dat_a_i"/>
@@ -1969,7 +1977,7 @@
         <PARAMETER NAME="C_USE_FREQ_SYNTH" VALUE="1"/>
         <PARAMETER NAME="C_USE_INCLK_STOPPED" VALUE="0"/>
         <PARAMETER NAME="C_USE_INCLK_SWITCHOVER" VALUE="0"/>
-        <PARAMETER NAME="C_USE_LOCKED" VALUE="0"/>
+        <PARAMETER NAME="C_USE_LOCKED" VALUE="1"/>
         <PARAMETER NAME="C_USE_MAX_I_JITTER" VALUE="0"/>
         <PARAMETER NAME="C_USE_MIN_O_JITTER" VALUE="0"/>
         <PARAMETER NAME="C_USE_MIN_POWER" VALUE="0"/>
@@ -2228,7 +2236,7 @@
         <PARAMETER NAME="USE_FREQ_SYNTH" VALUE="true"/>
         <PARAMETER NAME="USE_INCLK_STOPPED" VALUE="false"/>
         <PARAMETER NAME="USE_INCLK_SWITCHOVER" VALUE="false"/>
-        <PARAMETER NAME="USE_LOCKED" VALUE="false"/>
+        <PARAMETER NAME="USE_LOCKED" VALUE="true"/>
         <PARAMETER NAME="USE_MAX_I_JITTER" VALUE="false"/>
         <PARAMETER NAME="USE_MIN_O_JITTER" VALUE="false"/>
         <PARAMETER NAME="USE_MIN_POWER" VALUE="false"/>
@@ -2253,19 +2261,20 @@
         </PORT>
         <PORT CLKFREQUENCY="125000000" DIR="O" NAME="clk_out1" SIGIS="clk" SIGNAME="clk_wiz_0_clk_out1">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ACLK"/>
-            <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="S00_ACLK"/>
-            <CONNECTION INSTANCE="rst_clk_wiz_0_125M" PORT="slowest_sync_clk"/>
-            <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="ACLK"/>
-            <CONNECTION INSTANCE="axis_red_pitaya_adc_0" PORT="aclk"/>
-            <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_ACLK"/>
-            <CONNECTION INSTANCE="axi_mem_intercon" PORT="S00_ACLK"/>
-            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_ACLK"/>
-            <CONNECTION INSTANCE="axi_mem_intercon" PORT="M00_ACLK"/>
-            <CONNECTION INSTANCE="axi_mem_intercon" PORT="ACLK"/>
             <CONNECTION INSTANCE="PSDMonitorTop_0" PORT="ap_clk"/>
+            <CONNECTION INSTANCE="axi_mem_intercon" PORT="ACLK"/>
+            <CONNECTION INSTANCE="axi_mem_intercon" PORT="S00_ACLK"/>
+            <CONNECTION INSTANCE="axi_mem_intercon" PORT="M00_ACLK"/>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="M_AXI_GP0_ACLK"/>
+            <CONNECTION INSTANCE="processing_system7_0" PORT="S_AXI_HP0_ACLK"/>
+            <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="ACLK"/>
+            <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="S00_ACLK"/>
+            <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_ACLK"/>
+            <CONNECTION INSTANCE="rst_clk_wiz_0_125M" PORT="slowest_sync_clk"/>
+            <CONNECTION INSTANCE="axis_red_pitaya_adc_0" PORT="aclk"/>
           </CONNECTIONS>
         </PORT>
+        <PORT DIR="O" NAME="locked" SIGIS="undef"/>
       </PORTS>
       <BUSINTERFACES>
         <BUSINTERFACE BUSNAME="__NOC__" NAME="CLK_IN1_D" TYPE="TARGET" VLNV="xilinx.com:interface:diff_clock:1.0">
@@ -4670,13 +4679,13 @@
         <PORT DIR="O" NAME="mb_reset" POLARITY="ACTIVE_HIGH" SIGIS="rst"/>
         <PORT DIR="O" LEFT="0" NAME="peripheral_aresetn" POLARITY="ACTIVE_LOW" RIGHT="0" SIGIS="rst" SIGNAME="rst_clk_wiz_0_125M_peripheral_aresetn">
           <CONNECTIONS>
-            <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="S00_ARESETN"/>
-            <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="ARESETN"/>
-            <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_ARESETN"/>
+            <CONNECTION INSTANCE="PSDMonitorTop_0" PORT="ap_rst_n"/>
+            <CONNECTION INSTANCE="axi_mem_intercon" PORT="ARESETN"/>
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="S00_ARESETN"/>
             <CONNECTION INSTANCE="axi_mem_intercon" PORT="M00_ARESETN"/>
-            <CONNECTION INSTANCE="axi_mem_intercon" PORT="ARESETN"/>
-            <CONNECTION INSTANCE="PSDMonitorTop_0" PORT="ap_rst_n"/>
+            <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="ARESETN"/>
+            <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="S00_ARESETN"/>
+            <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M00_ARESETN"/>
           </CONNECTIONS>
         </PORT>
         <PORT DIR="O" LEFT="0" NAME="peripheral_reset" POLARITY="ACTIVE_HIGH" RIGHT="0" SIGIS="rst"/>

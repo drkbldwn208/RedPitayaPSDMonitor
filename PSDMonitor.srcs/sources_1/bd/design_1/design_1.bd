@@ -2,7 +2,7 @@
   "design": {
     "design_info": {
       "boundary_crc": "0x284F02DF4E5F378D",
-      "device": "xc7z020clg400-1",
+      "device": "xc7z010clg400-1",
       "gen_directory": "../../../../PSDMonitor.gen/sources_1/bd/design_1",
       "name": "design_1",
       "rev_ctrl_bd_flag": "RevCtrlBdOff",
@@ -241,6 +241,66 @@
           "PCW_FPGA_FCLK0_ENABLE": {
             "value": "1"
           },
+          "PCW_PACKAGE_DDR_BOARD_DELAY0": {
+            "value": "0.089"
+          },
+          "PCW_PACKAGE_DDR_BOARD_DELAY1": {
+            "value": "0.075"
+          },
+          "PCW_PACKAGE_DDR_BOARD_DELAY2": {
+            "value": "0.085"
+          },
+          "PCW_PACKAGE_DDR_BOARD_DELAY3": {
+            "value": "0.092"
+          },
+          "PCW_PACKAGE_DDR_DQS_TO_CLK_DELAY_0": {
+            "value": "-0.025"
+          },
+          "PCW_PACKAGE_DDR_DQS_TO_CLK_DELAY_1": {
+            "value": "0.014"
+          },
+          "PCW_PACKAGE_DDR_DQS_TO_CLK_DELAY_2": {
+            "value": "-0.009"
+          },
+          "PCW_PACKAGE_DDR_DQS_TO_CLK_DELAY_3": {
+            "value": "-0.033"
+          },
+          "PCW_UIPARAM_DDR_CLOCK_0_PACKAGE_LENGTH": {
+            "value": "80.4535"
+          },
+          "PCW_UIPARAM_DDR_CLOCK_1_PACKAGE_LENGTH": {
+            "value": "80.4535"
+          },
+          "PCW_UIPARAM_DDR_CLOCK_2_PACKAGE_LENGTH": {
+            "value": "80.4535"
+          },
+          "PCW_UIPARAM_DDR_CLOCK_3_PACKAGE_LENGTH": {
+            "value": "80.4535"
+          },
+          "PCW_UIPARAM_DDR_DQS_0_PACKAGE_LENGTH": {
+            "value": "105.056"
+          },
+          "PCW_UIPARAM_DDR_DQS_1_PACKAGE_LENGTH": {
+            "value": "66.904"
+          },
+          "PCW_UIPARAM_DDR_DQS_2_PACKAGE_LENGTH": {
+            "value": "89.1715"
+          },
+          "PCW_UIPARAM_DDR_DQS_3_PACKAGE_LENGTH": {
+            "value": "113.63"
+          },
+          "PCW_UIPARAM_DDR_DQ_0_PACKAGE_LENGTH": {
+            "value": "98.503"
+          },
+          "PCW_UIPARAM_DDR_DQ_1_PACKAGE_LENGTH": {
+            "value": "68.5855"
+          },
+          "PCW_UIPARAM_DDR_DQ_2_PACKAGE_LENGTH": {
+            "value": "90.295"
+          },
+          "PCW_UIPARAM_DDR_DQ_3_PACKAGE_LENGTH": {
+            "value": "103.977"
+          },
           "PCW_USE_S_AXI_HP0": {
             "value": "1"
           }
@@ -416,7 +476,7 @@
             "value": "Differential_clock_capable_pin"
           },
           "USE_LOCKED": {
-            "value": "false"
+            "value": "true"
           },
           "USE_RESET": {
             "value": "false"
@@ -539,7 +599,7 @@
       },
       "PSDMonitorTop_0": {
         "vlnv": "xilinx.com:hls:PSDMonitorTop:1.0",
-        "ip_revision": "2114573818",
+        "ip_revision": "2114573982",
         "xci_name": "design_1_PSDMonitorTop_0_0",
         "xci_path": "ip/design_1_PSDMonitorTop_0_0/design_1_PSDMonitorTop_0_0.xci",
         "inst_hier_path": "PSDMonitorTop_0",
@@ -685,8 +745,8 @@
               "auto_pc": {
                 "vlnv": "xilinx.com:ip:axi_protocol_converter:2.1",
                 "ip_revision": "31",
-                "xci_name": "design_1_auto_pc_0",
-                "xci_path": "ip/design_1_auto_pc_0/design_1_auto_pc_0.xci",
+                "xci_name": "design_1_auto_pc_1",
+                "xci_path": "ip/design_1_auto_pc_1/design_1_auto_pc_1.xci",
                 "inst_hier_path": "ps7_0_axi_periph/s00_couplers/auto_pc",
                 "parameters": {
                   "MI_PROTOCOL": {
@@ -906,8 +966,8 @@
               "auto_pc": {
                 "vlnv": "xilinx.com:ip:axi_protocol_converter:2.1",
                 "ip_revision": "31",
-                "xci_name": "design_1_auto_pc_1",
-                "xci_path": "ip/design_1_auto_pc_1/design_1_auto_pc_1.xci",
+                "xci_name": "design_1_auto_pc_0",
+                "xci_path": "ip/design_1_auto_pc_0/design_1_auto_pc_0.xci",
                 "inst_hier_path": "axi_mem_intercon/s00_couplers/auto_pc",
                 "parameters": {
                   "MI_PROTOCOL": {
@@ -1101,20 +1161,26 @@
           "axis_red_pitaya_adc_0/adc_dat_b"
         ]
       },
+      "axis_red_pitaya_adc_0_adc_csn": {
+        "ports": [
+          "axis_red_pitaya_adc_0/adc_csn",
+          "adc_csn_o"
+        ]
+      },
       "clk_wiz_0_clk_out1": {
         "ports": [
           "clk_wiz_0/clk_out1",
-          "processing_system7_0/M_AXI_GP0_ACLK",
-          "ps7_0_axi_periph/S00_ACLK",
-          "rst_clk_wiz_0_125M/slowest_sync_clk",
-          "ps7_0_axi_periph/ACLK",
-          "axis_red_pitaya_adc_0/aclk",
-          "ps7_0_axi_periph/M00_ACLK",
-          "axi_mem_intercon/S00_ACLK",
-          "processing_system7_0/S_AXI_HP0_ACLK",
-          "axi_mem_intercon/M00_ACLK",
+          "PSDMonitorTop_0/ap_clk",
           "axi_mem_intercon/ACLK",
-          "PSDMonitorTop_0/ap_clk"
+          "axi_mem_intercon/S00_ACLK",
+          "axi_mem_intercon/M00_ACLK",
+          "processing_system7_0/M_AXI_GP0_ACLK",
+          "processing_system7_0/S_AXI_HP0_ACLK",
+          "ps7_0_axi_periph/ACLK",
+          "ps7_0_axi_periph/S00_ACLK",
+          "ps7_0_axi_periph/M00_ACLK",
+          "rst_clk_wiz_0_125M/slowest_sync_clk",
+          "axis_red_pitaya_adc_0/aclk"
         ]
       },
       "processing_system7_0_FCLK_RESET0_N": {
@@ -1126,13 +1192,13 @@
       "rst_clk_wiz_0_125M_peripheral_aresetn": {
         "ports": [
           "rst_clk_wiz_0_125M/peripheral_aresetn",
-          "ps7_0_axi_periph/S00_ARESETN",
-          "ps7_0_axi_periph/ARESETN",
-          "ps7_0_axi_periph/M00_ARESETN",
+          "PSDMonitorTop_0/ap_rst_n",
+          "axi_mem_intercon/ARESETN",
           "axi_mem_intercon/S00_ARESETN",
           "axi_mem_intercon/M00_ARESETN",
-          "axi_mem_intercon/ARESETN",
-          "PSDMonitorTop_0/ap_rst_n"
+          "ps7_0_axi_periph/ARESETN",
+          "ps7_0_axi_periph/S00_ARESETN",
+          "ps7_0_axi_periph/M00_ARESETN"
         ]
       }
     },

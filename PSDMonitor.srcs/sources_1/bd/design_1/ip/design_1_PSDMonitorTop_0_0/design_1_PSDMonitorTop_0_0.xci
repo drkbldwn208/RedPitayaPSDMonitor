@@ -4,7 +4,7 @@
     "xci_name": "design_1_PSDMonitorTop_0_0",
     "cell_name": "PSDMonitorTop_0",
     "component_reference": "xilinx.com:hls:PSDMonitorTop:1.0",
-    "ip_revision": "2114573818",
+    "ip_revision": "2114573982",
     "gen_directory": "../../../../../../PSDMonitor.gen/sources_1/bd/design_1/ip/design_1_PSDMonitorTop_0_0",
     "parameters": {
       "component_parameters": {
@@ -46,7 +46,7 @@
         "ARCHITECTURE": [ { "value": "zynq" } ],
         "BASE_BOARD_PART": [ { "value": "" } ],
         "BOARD_CONNECTIONS": [ { "value": "" } ],
-        "DEVICE": [ { "value": "xc7z020" } ],
+        "DEVICE": [ { "value": "xc7z010" } ],
         "NEXTGEN_VERSAL": [ { "value": "0" } ],
         "PACKAGE": [ { "value": "clg400" } ],
         "PREFHDL": [ { "value": "VERILOG" } ],
@@ -58,7 +58,7 @@
       },
       "runtime_parameters": {
         "IPCONTEXT": [ { "value": "IP_Integrator" } ],
-        "IPREVISION": [ { "value": "2114573818" } ],
+        "IPREVISION": [ { "value": "2114573982" } ],
         "MANAGED": [ { "value": "TRUE" } ],
         "OUTPUTDIR": [ { "value": "../../../../../../PSDMonitor.gen/sources_1/bd/design_1/ip/design_1_PSDMonitorTop_0_0" } ],
         "SELECTEDSIMMODEL": [ { "value": "" } ],

@@ -7,108 +7,109 @@
   **** SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
   **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
   **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-  **** Start of session at: Mon Apr 20 11:59:33 2026
+  **** Start of session at: Mon Apr 20 14:44:00 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source design_1_PSDMonitorTop_0_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1446.172 ; gain = 47.836 ; free physical = 10924 ; free virtual = 39904
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitorTop/hls/impl/ip'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/home/levlabcukomen/tools/Vivado/2024.1/data/ip'.
 INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_PSDMonitorTop_0_0
-Command: synth_design -top design_1_PSDMonitorTop_0_0 -part xc7z020clg400-1 -incremental_mode off -mode out_of_context
+Command: synth_design -top design_1_PSDMonitorTop_0_0 -part xc7z010clg400-1 -incremental_mode off -mode out_of_context
 Starting synth_design
-Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
-INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
-INFO: [Device 21-403] Loading part xc7z020clg400-1
-INFO: [Device 21-9227] Part: xc7z020clg400-1 does not have CEAM library.
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Device 21-9227] Part: xc7z010clg400-1 does not have CEAM library.
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 3485113
+INFO: [Synth 8-7075] Helper process launched with PID 3792842
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2233.398 ; gain = 413.684 ; free physical = 14129 ; free virtual = 42603
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 2219.004 ; gain = 422.715 ; free physical = 5121 ; free virtual = 34101
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'design_1_PSDMonitorTop_0_0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ip/design_1_PSDMonitorTop_0_0/synth/design_1_PSDMonitorTop_0_0.v:53]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop.v:9]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_CTRL_s_axi' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_CTRL_s_axi.v:9]
-INFO: [Synth 8-155] case statement is not full and has no default [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_CTRL_s_axi.v:184]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_CTRL_s_axi' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_CTRL_s_axi.v:9]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:14]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_store' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:820]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_srl' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_srl' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_srl__parameterized0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_srl__parameterized0' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized0' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized1' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_mem' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2814]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_mem' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2814]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized1' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized2' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_srl__parameterized1' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_srl__parameterized1' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized2' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized3' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_srl__parameterized2' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_srl__parameterized2' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized3' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_store' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:820]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_load' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:328]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized4' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_srl__parameterized3' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_srl__parameterized3' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized4' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_reg_slice' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2480]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_reg_slice' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2480]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized5' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_mem__parameterized0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2814]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_mem__parameterized0' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2814]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized5' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_load' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:328]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_write' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:1628]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_burst_converter' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:1948]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_reg_slice__parameterized0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2480]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_reg_slice__parameterized0' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2480]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_burst_converter' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:1948]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized6' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_srl__parameterized4' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_srl__parameterized4' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized6' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_throttle' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2254]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_reg_slice__parameterized1' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2480]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_reg_slice__parameterized1' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2480]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized7' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_srl__parameterized5' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_srl__parameterized5' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized7' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized8' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_srl__parameterized6' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_srl__parameterized6' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized8' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_throttle' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2254]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_reg_slice__parameterized2' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2480]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_reg_slice__parameterized2' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2480]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:1939]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:1942]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_write' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:1628]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_read' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:1436]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized9' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_srl__parameterized7' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_srl__parameterized7' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized9' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
-WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:1620]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_read' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:1436]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:14]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_regslice_both' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_regslice_both.v:9]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_regslice_both' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_regslice_both.v:9]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_regslice_both__parameterized0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_regslice_both.v:9]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_regslice_both__parameterized0' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_regslice_both.v:9]
-INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_regslice_both__parameterized1' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_regslice_both.v:9]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_regslice_both__parameterized1' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_regslice_both.v:9]
-INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop.v:9]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop.v:9]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_CTRL_s_axi' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_CTRL_s_axi.v:9]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_CTRL_s_axi.v:184]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_CTRL_s_axi' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_CTRL_s_axi.v:9]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:14]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_store' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:820]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_srl' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_srl' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_srl__parameterized0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_srl__parameterized0' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized0' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized1' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_mem' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2814]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_mem' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2814]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized1' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized2' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_srl__parameterized1' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_srl__parameterized1' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized2' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized3' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_srl__parameterized2' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_srl__parameterized2' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized3' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_store' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:820]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_load' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:328]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized4' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_srl__parameterized3' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_srl__parameterized3' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized4' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_reg_slice' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2480]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_reg_slice' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2480]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized5' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_mem__parameterized0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2814]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_mem__parameterized0' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2814]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized5' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_load' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:328]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_write' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:1628]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_burst_converter' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:1948]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_reg_slice__parameterized0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2480]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_reg_slice__parameterized0' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2480]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_burst_converter' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:1948]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized6' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_srl__parameterized4' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_srl__parameterized4' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized6' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_throttle' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2254]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_reg_slice__parameterized1' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2480]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_reg_slice__parameterized1' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2480]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized7' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_srl__parameterized5' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_srl__parameterized5' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized7' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized8' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_srl__parameterized6' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_srl__parameterized6' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized8' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_throttle' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2254]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_reg_slice__parameterized2' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2480]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_reg_slice__parameterized2' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2480]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:1939]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:1942]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_write' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:1628]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_read' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:1436]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized9' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_gmem_m_axi_srl__parameterized7' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_srl__parameterized7' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2760]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_fifo__parameterized9' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:2582]
+WARNING: [Synth 8-589] replacing case/wildcard equality operator === with logical equality operator == [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:1620]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi_read' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:1436]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_gmem_m_axi' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_gmem_m_axi.v:14]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_regslice_both' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_regslice_both.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_regslice_both' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_regslice_both.v:9]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_regslice_both__parameterized0' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_regslice_both.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_regslice_both__parameterized0' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_regslice_both.v:9]
+INFO: [Synth 8-6157] synthesizing module 'PSDMonitorTop_regslice_both__parameterized1' [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_regslice_both.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop_regslice_both__parameterized1' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_regslice_both.v:9]
+INFO: [Synth 8-6155] done synthesizing module 'PSDMonitorTop' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop.v:9]
 INFO: [Synth 8-6155] done synthesizing module 'design_1_PSDMonitorTop_0_0' (0#1) [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ip/design_1_PSDMonitorTop_0_0/synth/design_1_PSDMonitorTop_0_0.v:53]
 WARNING: [Synth 8-7129] Port raddr[-1] in module PSDMonitorTop_gmem_m_axi_srl__parameterized7 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port raddr[0] in module PSDMonitorTop_gmem_m_axi_srl__parameterized7 is either unconnected or has no load
@@ -127,18 +128,18 @@ WARNING: [Synth 8-7129] Port re in module PSDMonitorTop_gmem_m_axi_srl__paramete
 WARNING: [Synth 8-7129] Port AWADDR[1] in module PSDMonitorTop_CTRL_s_axi is either unconnected or has no load
 WARNING: [Synth 8-7129] Port AWADDR[0] in module PSDMonitorTop_CTRL_s_axi is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2343.367 ; gain = 523.652 ; free physical = 14010 ; free virtual = 42486
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2317.973 ; gain = 521.684 ; free physical = 4580 ; free virtual = 33564
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2361.180 ; gain = 541.465 ; free physical = 14005 ; free virtual = 42481
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2335.785 ; gain = 539.496 ; free physical = 4542 ; free virtual = 33524
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 2361.180 ; gain = 541.465 ; free physical = 14005 ; free virtual = 42481
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 2335.785 ; gain = 539.496 ; free physical = 4534 ; free virtual = 33516
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.04 . Memory (MB): peak = 2361.180 ; gain = 0.000 ; free physical = 14005 ; free virtual = 42478
+Netlist sorting complete. Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2335.785 ; gain = 0.000 ; free physical = 4415 ; free virtual = 33398
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -149,28 +150,28 @@ Parsing XDC File [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonito
 Finished Parsing XDC File [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/design_1_PSDMonitorTop_0_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2503.930 ; gain = 0.000 ; free physical = 13983 ; free virtual = 42457
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2482.566 ; gain = 0.000 ; free physical = 4221 ; free virtual = 33203
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00.1 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2503.930 ; gain = 0.000 ; free physical = 13984 ; free virtual = 42457
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.12 ; elapsed = 00:00:00.05 . Memory (MB): peak = 2482.566 ; gain = 0.000 ; free physical = 4213 ; free virtual = 33195
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2503.930 ; gain = 684.215 ; free physical = 13979 ; free virtual = 42452
+Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2482.566 ; gain = 686.277 ; free physical = 3916 ; free virtual = 32904
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
-Loading part: xc7z020clg400-1
+Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2511.934 ; gain = 692.219 ; free physical = 13979 ; free virtual = 42452
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2490.570 ; gain = 694.281 ; free physical = 3916 ; free virtual = 32904
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/design_1_PSDMonitorTop_0_0_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2511.934 ; gain = 692.219 ; free physical = 13978 ; free virtual = 42451
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2490.570 ; gain = 694.281 ; free physical = 3916 ; free virtual = 32904
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'wstate_reg' in module 'PSDMonitorTop_CTRL_s_axi'
 INFO: [Synth 8-802] inferred FSM for state register 'rstate_reg' in module 'PSDMonitorTop_CTRL_s_axi'
@@ -259,7 +260,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'sequential' in module 'PSDMonitorTop_regslice_both__parameterized1'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 2511.934 ; gain = 692.219 ; free physical = 13969 ; free virtual = 42443
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 2490.570 ; gain = 694.281 ; free physical = 3917 ; free virtual = 32905
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -336,8 +337,8 @@ Finished RTL Component Statistics
 Start Part Resource Summary
 ---------------------------------------------------------------------------------
 Part Resources:
-DSPs: 220 (col length:60)
-BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
@@ -345,8 +346,8 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
-WARNING: [Synth 8-3936] Found unconnected internal register 'regslice_both_adc_in_V_data_V_U/data_p1_reg' and it is trimmed from '32' to '16' bits. [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_regslice_both.v:42]
-WARNING: [Synth 8-3936] Found unconnected internal register 'regslice_both_adc_in_V_data_V_U/data_p2_reg' and it is trimmed from '32' to '16' bits. [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/06cd/hdl/verilog/PSDMonitorTop_regslice_both.v:64]
+WARNING: [Synth 8-3936] Found unconnected internal register 'regslice_both_adc_in_V_data_V_U/data_p1_reg' and it is trimmed from '32' to '16' bits. [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_regslice_both.v:42]
+WARNING: [Synth 8-3936] Found unconnected internal register 'regslice_both_adc_in_V_data_V_U/data_p2_reg' and it is trimmed from '32' to '16' bits. [/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ipshared/b51b/hdl/verilog/PSDMonitorTop_regslice_both.v:64]
 WARNING: [Synth 8-7129] Port in_BUS_RID[0] in module PSDMonitorTop_gmem_m_axi_read is either unconnected or has no load
 WARNING: [Synth 8-7129] Port in_BUS_RRESP[1] in module PSDMonitorTop_gmem_m_axi_read is either unconnected or has no load
 WARNING: [Synth 8-7129] Port in_BUS_RRESP[0] in module PSDMonitorTop_gmem_m_axi_read is either unconnected or has no load
@@ -389,7 +390,7 @@ WARNING: [Synth 8-3332] Sequential element (regslice_both_adc_in_V_strb_V_U/FSM_
 WARNING: [Synth 8-3332] Sequential element (regslice_both_adc_in_V_last_V_U/FSM_sequential_state_reg[1]) is unused and will be removed from module PSDMonitorTop.
 WARNING: [Synth 8-3332] Sequential element (regslice_both_adc_in_V_last_V_U/FSM_sequential_state_reg[0]) is unused and will be removed from module PSDMonitorTop.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2511.934 ; gain = 692.219 ; free physical = 13979 ; free virtual = 42454
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 2490.570 ; gain = 694.281 ; free physical = 3845 ; free virtual = 32837
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -410,13 +411,13 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 2511.934 ; gain = 692.219 ; free physical = 13989 ; free virtual = 42463
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 2490.570 ; gain = 694.281 ; free physical = 4331 ; free virtual = 33321
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:20 . Memory (MB): peak = 2511.934 ; gain = 692.219 ; free physical = 13980 ; free virtual = 42455
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2490.570 ; gain = 694.281 ; free physical = 4326 ; free virtual = 33316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -437,7 +438,7 @@ Start Technology Mapping
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-7052] The timing for the instance inst/gmem_m_axi_U/store_unit/buff_wdata/U_fifo_mem/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:20 . Memory (MB): peak = 2511.934 ; gain = 692.219 ; free physical = 13969 ; free virtual = 42443
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 2490.570 ; gain = 694.281 ; free physical = 4327 ; free virtual = 33316
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -455,37 +456,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 2511.934 ; gain = 692.219 ; free physical = 13962 ; free virtual = 42436
+Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2490.570 ; gain = 694.281 ; free physical = 8143 ; free virtual = 37135
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 2511.934 ; gain = 692.219 ; free physical = 13961 ; free virtual = 42435
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2490.570 ; gain = 694.281 ; free physical = 8143 ; free virtual = 37135
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 2511.934 ; gain = 692.219 ; free physical = 13972 ; free virtual = 42446
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2490.570 ; gain = 694.281 ; free physical = 8141 ; free virtual = 37133
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 2511.934 ; gain = 692.219 ; free physical = 13972 ; free virtual = 42446
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2490.570 ; gain = 694.281 ; free physical = 8141 ; free virtual = 37133
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 2511.934 ; gain = 692.219 ; free physical = 13972 ; free virtual = 42446
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2490.570 ; gain = 694.281 ; free physical = 8139 ; free virtual = 37131
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 2511.934 ; gain = 692.219 ; free physical = 13972 ; free virtual = 42446
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2490.570 ; gain = 694.281 ; free physical = 8139 ; free virtual = 37131
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -544,18 +545,18 @@ Report Cell Usage:
 |11    |FDSE     |     5|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 2511.934 ; gain = 692.219 ; free physical = 13972 ; free virtual = 42446
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2490.570 ; gain = 694.281 ; free physical = 8139 ; free virtual = 37131
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 42 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 2511.934 ; gain = 549.469 ; free physical = 13969 ; free virtual = 42443
-Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:23 . Memory (MB): peak = 2511.941 ; gain = 692.219 ; free physical = 13969 ; free virtual = 42443
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:22 ; elapsed = 00:00:22 . Memory (MB): peak = 2490.570 ; gain = 547.500 ; free physical = 8147 ; free virtual = 37139
+Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:24 . Memory (MB): peak = 2490.578 ; gain = 694.281 ; free physical = 8147 ; free virtual = 37139
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2511.941 ; gain = 0.000 ; free physical = 14318 ; free virtual = 42792
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2490.578 ; gain = 0.000 ; free physical = 8454 ; free virtual = 37445
 INFO: [Netlist 29-17] Analyzing 108 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2567.961 ; gain = 0.000 ; free physical = 14320 ; free virtual = 42794
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2546.598 ; gain = 0.000 ; free physical = 8397 ; free virtual = 37390
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
@@ -563,14 +564,14 @@ Synth Design complete | Checksum: 25299c4b
 INFO: [Common 17-83] Releasing license: Synthesis
 122 Infos, 61 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:27 . Memory (MB): peak = 2567.961 ; gain = 1103.746 ; free physical = 14322 ; free virtual = 42796
-INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1995.986; main = 1606.595; forked = 414.512
-INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3607.562; main = 2567.965; forked = 1095.625
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2591.973 ; gain = 0.000 ; free physical = 14322 ; free virtual = 42796
+synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:28 . Memory (MB): peak = 2546.598 ; gain = 1082.582 ; free physical = 8371 ; free virtual = 37363
+INFO: [Common 17-2834] synth_design peak Physical Memory [PSS] (MB): overall = 1765.124; main = 1487.543; forked = 320.266
+INFO: [Common 17-2834] synth_design peak Virtual Memory [VSS] (MB): overall = 3522.812; main = 2546.602; forked = 1032.238
+Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2570.609 ; gain = 0.000 ; free physical = 8383 ; free virtual = 37375
 INFO: [Common 17-1381] The checkpoint '/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/design_1_PSDMonitorTop_0_0_synth_1/design_1_PSDMonitorTop_0_0.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_PSDMonitorTop_0_0, cache-ID = 5d3deed4b090b160
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_PSDMonitorTop_0_0, cache-ID = a8cb448fa4261cfc
 INFO: [Coretcl 2-1174] Renamed 30 cell refs.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2591.973 ; gain = 0.000 ; free physical = 14314 ; free virtual = 42791
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2570.609 ; gain = 0.000 ; free physical = 8361 ; free virtual = 37355
 INFO: [Common 17-1381] The checkpoint '/home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/design_1_PSDMonitorTop_0_0_synth_1/design_1_PSDMonitorTop_0_0.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file design_1_PSDMonitorTop_0_0_utilization_synth.rpt -pb design_1_PSDMonitorTop_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Apr 20 12:00:09 2026...
+INFO: [Common 17-206] Exiting Vivado at Mon Apr 20 14:44:37 2026...

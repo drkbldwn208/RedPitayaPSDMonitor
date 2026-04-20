@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:36:09 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Mon Apr 20 11:08:29 2026
-# Process ID: 3326085
+# Start of session at: Mon Apr 20 14:43:17 2026
+# Process ID: 3790432
 # Current directory: /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/design_1_axis_red_pitaya_adc_0_0_synth_1
 # Command line: vivado -log design_1_axis_red_pitaya_adc_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_axis_red_pitaya_adc_0_0.tcl
 # Log file: /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.runs/design_1_axis_red_pitaya_adc_0_0_synth_1/design_1_axis_red_pitaya_adc_0_0.vds
@@ -13,12 +13,12 @@
 # Platform          :Ubuntu
 # Operating System  :Ubuntu 22.04.5 LTS
 # Processor Detail  :Intel(R) Core(TM) i9-10900KF CPU @ 3.70GHz
-# CPU Frequency     :4904.010 MHz
+# CPU Frequency     :4900.002 MHz
 # CPU Physical cores:10
 # CPU Logical cores :20
 # Host memory       :67280 MB
 # Swap memory       :0 MB
 # Total Virtual     :67280 MB
-# Available Virtual :47239 MB
+# Available Virtual :44693 MB
 #-----------------------------------------------------------
 source design_1_axis_red_pitaya_adc_0_0.tcl -notrace

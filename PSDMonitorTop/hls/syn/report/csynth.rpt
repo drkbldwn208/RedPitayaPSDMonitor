@@ -4,12 +4,12 @@
 == Synthesis Summary Report of 'PSDMonitorTop'
 ================================================================
 + General Information: 
-    * Date:           Mon Apr 20 11:58:29 2026
+    * Date:           Mon Apr 20 14:41:49 2026
     * Version:        2024.1 (Build 5069499 on May 21 2024)
     * Project:        PSDMonitorTop
     * Solution:       hls (Vivado IP Flow Target)
     * Product family: zynq
-    * Target device:  xc7z020-clg400-1
+    * Target device:  xc7z010-clg400-1
     
 
 + Performance & Resource Estimates: 
@@ -19,7 +19,7 @@
     |     Modules     | Issue|      | Latency | Latency| Iteration|         | Trip |          |         |    |           |           |     |
     |     & Loops     | Type | Slack| (cycles)|  (ns)  |  Latency | Interval| Count| Pipelined|  BRAM   | DSP|     FF    |    LUT    | URAM|
     +-----------------+------+------+---------+--------+----------+---------+------+----------+---------+----+-----------+-----------+-----+
-    |+ PSDMonitorTop  |     -|  0.00|        7|  56.000|         -|        1|     -|       yes|  1 (~0%)|   -|  1209 (1%)|  1380 (2%)|    -|
+    |+ PSDMonitorTop  |     -|  0.00|        7|  56.000|         -|        1|     -|       yes|  1 (~0%)|   -|  1209 (3%)|  1380 (7%)|    -|
     +-----------------+------+------+---------+--------+----------+---------+------+----------+---------+----+-----------+-----------+-----+
 
 

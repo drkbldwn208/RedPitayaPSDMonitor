@@ -108,7 +108,7 @@ set rc [catch {
   set_param chipscope.maxJobs 5
   set_param runs.launchOptions { -jobs 10  }
 OPTRACE "create in-memory project" START { }
-  create_project -in_memory -part xc7z020clg400-1
+  create_project -in_memory -part xc7z010clg400-1
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
@@ -135,7 +135,7 @@ OPTRACE "read constraints: implementation_pre" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }
   set_param project.isImplRun true
-  link_design -top design_1_wrapper -part xc7z020clg400-1 
+  link_design -top design_1_wrapper -part xc7z010clg400-1 
 OPTRACE "link_design" END { }
   set_param project.isImplRun false
 OPTRACE "gray box cells" START { }

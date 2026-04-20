@@ -2,14 +2,14 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
--- Date        : Mon Apr 20 11:56:31 2026
+-- Date        : Mon Apr 20 14:44:35 2026
 -- Host        : levlabcukomen-OMEN-30L-Desktop-GT13-0xxx running 64-bit Ubuntu 22.04.5 LTS
--- Command     : write_vhdl -force -mode funcsim -rename_top design_1_auto_us_0 -prefix
---               design_1_auto_us_0_ design_1_auto_us_0_sim_netlist.vhdl
+-- Command     : write_vhdl -force -mode funcsim
+--               /home/levlabcukomen/Desktop/VitisProjects/PSDMonitor/PSDMonitor/PSDMonitor.gen/sources_1/bd/design_1/ip/design_1_auto_us_0/design_1_auto_us_0_sim_netlist.vhdl
 -- Design      : design_1_auto_us_0
 -- Purpose     : This VHDL netlist is a functional simulation representation of the design and should not be modified or
 --               synthesized. This netlist cannot be used for SDF annotated simulation.
--- Device      : xc7z020clg400-1
+-- Device      : xc7z010clg400-1
 -- --------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
@@ -105,6 +105,8 @@ entity design_1_auto_us_0_axi_dwidth_converter_v2_1_31_w_upsizer is
     \WORD_LANE[1].USE_ALWAYS_PACKER.BYTE_LANE[3].USE_RTL_DATA.USE_REGISTER.M_AXI_WDATA_I_reg[63]_0\ : in STD_LOGIC_VECTOR ( 0 to 0 );
     \WORD_LANE[1].USE_ALWAYS_PACKER.BYTE_LANE[3].USE_RTL_DATA.USE_REGISTER.M_AXI_WDATA_I_reg[63]_1\ : in STD_LOGIC_VECTOR ( 7 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of design_1_auto_us_0_axi_dwidth_converter_v2_1_31_w_upsizer : entity is "axi_dwidth_converter_v2_1_31_w_upsizer";
 end design_1_auto_us_0_axi_dwidth_converter_v2_1_31_w_upsizer;
 
 architecture STRUCTURE of design_1_auto_us_0_axi_dwidth_converter_v2_1_31_w_upsizer is
@@ -1956,6 +1958,8 @@ entity design_1_auto_us_0_axi_register_slice_v2_1_31_axic_register_slice is
     SR : in STD_LOGIC_VECTOR ( 0 to 0 );
     D : in STD_LOGIC_VECTOR ( 86 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of design_1_auto_us_0_axi_register_slice_v2_1_31_axic_register_slice : entity is "axi_register_slice_v2_1_31_axic_register_slice";
 end design_1_auto_us_0_axi_register_slice_v2_1_31_axic_register_slice;
 
 architecture STRUCTURE of design_1_auto_us_0_axi_register_slice_v2_1_31_axic_register_slice is
@@ -3547,6 +3551,8 @@ entity design_1_auto_us_0_generic_baseblocks_v2_1_2_command_fifo is
     s_axi_bready : in STD_LOGIC;
     m_axi_bvalid : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of design_1_auto_us_0_generic_baseblocks_v2_1_2_command_fifo : entity is "generic_baseblocks_v2_1_2_command_fifo";
 end design_1_auto_us_0_generic_baseblocks_v2_1_2_command_fifo;
 
 architecture STRUCTURE of design_1_auto_us_0_generic_baseblocks_v2_1_2_command_fifo is
@@ -6458,6 +6464,8 @@ entity design_1_auto_us_0_axi_dwidth_converter_v2_1_31_a_upsizer is
     m_axi_awready : in STD_LOGIC;
     \in\ : in STD_LOGIC_VECTOR ( 23 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of design_1_auto_us_0_axi_dwidth_converter_v2_1_31_a_upsizer : entity is "axi_dwidth_converter_v2_1_31_a_upsizer";
 end design_1_auto_us_0_axi_dwidth_converter_v2_1_31_a_upsizer;
 
 architecture STRUCTURE of design_1_auto_us_0_axi_dwidth_converter_v2_1_31_a_upsizer is
@@ -6632,6 +6640,8 @@ entity design_1_auto_us_0_axi_register_slice_v2_1_31_axi_register_slice is
     SR : in STD_LOGIC_VECTOR ( 0 to 0 );
     D : in STD_LOGIC_VECTOR ( 86 downto 0 )
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of design_1_auto_us_0_axi_register_slice_v2_1_31_axi_register_slice : entity is "axi_register_slice_v2_1_31_axi_register_slice";
 end design_1_auto_us_0_axi_register_slice_v2_1_31_axi_register_slice;
 
 architecture STRUCTURE of design_1_auto_us_0_axi_register_slice_v2_1_31_axi_register_slice is
@@ -6684,6 +6694,8 @@ entity design_1_auto_us_0_axi_dwidth_converter_v2_1_31_axi_upsizer is
     s_axi_wvalid : in STD_LOGIC;
     m_axi_awready : in STD_LOGIC
   );
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of design_1_auto_us_0_axi_dwidth_converter_v2_1_31_axi_upsizer : entity is "axi_dwidth_converter_v2_1_31_axi_upsizer";
 end design_1_auto_us_0_axi_dwidth_converter_v2_1_31_axi_upsizer;
 
 architecture STRUCTURE of design_1_auto_us_0_axi_dwidth_converter_v2_1_31_axi_upsizer is
@@ -7329,6 +7341,8 @@ entity design_1_auto_us_0_axi_dwidth_converter_v2_1_31_top is
   attribute C_S_AXI_ID_WIDTH of design_1_auto_us_0_axi_dwidth_converter_v2_1_31_top : entity is 1;
   attribute DowngradeIPIdentifiedWarnings : string;
   attribute DowngradeIPIdentifiedWarnings of design_1_auto_us_0_axi_dwidth_converter_v2_1_31_top : entity is "yes";
+  attribute ORIG_REF_NAME : string;
+  attribute ORIG_REF_NAME of design_1_auto_us_0_axi_dwidth_converter_v2_1_31_top : entity is "axi_dwidth_converter_v2_1_31_top";
   attribute P_AXI3 : integer;
   attribute P_AXI3 of design_1_auto_us_0_axi_dwidth_converter_v2_1_31_top : entity is 1;
   attribute P_AXI4 : integer;

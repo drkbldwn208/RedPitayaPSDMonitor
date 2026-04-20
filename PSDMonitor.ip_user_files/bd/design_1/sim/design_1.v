@@ -2,7 +2,7 @@
 //Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 //--------------------------------------------------------------------------------
 //Tool Version: Vivado v.2024.1 (lin64) Build 5076996 Wed May 22 18:36:09 MDT 2024
-//Date        : Mon Apr 20 11:59:16 2026
+//Date        : Mon Apr 20 14:43:02 2026
 //Host        : levlabcukomen-OMEN-30L-Desktop-GT13-0xxx running 64-bit Ubuntu 22.04.5 LTS
 //Command     : generate_target design_1.bd
 //Design      : design_1
@@ -114,6 +114,7 @@ module design_1
   wire axi_mem_intercon_M00_AXI_WREADY;
   wire [7:0]axi_mem_intercon_M00_AXI_WSTRB;
   wire axi_mem_intercon_M00_AXI_WVALID;
+  wire axis_red_pitaya_adc_0_adc_csn;
   wire [31:0]axis_red_pitaya_adc_0_m_axis_TDATA;
   wire axis_red_pitaya_adc_0_m_axis_TVALID;
   wire clk_wiz_0_clk_out1;
@@ -198,6 +199,7 @@ module design_1
 
   assign adc_clk_n_i_1 = adc_clk_n_i;
   assign adc_clk_p_i_1 = adc_clk_p_i;
+  assign adc_csn_o = axis_red_pitaya_adc_0_adc_csn;
   assign adc_dat_a_i_1 = adc_dat_a_i[15:0];
   assign adc_dat_b_i_1 = adc_dat_b_i[15:0];
   design_1_PSDMonitorTop_0_0 PSDMonitorTop_0
@@ -300,6 +302,7 @@ module design_1
         .S00_AXI_wvalid(PSDMonitorTop_0_m_axi_gmem_WVALID));
   design_1_axis_red_pitaya_adc_0_0 axis_red_pitaya_adc_0
        (.aclk(clk_wiz_0_clk_out1),
+        .adc_csn(axis_red_pitaya_adc_0_adc_csn),
         .adc_dat_a(adc_dat_a_i_1),
         .adc_dat_b(adc_dat_b_i_1),
         .m_axis_tdata(axis_red_pitaya_adc_0_m_axis_TDATA),
@@ -1196,7 +1199,7 @@ module s00_couplers_imp_7HNO1D
   assign s00_couplers_to_auto_pc_WLAST = S_AXI_wlast;
   assign s00_couplers_to_auto_pc_WSTRB = S_AXI_wstrb[3:0];
   assign s00_couplers_to_auto_pc_WVALID = S_AXI_wvalid;
-  design_1_auto_pc_1 auto_pc
+  design_1_auto_pc_0 auto_pc
        (.aclk(S_ACLK_1),
         .aresetn(S_ARESETN_1),
         .m_axi_awaddr(auto_pc_to_auto_us_AWADDR),
@@ -1518,7 +1521,7 @@ module s00_couplers_imp_UYSKKA
   assign s00_couplers_to_auto_pc_WLAST = S_AXI_wlast;
   assign s00_couplers_to_auto_pc_WSTRB = S_AXI_wstrb[3:0];
   assign s00_couplers_to_auto_pc_WVALID = S_AXI_wvalid;
-  design_1_auto_pc_0 auto_pc
+  design_1_auto_pc_1 auto_pc
        (.aclk(S_ACLK_1),
         .aresetn(S_ARESETN_1),
         .m_axi_araddr(auto_pc_to_s00_couplers_ARADDR),
